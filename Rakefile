@@ -1,16 +1,21 @@
+require 'rubygems'
+Gem.clear_paths
+Gem.path.unshift(File.join(File.dirname(__FILE__), "gems"))
+
 require 'rake'
 require 'rake/rdoctask'
 require 'rake/testtask'
 require 'spec/rake/spectask'
 require 'fileutils'
-require 'rubygems'
-
-MERB_ENV = ENV['MERB_ENV'] if ENV['MERB_ENV']
 
 require File.dirname(__FILE__)+'/config/boot.rb'
-require MERB_FRAMEWORK_ROOT+'/tasks'
-MERB_ROOT = File.dirname(__FILE__)
+require Merb::framework_root+'/tasks'
 include FileUtils
+
+# Set these before any dependencies load
+# otherwise the ORM may connect to the wrong env
+Merb.root = File.dirname(__FILE__)
+Merb.environment = ENV['MERB_ENV'] if ENV['MERB_ENV']
 
 # Get Merb plugins and dependencies
 require File.dirname(__FILE__)+'/config/dependencies.rb'
@@ -21,9 +26,9 @@ Merb::Plugins.rakefiles.each {|r| require r }
 
 desc "load merb_init.rb"
 task :merb_init do
-  require 'merb'
-  require File.dirname(__FILE__)+'/config/merb_init.rb'
-end  
+  # deprecated - here for BC
+  Rake::Task['merb_env'].invoke
+end
 
 task :uninstall => [:clean] do
   sh %{sudo gem uninstall #{NAME}}
@@ -56,6 +61,18 @@ Spec::Rake::SpecTask.new('specs') do |t|
   t.spec_files = Dir['spec/**/*_spec.rb'].sort
 end
 
+desc "Run all model specs"
+Spec::Rake::SpecTask.new('model_specs') do |t|
+  t.spec_opts = ["--format", "specdoc", "--colour"]
+  t.spec_files = Dir['spec/models/**/*_spec.rb'].sort
+end
+
+desc "Run all controller specs"
+Spec::Rake::SpecTask.new('controller_specs') do |t|
+  t.spec_opts = ["--format", "specdoc", "--colour"]
+  t.spec_files = Dir['spec/controllers/**/*_spec.rb'].sort
+end
+
 desc "Run a specific spec with TASK=xxxx"
 Spec::Rake::SpecTask.new('spec') do |t|
   t.spec_opts = ["--format", "specdoc", "--colour"]
@@ -82,6 +99,19 @@ desc 'Run all tests, specs and finish with rcov'
 task :aok do
   sh %{rake rcov}
   sh %{rake spec}
+end
+
+unless Gem.cache.search("haml").empty?
+  namespace :haml do
+    desc "Compiles all sass files into CSS"
+    task :compile_sass do
+      gem 'haml'
+      require 'sass'
+      puts "*** Updating stylesheets"
+      Sass::Plugin.update_stylesheets
+      puts "*** Done"      
+    end
+  end
 end
 
 ##############################################################################

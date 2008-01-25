@@ -1,5 +1,5 @@
 module Merb
   module GlobalHelper
-    # helpers deinfed here available to all views.  
+    # helpers defined here available to all views.  
   end
 end    

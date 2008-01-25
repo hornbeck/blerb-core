@@ -6,6 +6,6 @@ class Comment < DataMapper::Base
   
   belongs_to :article
   
-  validates_presence_of :post_id, :email
+  validates_presence_of :article_id, :email
 end
 

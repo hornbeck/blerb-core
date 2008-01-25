@@ -9,7 +9,7 @@ rescue LoadError
 end
 
 require File.join(File.dirname(__FILE__), "..", 'config', 'boot')
-require (APP_ROOT / "config" / "merb_init" )
+require File.join(Merb.root, 'config', 'dependencies')
 module Kernel
   undef dependency if defined?(Kernel.dependency)
 end

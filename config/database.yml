@@ -2,14 +2,14 @@
 # This is a sample database file for the DataMapper ORM
 :development: &defaults
   :adapter: mysql
-  :database: blog_development
+  :database: blerb_development
   :username: root
   :password: 
   :host: localhost
 
 :test:
   <<: *defaults
-  :database: blog_test
+  :database: blerb_test
 
 :production:
   <<: *defaults

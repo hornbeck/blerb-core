@@ -21,7 +21,7 @@
 
 # A secret key is required when using the 'cookie' session store (default), 
 # change this value to something unique to your application and keep it private
-:session_secret_key: /USERS/HORNBECK/CODE/MERB/BLOG8167
+:session_secret_key: /USERS/JEFF/DEV/PROJECTS/BLERB6404
 
 # Uncomment to use the merb upload progress. The 'path match' will be treated as
 # a regex for any URLs that should be considered for upload monitoring.
@@ -32,8 +32,18 @@
 # automatically in production mode.
 #:cache_templates: true
 
+# Uncomment to bundle assets in dev mode. Assets are automatically bundled in
+# production mode.
+#:bundle_assets: true
+
+# this is true if you want mongrel to emulate the X-Sendfile header internally,
+# false if you want it to fall thru to apache or whatever front end server you use.
+# true by default
+#:mongrel_x_sendfile: false
+
 # Uncomment and set this if you want to run a drb server for upload progress
 # or other drb services.
+#:start_drb: true
 #:drb_server_port: 32323
 
 # If you want to protect some or all of your app with  HTTP basic auth then
@@ -61,4 +71,12 @@
 # It is often useful to use a differant layout from 'application' for errors
 # set this to the layout template (or :none) that you want to use by default
 #:exception_layout: :none
-  
+
+# You can override settings for specific environments by creating a yaml
+# file for that environment in config/environments.  For example, to
+# change the configuration only for development create
+# config/environments/development.yml
+
+# If you don't intend to parse JSON, use ActiveSupport, or want to roll your own
+# set this to true, to disable the loading of the JSON gem
+# :disable_json_gem: true
