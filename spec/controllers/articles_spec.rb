@@ -28,7 +28,8 @@ describe "Articles Controller", "show action" do
   end
   
   it "should return only one article" do 
-    Article.should_receive(:find_by_id).with(1).and_return(@article)
+    Article.should_receive(:find).with('1').and_return(@article)
+    request(:get, '/articles/1', :yields => controller)
   end
   
   it "should only return comments associated with this article"
@@ -38,7 +39,6 @@ end
 describe "Articles Controller", "destroy action" do
   
   it "should only delete one article"
-  
   it "should delete all comments owned by the deleted article"
   
 end

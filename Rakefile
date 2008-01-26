@@ -24,6 +24,9 @@ Merb::Plugins.rakefiles.each {|r| require r }
 #desc "Packages up Merb."
 #task :default => [:package]
 
+# Make the default task run specs for now
+task :default => [:specs]
+
 desc "load merb_init.rb"
 task :merb_init do
   # deprecated - here for BC
