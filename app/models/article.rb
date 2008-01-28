@@ -8,10 +8,13 @@ class Article < DataMapper::Base
 
   has_many :comments
   
-  before_save :set_slug
+  validates_presence_of :title
+  validates_presence_of :slug
   
-  def set_slug(slug = self.title)
-    self.slug = slug.gsub(" ", "_")
+  before_validation :set_slug
+  
+  def set_slug(slug_title = self.title)
+    self.slug = slug_title.gsub(" ", "_") if slug_title
   end
   
 end

@@ -1,10 +1,16 @@
+dir = File.dirname(__FILE__)
 $TESTING=true
-require File.join(File.dirname(__FILE__), "..", 'config', 'boot')
+require File.join(dir, "..", 'config', 'boot')
 Merb.environment="test"
 require File.join(Merb.root, 'config', 'merb_init')
 
 require 'merb/test/helper'
 require 'merb/test/rspec'
+
+require "#{dir}/spec_helpers/core"
+require "#{dir}/spec_helpers/custom_matchers"
+require "#{dir}/spec_helpers/shared_behaviors"
+require "#{dir}/spec_helpers/app_specific"
 
 Spec::Runner.configure do |config|
     config.include(Merb::Test::Helper)

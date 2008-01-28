@@ -1,24 +1,18 @@
 require File.join( File.dirname(__FILE__), "..", "spec_helper" )
 
 describe Article do
-  before(:each) do 
-    @article = Article.new
-  end
-  
-  it "should have a title" do 
-    @article.title = "First article!"
-    @article.title.should == "First article!"
-  end
-  
-  it "should have a body" do 
-    @article.body = "The body of the article"
-    @article.body.should == "The body of the article"
-  end
+  include DefaultSpecHelper
+  include DefaultModelHelper
+  include ArticleSpecHelper
+
+  it_should_behave_like "timestamps work correctly"
+  it_should_behave_like "validates required fields"
   
   it "should build a slug" do
-    @article.title = "Page One"
-    @article.save
-    @article.slug.should == "Page_One"
+    article = Article.new(:title => "Page One")
+    article.save
+    article.should_not be_nil
+    article.slug.should == "Page_One"
   end
   
 end
