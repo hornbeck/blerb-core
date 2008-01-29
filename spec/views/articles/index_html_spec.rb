@@ -31,7 +31,7 @@ describe "index.html.erb" do
     end
   end
 
-  describe "when noarticles have been created" do
+  describe "when no articles have been created" do
     attr_reader :body, :no_articles_text
     before(:each) do
       @no_articles_text = "No articles created yet"

@@ -30,6 +30,6 @@ Merb::Router.prepare do |r|
   # clients from calling your create or destroy actions with a GET
   r.default_routes
   
-  # Change this for your home page to be available at /
-  # r.match('/').to(:controller => 'whatever', :action =>'index')
+  # Set the default to articles for now
+  r.match('/').to(:controller => 'articles', :action =>'index')
 end
