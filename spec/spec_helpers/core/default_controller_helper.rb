@@ -5,7 +5,14 @@ module DefaultControllerHelper
   end
 
   def do_create(options = {})
-    hit_controller(:post, url(controller_sym, model_sym => valid_attributes.merge(options)))
+    # in case the controller doesn't support create, fake this out by creating a new model
+    # and sticking it into the instance variable (so assigns will retrieve it properly)
+    if controller.respond_to? :create
+      hit_controller(:post, url(controller_sym, model_sym => valid_attributes.merge(options)))
+    else
+      new_model = model_class.create(valid_attributes.merge(options))
+      controller.instance_variable_set("@#{model_sym.to_s}", new_model)
+    end
   end
 
   def do_show(id)
