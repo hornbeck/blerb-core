@@ -1,6 +1,10 @@
 #!/usr/bin/env ruby
 APP_ROOT = File.join(File.dirname(__FILE__), '..')
 
+# required to overcome a callback in rspec
+def at_exit
+end
+
 begin
   require 'rubigen'
 rescue LoadError

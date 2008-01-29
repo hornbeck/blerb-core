@@ -13,5 +13,5 @@ puts "Loading Application..."
 Merb::BootLoader.load_application
 
 # Load environment-specific configuration
-environment_config = File.join(Merb.root, 'config', 'environments', Merb.environment)
+environment_config = File.join(Merb.root, 'config', 'environments', Merb.environment + '.rb')
 require environment_config if File.exist?(environment_config)
