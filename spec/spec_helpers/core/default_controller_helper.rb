@@ -11,7 +11,7 @@ module DefaultControllerHelper
       hit_controller(:post, url(controller_sym, model_sym => valid_attributes.merge(options)))
     else
       new_model = model_class.create(valid_attributes.merge(options))
-      controller.instance_variable_set("@#{model_sym.to_s}", new_model)
+      controller.set_assigns(model_sym, new_model)
     end
   end
 

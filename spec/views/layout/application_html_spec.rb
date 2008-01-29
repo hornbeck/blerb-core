@@ -14,7 +14,7 @@ describe "default layout" do
     
     # TODO: jw - change these to either hpricot, or some smarter matcher that doesn't require an exact semantic match
     it "should include the master.css stylesheet" do
-      body.should match(/<link.*type=\"text\/css\" href=\"\/stylesheets\/master.css\"/)
+      body.should match(/<link.*type=\"text\/css\".*href=\"\/stylesheets\/master.css\"/)
     end
     
     it "should include the jquery javascript library" do
