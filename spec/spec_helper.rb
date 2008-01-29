@@ -20,6 +20,10 @@ end
 
 ### METHODS BELOW THIS LINE SHOULD BE EXTRACTED TO MERB ITSELF
 
+#
+# Pulled this in from timocratic's blog, this should be put somewhere else
+# http://www.timocracy.com/articles/2007/12/17/isolated-controller-and-view-testing-in-merb
+#
 def fake_render(template, ivars={})
   dummy = Object.new
   ivars.each do |key, value|
