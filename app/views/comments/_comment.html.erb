@@ -1,0 +1,11 @@
+<li id="comment_<%= comment.id %>">
+	<div class="user">
+		<h4><%= comment.name %></h4>
+		<p class="time">
+			<%= time_ago_in_words(comment.created_at) %>
+		</p>
+	</div>
+	<div class="body">
+		<%= comment.body %>
+	</div>
+</li>

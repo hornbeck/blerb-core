@@ -1,11 +1,7 @@
 <h1>Latest Articles</h1>
 
 <% unless @articles.blank? -%>
-  <ul>
-  <% @articles.each do |article| -%>
-    <li><%=article.title%></li>
-  <% end -%>
-  </ul>
+  <%= partial 'article', :with => @articles %>
 <% else -%>
   <h2>No articles created yet</h2>
 <% end -%>

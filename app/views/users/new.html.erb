@@ -1,0 +1,29 @@
+<%= error_messages_for @user %>
+<% form_for @user, :action => url(:users) do %>
+  <fieldset>
+    <legend>Required Info</legend>
+    <p>
+      <%= text_control :email, :label => "Email" %>
+    </p>
+    <p>
+      <%= password_control :password, :label => "Password" %>
+    </p>
+    <p>
+      <%= password_control :password_confirmation, :label => "Password Confirmation" %>
+    </p>
+    </fieldset>
+    <fieldset>
+      <legend>Optional Info</legend>
+    <p>
+      <%= text_control :first_name, :label => "First Name" %>
+    </p>
+    <p>
+      <%= text_control :last_name, :label => "Last Name" %>
+    </p>
+    <p>
+      <button type="submit">
+        Signup
+    	</button>
+    </p>
+  </fieldset>
+<% end %>

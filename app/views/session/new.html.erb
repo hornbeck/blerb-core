@@ -1,0 +1,25 @@
+<% form_tag :action => url(:login) do -%>
+  <fieldset>
+    <legend>Login</legend>
+    <p>
+      <label for="login">Login</label>
+      <%= text_field :name => :email %>
+    </p>
+    <p>
+      <label for="password">Password</label>
+      <%= password_field :name => :password %>
+    </p>
+    <p>
+      <label for="remember_me">Remember me:</label>
+      <%= checkbox_field :name => 'remember_me' %>
+    </p>
+    <p>
+      <button type="submit">
+        Login
+      </button>
+      <a href="/signup">
+        Signup
+      </a>
+    </p>
+  </fieldset>
+<% end -%>

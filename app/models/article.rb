@@ -6,7 +6,11 @@ class Article < DataMapper::Base
   property :created_at, :datetime
   property :updated_at, :datetime
 
+  property :published_at, :datetime
+  property :draft, :boolean
+
   has_many :comments
+  belongs_to :user
   
   validates_presence_of :title
   validates_presence_of :slug

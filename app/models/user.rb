@@ -1,52 +1,68 @@
 require 'digest/sha1'
+dependency 'authenticated_system_model'
 class User < DataMapper::Base
-
-  property :login, :string
-  property :hashed_password, :string
-  property :email, :string
-  property :salt, :string
-  property :created_at, :datetime
+  include AuthenticatedSystem::Model
   
-  attr_accessor :id, :salt, :password, :password_confirmation
-
-  def self.authenticate(login, pass)
-    u=find(:first, :conditions=>["login = ?", login])
-    return nil if u.nil?
-    return u if User.encrypt(pass, u.salt)==u.hashed_password
-    nil
-  end  
-
-  def password=(pass)
-    @password=pass
-    self.salt = User.random_string(10) if !self.salt?
-    self.hashed_password = User.encrypt(@password, self.salt)
+  attr_accessor :password, :password_confirmation
+  
+  property :email,                      :string
+  property :crypted_password,           :string
+  property :salt,                       :string
+  property :activation_code,            :string
+  property :activated_at,               :datetime
+  property :remember_token_expires_at,  :datetime
+  property :remember_token,             :string
+  property :created_at,                 :datetime
+  property :updated_at,                 :datetime
+  property :first_name,                 :string
+  property :last_name,                  :string
+  
+  validates_presence_of       :email
+  # validates_format_of         :email,                   :as => :email_address
+  validates_length_of         :email,                   :within => 3..100
+  validates_uniqueness_of     :email
+  validates_presence_of       :password,                :if => proc {password_required?}
+  validates_presence_of       :password_confirmation,   :if => proc {password_required?}
+  validates_length_of         :password,                :within => 4..40, :if => proc {password_required?}
+  validates_confirmation_of   :password,                :groups => :create
+    
+  before_save :encrypt_password
+  before_create :make_activation_code
+  after_create :send_signup_notification
+  
+  def email=(value)
+    @email = value.downcase unless value.nil?
   end
 
-  def send_new_password
-    new_pass = User.random_string(10)
-    self.password = self.password_confirmation = new_pass
-    self.save
-    Notifications.deliver_forgot_password(self.email, self.login, new_pass)
-  end
+  EMAIL_FROM = "info@mysite.com"
+  SIGNUP_MAIL_SUBJECT = "Welcome to MYSITE.  Please activate your account."
+  ACTIVATE_MAIL_SUBJECT = "Welcome to MYSITE"
+  
+  # Activates the user in the database
+  def activate
+    @activated = true
+    self.activated_at = Time.now.utc
+    self.activation_code = nil
+    save
 
-  protected
+    # send mail for activation
+    UserMailer.dispatch_and_deliver(  :activation_notification,
+                                  {   :from => User::EMAIL_FROM,
+                                      :to   => self.email,
+                                      :subject => User::ACTIVATE_MAIL_SUBJECT },
 
-  def self.encrypt(pass, salt)
-    Digest::SHA1.hexdigest(pass+salt)
-  end
+                                      :user => self )
 
-  def self.random_string(len)
-    #generat a random password consisting of strings and digits
-    chars = ("a".."z").to_a + ("A".."Z").to_a + ("0".."9").to_a
-    newpass = ""
-    1.upto(len) { |i| newpass << chars[rand(chars.size-1)] }
-    return newpass
   end
   
+  def send_signup_notification
+    UserMailer.dispatch_and_deliver(
+        :signup_notification,
+      { :from => User::EMAIL_FROM,
+        :to  => self.email,
+        :subject => User::SIGNUP_MAIL_SUBJECT },
+        :user => self        
+    )
+  end
+
 end
-
-
-
-
-
-  
