@@ -11,6 +11,7 @@
   
 Blerb should now be running on port 4000, so open up your browser and visit localhost:4000!
 
-== Dependencies
+== Dependencies (versions tested)
 
-datamapper (0.3.0)
+merb (5.3.0)
+datamapper (0.2.5)
