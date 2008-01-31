@@ -1,0 +1,16 @@
+= Welcome to Blerb!
+
+== Installation
+
+  * git clone git@github.com:hornbeck/blerb.git
+  * cd blerb
+  * mv config/database.yml.sample config/database.yml 
+  * fill in the correct database credentials
+  * rake db:dm:automigrate
+  * merb
+  
+Blerb should now be running on port 4000, so open up your browser and visit localhost:4000!
+
+== Dependencies
+
+datamapper (0.3.0)
