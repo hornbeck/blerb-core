@@ -4,6 +4,14 @@ Merb::Router.prepare do |r|
   r.resources :articles do |post|
     post.resources :comments
   end
+
+  r.resources :articles, :namespace => 'admin'
+  r.resources :comments, :namespace => 'admin'
+  r.match("/admin/comments/reject/:id", :method => :put).to(:controller => "admin/comments",:action => "reject").name(:reject_admin_comment)
+  r.match("/admin/comments/approve/:id", :method => :put).to(:controller => "admin/comments",:action => "approve").name(:approve_admin_comment)
+    r.match("/admin/comments/destroy_multiple", :method => :delete).to(:controller => "admin/comments",:action => "destory_multiple").name(:destroy_multiple_admin_comments)
+  r.resources :users, :namespace => 'admin'
+  r.match("/admin").to(:controller => "admin/articles", :action => 'index').name(:admin_home)
   
   r.match("/signup").to(:controller => "users", :action => "new").name(:signup)
   r.to(:controller => "Session") do |session|
@@ -13,8 +21,8 @@ Merb::Router.prepare do |r|
   r.match("/users/activate/:activation_code").to(:controller => "Users", :action => "activate").name(:user_activation)
   r.resources :users
   
-  r.default_routes
+  #r.default_routes
   
   # Set the default to articles for now
-  r.match('/').to(:controller => 'articles', :action =>'index')
+  r.match('/').to(:controller => 'articles', :action =>'index').name(:home)
 end

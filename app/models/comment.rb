@@ -15,6 +15,14 @@ class Comment < DataMapper::Base
   validates_presence_of :name, :body, :email
   
   attr_writer :spam, :ham, :current_user
+  
+  def self.spam
+    all(:approved => false, :order => 'created_at DESC') 
+  end
+  
+  def self.ham
+    all(:approved => true, :order => 'created_at DESC')
+  end
 
   def request=(request)
     self.user_ip    = request.remote_ip

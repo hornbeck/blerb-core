@@ -1,7 +1,8 @@
 <h1>Latest Articles</h1>
-
-<% unless @articles.blank? -%>
-  <%= partial 'article', :with => @articles %>
-<% else -%>
-  <h2>No articles created yet</h2>
-<% end -%>
+<div class="container">
+  <% unless @articles.blank? -%>
+    <%= partial 'article', :with => @articles %>
+  <% else -%>
+    <h2>No articles created yet</h2>
+  <% end -%>
+</div>
