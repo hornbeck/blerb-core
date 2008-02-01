@@ -1,0 +1,20 @@
+Story: Viewing the signup page
+  As an unregistered user
+  I want to view the signup page
+  So that I can register as a user
+  
+  Scenario: the signup form posts to the user resource
+    Given there is an unregistered user
+    When they view the signup page
+    Then they should see a form
+    And they should see a form with a "post" method
+  
+  Scenario: the signup form should have inputs for the user's info
+    Given there is an unregistered user
+    When they view the signup page
+    Then they should see the form
+    And they should see the user_email input within the form
+    And they should see the user_password input within the form
+    And they should see the user_password_confirmation input within the form
+    And they should see the user_first_name input within the form
+    And they should see the user_last_name input within the form

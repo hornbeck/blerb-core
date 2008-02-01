@@ -94,6 +94,7 @@ desc "RCov"
 Spec::Rake::SpecTask.new('rcov') do |t|
   t.spec_opts = ["--format", "specdoc", "--colour"]
   t.spec_files = Dir['spec/**/*_spec.rb'].sort
+  t.rcov_opts = ["--exclude", "gems", "--exclude", "spec"]
   t.libs = ['lib', 'server/lib' ]
   t.rcov = true
 end

@@ -3,7 +3,7 @@ require File.join( File.dirname(__FILE__), "..", "user_spec_helper")
 require File.join( File.dirname(__FILE__), "..", "authenticated_system_spec_helper")
 require 'cgi'
 
-describe "Session Controller", "index action" do
+describe "Sessions Controller", "index action" do
   include UserSpecHelper
   
   before(:each) do
@@ -16,15 +16,8 @@ describe "Session Controller", "index action" do
   it "should have a route to Session#new from '/login'" do
     with_route("/login") do |params|
       params[:controller].should == "Session"
-      params[:action].should == "create"
+      params[:action].should == "new"
     end   
-  end
-  
-  it "should route to Session#create from '/login' via post" do
-    with_route("/login", "POST") do |params|
-      params[:controller].should  == "Session"
-      params[:action].should      == "create"
-    end      
   end
   
   it "should have a named route :login" do
@@ -46,14 +39,14 @@ describe "Session Controller", "index action" do
   end
 
   it 'logins and redirects' do
-    post "/login", :email => 'quentin@example.com', :password => 'test'
+    post "/session", :email => 'quentin@example.com', :password => 'test'
     session[:user].should_not be_nil
     session[:user].should == @quentin.id
     controller.should redirect_to("/")
   end
    
   it 'fails login and does not redirect' do
-    post "/login", :email => 'quentin@example.com', :password => 'bad password'
+    post "/session", :email => 'quentin@example.com', :password => 'bad password'
     session[:user].should be_nil
     controller.template.should match(/^new\./)
     controller.should be_success
@@ -66,12 +59,12 @@ describe "Session Controller", "index action" do
   end
 
   it 'remembers me' do
-    post "/login", :email => 'quentin@example.com', :password => 'test', :remember_me => "1"
+    post "/session", :email => 'quentin@example.com', :password => 'test', :remember_me => "1"
     cookies["auth_token"].should_not be_nil
   end
  
   it 'does not remember me' do
-    post "/login", :email => 'quentin@example.com', :password => 'test', :remember_me => "0"
+    post "/session", :email => 'quentin@example.com', :password => 'test', :remember_me => "0"
     cookies["auth_token"].should be_nil
   end
   

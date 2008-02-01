@@ -1,0 +1,17 @@
+Story: Viewing an individual article
+  As a user
+  I want to view an article
+  So that I can read it's contents
+  
+  Scenario: title for the page is the article's title
+  
+  Scenario: hAtom 0.1 microformat compliant
+    Given there is a user
+    And there is an article
+    When they view the article
+    Then they should see a hentry box
+    And they should see an entry-title h2 within a hentry box
+    And they should see a bookmark link within an entry-title h2
+    And they should see a bookmark link with a "bookmark" rel
+    And they should see a published paragraph within a hentry box
+    And they should see an entry-content box within a hentry box
