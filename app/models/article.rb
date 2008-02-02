@@ -1,3 +1,4 @@
+dependency 'permalinker'
 class Article < DataMapper::Base
   property :title, :string, :lazy => false
   property :body, :text, :lazy => false
@@ -11,15 +12,9 @@ class Article < DataMapper::Base
 
   has_many :comments
   belongs_to :user
+  has_and_belongs_to_many :tags
   
   validates_presence_of :title
-  validates_presence_of :slug
-  
-  before_validation :set_slug
-  
-  def set_slug(slug_title = self.title)
-    self.slug = slug_title.gsub(" ", "_") if slug_title
-  end
   
 end
 
