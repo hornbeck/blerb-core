@@ -27,13 +27,25 @@ module BoxyStories
   TAGS = HTML_TAGS.flatten.sort_by{|t| -t.size}
   
   def tag_filter_and_attributes(string)
-    parts = string.scan /(?:\"|\')(?:\w+| +)+(?:\"|\')|\w+/
+    parts = string.scan /(?:\"|\')(?:\w+| +)+(?:\"|\')|(?:\w|-)+/
     
     case parts.size
+    when 1
+      return nil, as_filter(parts[0]), {} if is_filter?(parts[0])
+      return TAG_MAP[parts[0]] || parts[0], nil, {}
+    when 2
+      return nil, nil, {parts[1].to_sym => as_attribute(parts[0])} if is_attribute?(parts[0])
+      return TAG_MAP[parts[1]] || parts[1], (as_filter(parts[0]) if is_attribute?(parts[0])), {}
     when 3
-      return TAG_MAP[parts[2]] || parts[2], as_filter(parts[1]), {} if is_filter?(parts[1])
+      return nil, nil, { parts[2].to_sym => as_attribute(parts[1]) } if is_attribute?(parts[1])
       return TAG_MAP[parts[2]] || parts[2], nil, ARTICLE_MAP[parts[0]] => parts[1]
+    else
+      raise "invalid boxy step portion: #{string}"
     end
+  end
+  
+  def as
+    
   end
   
   def as_filter(part)
@@ -45,7 +57,11 @@ module BoxyStories
     end
   end
   
+  alias_method :as_attribute, :as_filter
+  
   def is_filter?(part)
     part =~ /^\'.*\'$/ || part =~ /^\".*\"$/
   end
+  
+  alias_method :is_attribute?, :is_filter?
 end

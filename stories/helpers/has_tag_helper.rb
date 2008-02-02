@@ -30,3 +30,7 @@ class HasTag
     end
   end
 end
+
+def have_tag(*args)
+  HasTag.new(*args)
+end

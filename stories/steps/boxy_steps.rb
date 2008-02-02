@@ -1,41 +1,35 @@
 steps_for(:boxy) do
   
-  start_of_boxy_step = "they should see"
+  start_of_boxy_step = "they should see "
   end_of_boxy_step = ""
-
-  html_tags = [
-    %w[                   link          a                         ],
-    %w[                   box           div                       ],
-    %w[                                 form                      ],
-    %w[                   title         h1                        ],
-    %w[                   subtitle      h2                        ],
-    %w[                                 h3                        ],
-    %w[                                 h4                        ],
-    %w[                                 h5                        ],
-    %w[                                 h6                        ],
-    %w[                   image         img                       ],
-    %w[                                 input                     ],
-    %w[                                 label                     ],
-    %w[                   paragraph     p                         ],
-    %w[                                 strong                    ],
-    ]
-
-  article_map = {
-    "the" => :id,
-    "an"  => :class,
-     "a"  => :class
-   }
-   
-   Then "#{start_of_boxy_step} $parent with $attribute" do |parent, attribute|
-     tag, filter, attributes = tag_filter_and_attributes(parent)
-     attributes.merge(attributize(attribute))
-     
-     @response.body.should have_tag(tag, filter, attributes)
-   end
-   
-   Then "#{start_of_boxy_step} ${parent} #{end_of_boxy_step}" do |parent|
+  
+  Then "#{start_of_boxy_step}$child within $parent" do |child, parent|
+    child_elements = tag_filter_and_attributes(child)
+    parent_elements = tag_filter_and_attributes(parent)
+    
+    @response.body.should have_tag(*parent_elements[0..2]) do
+      with_tag(*child_elements[0..2])
+    end
+  end
+  
+  Then "#{start_of_boxy_step}$parent with $attribute" do |parent, attribute|
+    tag, filter, attributes = tag_filter_and_attributes(parent)
+    unused, unused, extra_attribute = tag_filter_and_attributes(attribute)
+    attributes.merge(extra_attribute)
+    
+    @response.body.should have_tag(tag, filter, attributes)
+  end
+  
+  Then "#{start_of_boxy_step}$parent containing $filter" do |parent, filter|
+    tag, unused, attributes = tag_filter_and_attributes(parent)
+    unused, filter, unused = tag_filter_and_attributes(filter)
+    
+    @response.body.should have_tag(tag, filter, attributes)
+  end
+  
+  Then "#{start_of_boxy_step}$parent#{end_of_boxy_step}" do |parent|
     tag, filter, attributes = tag_filter_and_attributes(parent)
     
     @response.body.should have_tag(tag, filter, attributes)
-   end
+  end
 end
