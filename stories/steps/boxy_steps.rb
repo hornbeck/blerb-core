@@ -1,58 +1,58 @@
+# Boxy Steps
+#
+# Boxy Steps is an attempt at a convention for creating story tests
+# that check html output.  This should make it easy to test for the
+# existence of elements in the DOM tree.
+#
+# Currently their are four types of checks:
+#   for an element
+#   for an element containing a string or regexp
+#   for an element with an attribute
+#   for an element within another element
+#
+# Instead of specifying the class or id explicitly, Boxy Steps follow
+# a convention of using an article before the identifier value to signal
+# either class or id.  'a' and 'an' for class, 'the' for id.
+#
+# For example, "a round div" will match <div class='round'>
+# "the signup subtitle" will match <h2 id='signup'>
+#
+# Also, there is aliasing for elements, so that in the previous example,
+# subtitle will be translated to h2
 steps_for(:boxy) do
-  html_elements = %w[paragraph subtitle strong image input label title form link box div img h1 h2 h3 h4 h5 h6 a p]
   
-  [%w[' "], %w[" '], [nil, nil]].each do |containers|
-    When "they go to #{containers.first}$url#{containers.first}" do |url|
-      get url
-    end
+  start_of_boxy_step = "they should see "
+  end_of_boxy_step = ""
+  
+  Then "#{start_of_boxy_step}$child within $parent" do |child, parent|
+    child_elements = tag_filter_and_attributes(child)
+    parent_elements = tag_filter_and_attributes(parent)
     
-    Then "they should see the #{containers.first}$template#{containers.first} template" do |template|
-      response.should render_template(template)
+    @response.body.should have_tag(*parent_elements[0..2]) do
+      with_tag(*child_elements[0..2])
     end
+  end
+  
+  Then "#{start_of_boxy_step}$parent with $attribute" do |parent, attribute|
+    tag, filter, attributes = tag_filter_and_attributes(parent)
+    unused, unused, extra_attribute = tag_filter_and_attributes(attribute)
+    attributes.merge(extra_attribute)
     
-    html_elements.each do |parent_element|
-      %w[a an the].each do |first_article|
-
-        html_elements.each do |child_element|
-          %w[a an the].each do |second_article|
-            Then "they should see #{first_article} #{containers.first}$child#{containers.first} #{child_element} within #{second_article} #{containers.last}$parent#{containers.last} #{parent_element}" do |child, parent|
-              multi_check("have_#{first_article}_#{child_element}_in_#{second_article}_#{parent_element}", child, parent)
-            end
-            
-            Then "they should see #{first_article} #{containers.first}#{child_element}#{containers.first} within #{second_article} #{containers.last}$parent#{containers.last} #{parent_element}" do |parent|
-              multi_check("have_#{first_article}_#{child_element}_in_#{second_article}_#{parent_element}", nil, parent)
-            end
-            
-            Then "they should see #{first_article} #{containers.first}$child#{containers.first} #{child_element} within #{second_article} #{parent_element}" do |child|
-              multi_check("have_#{first_article}_#{child_element}_in_#{second_article}_#{parent_element}", child)
-            end
-            
-            Then "they should see #{first_article} #{containers.first}$parent#{containers.first} #{parent_element} with #{second_article} #{containers.last}$value#{containers.last} $attribute" do |parent, value, attribute|
-              have_with_check("have#{first_article}_#{parent_element}_with_#{attribute}", parent, value)
-            end
-            
-            Then "they should see #{first_article} #{parent_element} with #{second_article} #{containers.first}$value#{containers.first} $attribute" do |value, attribute|
-              have_with_check("have#{first_article}_#{parent_element}_with_#{attribute}", nil, value)
-            end
-          end
-        end
-        
-        Then "they should see #{first_article} #{parent_element} containing #{containers.first}$string#{containers.first}" do |string|
-          have_with_content_check("have_#{first_article}_#{parent_element}_with_content", nil, string)
-        end unless containers.first.nil?
-        
-        Then "they should see #{first_article} #{parent_element}" do
-          have_check("have_#{first_article}_#{parent_element}")
-        end
-        
-        Then "they should see #{first_article} #{containers.first}$parent#{containers.first} #{parent_element}" do |parent|
-          have_check("have_#{first_article}_#{parent_element}", parent)
-        end
-        
-        Then "they should see #{first_article} #{containers.first}#{parent_element}#{containers.first}" do
-          have_check("have_#{first_article}_#{parent_element}")
-        end
-      end
-    end
+    @response.body.should have_tag(tag, filter, attributes)
+  end
+  
+  Then "#{start_of_boxy_step}$parent containing $filter" do |parent, filter|
+    tag, unused, attributes = tag_filter_and_attributes(parent)
+    unused, filter, unused = tag_filter_and_attributes(filter)
+    
+    @response.body.should have_tag(tag, filter, attributes)
+  end
+  
+  #example:
+  #Then they should see a hentry box
+  Then "#{start_of_boxy_step}$parent#{end_of_boxy_step}" do |parent|
+    tag, filter, attributes = tag_filter_and_attributes(parent)
+    
+    @response.body.should have_tag(tag, filter, attributes)
   end
 end
