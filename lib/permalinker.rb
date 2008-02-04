@@ -47,5 +47,9 @@ module Permalinker
         self.slug = self.class.format_identifier(self.send(source_column).to_s.dup)
       end
     end
+    
+    def to_param
+      self.slug
+    end
   end
 end

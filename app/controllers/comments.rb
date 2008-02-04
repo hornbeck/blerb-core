@@ -1,4 +1,5 @@
 class Comments < Application
+  provides :js
   
   def create
     @article = Article.find(params[:article_id])

@@ -1,5 +1,5 @@
 class Articles < Application
-  provides :xml, :js, :yaml
+  provides :html, :atom
   
   def index
     @articles = Article.find(:all, :order => 'created_at desc')
