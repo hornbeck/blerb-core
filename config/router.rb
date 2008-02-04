@@ -11,6 +11,8 @@ Merb::Router.prepare do |r|
   r.match("/admin/comments/approve/:id", :method => :put).to(:controller => "admin/comments",:action => "approve").name(:approve_admin_comment)
     r.match("/admin/comments/destroy_multiple", :method => :delete).to(:controller => "admin/comments",:action => "destory_multiple").name(:destroy_multiple_admin_comments)
   r.resources :users, :namespace => 'admin'
+  r.match("/admin/settings/edit").to(:controller => "admin/settings", :action => "edit").name(:edit_admin_settings)
+  r.match("/admin/settings",:method => :put).to(:controller => "admin/settings",:action => "update").name(:admin_settings)
   r.match("/admin").to(:controller => "admin/articles", :action => 'index').name(:admin_home)
   
   r.match("/signup").to(:controller => "users", :action => "new").name(:signup)

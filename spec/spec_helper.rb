@@ -13,7 +13,7 @@ require "#{dir}/spec_helpers/shared_behaviors"
 require "#{dir}/spec_helpers/app_specific"
 
 # JW -- This is causing failures for me
-# DataMapper::Base.auto_migrate!
+#DataMapper::Persistence.auto_migrate!
 
 Spec::Runner.configure do |config|
     config.include(Merb::Test::Helper)

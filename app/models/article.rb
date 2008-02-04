@@ -1,8 +1,8 @@
 dependency 'permalinker'
 class Article < DataMapper::Base
+  include Permalinker
   property :title, :string, :lazy => false
   property :body, :text, :lazy => false
-  property :slug, :string, :lazy => false
   
   property :created_at, :datetime
   property :updated_at, :datetime
@@ -12,9 +12,10 @@ class Article < DataMapper::Base
 
   has_many :comments
   belongs_to :user
-  has_and_belongs_to_many :tags
   
   validates_presence_of :title
+  
+  permalinker :title
   
 end
 

@@ -5,7 +5,7 @@
 	  </a>
 	</h2>
 	<p class="published">
-		<%= article.published_at.strftime("%H:%M %m/%d/%Y") %>
+		<%= article.created_at.strftime("%H:%M %m/%d/%Y") %>
 	</p>
 	<div class="entry-content"><%= article.body %></div>
 	<div class="bottom"></div>
