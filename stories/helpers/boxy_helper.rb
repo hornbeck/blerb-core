@@ -44,10 +44,6 @@ module BoxyStories
     end
   end
   
-  def as
-    
-  end
-  
   def as_filter(part)
     case part
     when /^\'.*\'$/

@@ -28,9 +28,7 @@ steps_for(:boxy) do
     child_elements = tag_filter_and_attributes(child)
     parent_elements = tag_filter_and_attributes(parent)
     
-    @response.body.should have_tag(*parent_elements[0..2]) do
-      with_tag(*child_elements[0..2])
-    end
+    @response.body.should have_tag(*parent_elements[0..2]).with_tag(*child_elements[0..2])
   end
   
   Then "#{start_of_boxy_step}$parent with $attribute" do |parent, attribute|
