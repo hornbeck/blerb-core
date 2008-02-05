@@ -5,7 +5,7 @@ describe Articles do
   include DefaultControllerHelper
   include ArticleSpecHelper
 
-  it_should_behave_like "default controller behavior"
+  #it_should_behave_like "default controller behavior"
   
   describe "#index" do
     it "should return a list of all articles in reverse order of creation" do

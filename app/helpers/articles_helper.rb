@@ -1,5 +1,5 @@
 module Merb
-module ArticlesHelper
+  module ArticlesHelper
   
   end
 end

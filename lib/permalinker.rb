@@ -1,9 +1,6 @@
 module Permalinker
 
   def self.included(base)
-    base.class_eval do
-      property :slug, :string, :lazy => false
-    end
     base.send(:extend,ClassMethods)
   end
 
@@ -12,6 +9,7 @@ module Permalinker
       include InstanceMethods
       class_eval do
         extend SingletonMethods
+        property :slug, :string, :lazy => false
         validates_presence_of :slug
         validates_uniqueness_of :slug
         before_validation { |record| record.set_identifier!(source) }

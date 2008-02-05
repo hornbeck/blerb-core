@@ -1,5 +1,6 @@
 module Merb
-module Admin::ArticlesHelper
-  
+  module Admin
+    module ArticlesHelper
+    end
   end
 end

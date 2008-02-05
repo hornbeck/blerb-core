@@ -1,5 +1,6 @@
 module Merb
-module Admin::CommentsHelper
-  
+  module Admin
+    module CommentsHelper
+    end
   end
 end

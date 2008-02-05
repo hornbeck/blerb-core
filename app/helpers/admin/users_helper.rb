@@ -1,5 +1,6 @@
 module Merb
-module Admin::UsersHelper
-  
+  module Admin
+    module UsersHelper
+    end
   end
 end
