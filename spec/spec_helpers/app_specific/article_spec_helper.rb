@@ -9,7 +9,7 @@ module ArticleSpecHelper
   end
   
   def valid_attributes
-    {:title => 'My Bestest Blog Post'}
+    {:title => "Blog Post #{rand(50)} on #{Time.now.to_i}"}
   end
   
   def updated_attributes

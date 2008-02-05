@@ -1,7 +1,7 @@
 module Permalinker
 
   def self.included(base)
-    base.send(:extend,ClassMethods)
+    base.send(:extend, ClassMethods)
   end
 
   module ClassMethods
@@ -18,15 +18,7 @@ module Permalinker
   end
   
   # Adds class methods.
-  module SingletonMethods 
-    def find(*args)
-      if args.first.is_a? String
-        super(:first, :conditions => ["slug = ?", args.first])
-      else
-        super
-      end
-    end
-    
+  module SingletonMethods
     def format_identifier(s)
       s.gsub!(/'/,'') # remove characters that occur mid-word
       s.gsub!(/[\W]/,' ') # translate non-words into spaces
