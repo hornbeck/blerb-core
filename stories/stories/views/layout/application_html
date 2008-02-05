@@ -1,0 +1,24 @@
+Story: Viewing Application layout based pages
+  As an unregistered user
+  I want to view pages based on the application layout
+  So that there is a constant 
+  
+  Scenario: All pages should have a title
+    Given there is a user
+    When they view any application layout based page
+    Then they should see a page_title within the head
+    And they should see a page_title containing '\w+'
+  
+  Scenario: All pages should include the css files
+    Given there is a user
+    When they view any application layout based page
+    Then they should see a link within the head
+    And they should see a link with "text/css" type
+    And they should see a link with "/stylesheets/master.css"
+    
+  Scenario: All pages should include the javascript files
+    Given there is a user
+    When they view any application layout based page
+    Then they should see a link within the head
+    And they should see a link with "text/javascript" type
+    And they should see a link with "/javascripts/jquery.js"

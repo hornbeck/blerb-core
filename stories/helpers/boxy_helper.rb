@@ -14,6 +14,7 @@ module BoxyStories
     %w[                                 input                     ],
     %w[                                 label                     ],
     %w[                   paragraph     p                         ],
+    %w[                   page_title    title                     ],
     %w[                                 strong                    ],
     ]
 
