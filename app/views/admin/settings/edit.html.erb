@@ -1,0 +1,10 @@
+<% form_for(:setting, :action => url(:admin_settings,@setting), :method => :put) do |f| %>
+  <fieldset>
+    <legend>Blerb Settings</legend>
+    <%= text_control :title, :label => "Blog Title", :class => "title" %>
+    <%= text_control :tagline, :label => "Tagline", :class => "title" %>
+    <button type="submit">
+      <img src="/images/icons/tick.png"> Save
+    </button>
+  </fieldset>
+<% end %>

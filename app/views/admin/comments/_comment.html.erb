@@ -1,0 +1,18 @@
+<li id="comment_<%= comment.id %>">
+	<div class="controls">
+		<a href="<%= url(:reject_admin_comment,comment) %>" class="button update spam">
+			<%= image_tag "icons/comment_delete.png" %> Spam
+		</a>
+		<a href="<%= url(:edit_admin_comment,comment) %>" class="button edit">
+			<%= image_tag "icons/comment_edit.png" %> Edit
+		</a>
+		<a href="<%= url(:admin_comment,comment) %>" class="button negative">
+			<%= image_tag "icons/cross.png" %> Delete
+		</a>
+	</div>
+	<div class="info">
+		<h3><%= link_to "Posted by #{h(comment.name)} on  #{comment.created_at.strftime("%H:%M %m/%d/%Y")}", url(:admin_comment,comment) %></h3>
+		<div class="date"><%= h comment.post.name %></div>
+		<div class="date"><%= h comment.body %></div>
+	</div>
+</li>

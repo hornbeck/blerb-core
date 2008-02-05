@@ -1,0 +1,29 @@
+<h2>New Article</h2>
+<%= error_messages_for :article %>
+<% form_for(:article, :action => url(:admin_articles)) do |f| %>
+  <p>
+    <%= text_control :title, :label => "Title", :size => '45' %>
+  </p>  
+  <p>
+    <%= text_area_control :body, :label => "Body", :class => 'wymeditor' %>
+  </p>
+  <p class="buttons">
+	<button type="submit" class="button positive wymupdate">
+	    <%= image_tag "icons/tick.png" %> Create
+	</button>
+    <button type="submit" name="draft" class="button wymupdate">
+	    <%= image_tag "icons/error.png" %> Save as Draft
+	</button>
+  </p>
+<% end %>
+<div class="buttons">
+  <a href="<%= url(:admin_articles) %>" class="button">
+	<%= image_tag "icons/arrow_undo.png" %> Back
+  </a>
+</div>
+<% throw_content :javascript do %>
+  <%= js_include_tag "wymeditor/jquery.wymeditor" %>
+<% end %>
+<% throw_content :head do %>
+  <%= css_include_tag "wymeditor/screen.css" %>
+<% end %>

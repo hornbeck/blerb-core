@@ -1,0 +1,15 @@
+<h2>Latest comments</h2>
+<ul id="comments" class="admin">
+	<%= partial 'comment', :with => @comments %>
+</ul>
+<h2>Latest spam</h2>
+<% form_tag :action => url(:destroy_multiple_admin_comments), :method => :delete do %>
+  <div class="buttons">
+    <button type="submit" class="button negative">
+  	  <%= image_tag "icons/cross.png" %> Destroy Checked
+  	</button>
+	</div>
+	<ul id="spam" class="admin">
+		<%= partial 'spam', :with => @spams %>
+	</ul>
+<% end %>

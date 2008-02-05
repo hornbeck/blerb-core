@@ -1,0 +1,18 @@
+<%= error_messages_for :comment %>
+
+<% form_for(:comment, :action => url(:admin_comment,@comment)) do |f| %>
+	<p>
+		<%= f.text_area_control :body, :label => "Body" :size => "40x8" %>
+	</p>
+	<p>
+		<button type="submit" class="button positive">
+	    <%= image_tag "icons/tick.png" %> Change
+	  </button>
+	</p>
+<% end %>
+
+<div class="buttons">
+  <a href="<%= url(:admin_comments) %>" class="button">
+  	<%= image_tag "icons/arrow_undo.png" %>Back
+  </a>
+</div>
