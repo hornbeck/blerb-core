@@ -1,2 +1,4 @@
 log/*.log
 log/*.pid
+*.db
+config/database.yml
