@@ -26,6 +26,8 @@ use_test :rspec
 
 ### Add your other dependencies here
 
+dependency "merb-mailer"
+
 # These are some examples of how you might specify dependencies.
 #
 # dependencies "RedCloth", "merb_helpers"
@@ -33,9 +35,7 @@ use_test :rspec
 # dependency "RedCloth", "> 3.0"
 # OR
 # dependencies "RedCloth" => "> 3.0", "ruby-aes-cext" => "= 1.0"
-dependency "merb-mailer"
-dependency "merb_stories" if %w[test development].include? Merb.environment
-dependency "app/controllers/application"
+
 Merb::BootLoader.after_app_loads do
   ### Add dependencies here that must load after the application loads:
 

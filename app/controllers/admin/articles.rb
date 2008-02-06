@@ -1,25 +1,26 @@
+dependency "app/controllers/application"
 module Admin
   class Articles < Application
     self._layout = 'admin'
     provides :html, :js
-    
+
     def index
       @articles = Article.all
       render @articles
     end
-  
+
     def show(id)
       @article = Article[id]
       raise NotFound unless @article
       render @article
     end
-  
+
     def new
       only_provides :html
       @article = Article.new
       render @article
     end
-  
+
     def create(article)
       @article = Article.new(article)
       if @article.save
@@ -28,14 +29,14 @@ module Admin
         render :action => :new
       end
     end
-  
+
     def edit(id)
       only_provides :html
       @article = Article[id]
       raise NotFound unless @article
       render
     end
-  
+
     def update(id, article)
       @article = Article[id]
       raise NotFound unless @article
@@ -45,7 +46,7 @@ module Admin
         raise BadRequest
       end
     end
-  
+
     def destroy(id)
       @article = Article[id]
       raise NotFound unless @article
