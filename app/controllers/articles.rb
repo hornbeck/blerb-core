@@ -3,13 +3,13 @@ class Articles < Application
 
   def index
     @articles = Article.find(:all, :order => 'created_at desc')
-    render @articles
+    display @articles
   end
 
   def show(id)
     @article = Article.find(id)
     raise NotFound unless @article
-    render @article
+    display @article
   end
 
 end

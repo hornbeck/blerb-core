@@ -6,7 +6,7 @@ class Users < Application
   def new(user = {})
     only_provides :html
     @user = User.new(user)
-    render @user
+    display @user
   end
   
   def create(user)
@@ -16,7 +16,7 @@ class Users < Application
     if @user.save
       redirect_back_or_default('/')
     else
-      render :action => :new
+      render :new
     end
   end
   

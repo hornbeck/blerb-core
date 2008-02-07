@@ -14,7 +14,7 @@ class Session < Application
       end
       redirect_back_or_default('/')
     else
-      render :action => "new"
+      render :new
     end
   end
 

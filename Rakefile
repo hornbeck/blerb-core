@@ -7,19 +7,15 @@ require 'rake/rdoctask'
 require 'rake/testtask'
 require 'spec/rake/spectask'
 require 'fileutils'
+require 'merb-core'
 
-require File.dirname(__FILE__)+'/config/boot.rb'
-require Merb::framework_root+'/tasks'
+$RAKE_ENV = true
+Merb.start :environment => (ENV['MERB_ENV'] || 'development'),
+           :adapter     => 'runner',
+           :merb_root  => File.dirname(__FILE__)
+#require Merb::framework_root+'/tasks'
 include FileUtils
-
-# Set these before any dependencies load
-# otherwise the ORM may connect to the wrong env
-Merb.root = File.dirname(__FILE__)
-Merb.environment = ENV['MERB_ENV'] if ENV['MERB_ENV']
-
-# Get Merb plugins and dependencies
-require File.dirname(__FILE__)+'/config/dependencies.rb'
-Merb::Plugins.rakefiles.each {|r| require r } 
+Merb::Plugins.rakefiles.each {|r| require r }
 
 #desc "Packages up Merb."
 #task :default => [:package]

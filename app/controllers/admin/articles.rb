@@ -6,19 +6,19 @@ module Admin
 
     def index
       @articles = Article.all
-      render @articles
+      display @articles
     end
 
     def show(id)
       @article = Article[id]
       raise NotFound unless @article
-      render @article
+      display @article
     end
 
     def new
       only_provides :html
       @article = Article.new
-      render @article
+      display @article
     end
 
     def create(article)
@@ -26,7 +26,7 @@ module Admin
       if @article.save
         redirect url(:admin_article, @article)
       else
-        render :action => :new
+        render :new
       end
     end
 

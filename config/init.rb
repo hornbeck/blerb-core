@@ -1,9 +1,15 @@
 # Make the app's "gems" directory a place where gems are loaded from
 Gem.clear_paths
 Gem.path.unshift(Merb.root / "gems")
-
+dependency "merb-action-args"
 # Make the app's "lib" directory a place where ruby files get "require"d from
 $LOAD_PATH.unshift(Merb.root / "lib")
+
+
+Merb::Config.use do |c|
+  c[:session_secret_key]  = '173677463cf206a988654d113a4c52312901abb7'
+  c[:session_store] = 'cookie'
+end
 
 ### Merb doesn't come with database support by default.  You need
 ### an ORM plugin.  Install one, and uncomment one of the following lines,
@@ -27,6 +33,9 @@ use_test :rspec
 ### Add your other dependencies here
 
 dependency "merb-mailer"
+dependency "merb-assets"
+dependency "merb_helpers"
+
 
 # These are some examples of how you might specify dependencies.
 #

@@ -4,19 +4,19 @@ module Admin
   
     def index
       @users = User.all
-      render @users
+      display @users
     end
   
     def show(id)
       @user = User[id]
       raise NotFound unless @user
-      render @user
+      display @user
     end
   
     def new
       only_provides :html
       @user = User.new
-      render @user
+      display @user
     end
   
     def create(user)
@@ -24,7 +24,7 @@ module Admin
       if @user.save
         redirect url(:user, @user)
       else
-        render :action => :new
+        render :new
       end
     end
   

@@ -5,13 +5,13 @@ module Admin
     def index
       @comments = Comment.ham
       @spams = Comment.spam
-      render @comments
+      display @comments
     end
   
     def show(id)
       @comment = Comment[id]
       raise NotFound unless @comment
-      render @comment
+      display @comment
     end
   
     def edit(id)
