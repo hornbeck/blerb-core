@@ -26,7 +26,7 @@ task :default => [:specs]
 desc "load merb_init.rb"
 task :merb_init do
   # deprecated - here for BC
-  Rake::Task['merb_env'].invoke
+  # Rake::Task['merb_env'].invoke
 end
 
 task :uninstall => [:clean] do

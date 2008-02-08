@@ -2,13 +2,37 @@
 
 == Installation
   * Install merb-core, merb-more and merb-plugins from wycats repo on github
+  
+  * Install merb-core
+    * git clone git://github.com/wycats/merb-core.git
+    * cd merb-core
+    * rake install
+    * sudo cp bin/merb /usr/bin/merb
+    
+  * Install merb-more
+    * git clone git://github.com/wycats/merb-more.git
+    * cd merb-more
+    * rake install
+    * cd merb-more/merb-action-args
+    * rake install
+    * cd merb-more/merb-assets
+    * rake install
+    
+  * Install merb-plugins
+    * git clone git://github.com/wycats/merb-plugins.git
+    * cd merb-plugins/merb_datamapper
+    * rake install
+    * cd merb-plugins/merb_helpers
+    * rake install
+    
   * git clone git://github.com/hornbeck/blerb-core.git - anon checkout
   * git clone git@github.com:hornbeck/blerb-core.git   - commit access
   * cd blerb-core
   * mv config/database.yml.sample config/database.yml
   * fill in the correct database credentials
   * rake dm:db:automigrate
-  * merb
+    * automigrate seems to be broken at the moment.  A better bet is to import the blerb.sql file from config
+  * script/blerb
 
 Blerb should now be running on port 4000, so open up your browser and visit localhost:4000!
 

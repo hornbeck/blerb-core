@@ -1,0 +1,6 @@
+#!/user/bin/env ruby
+
+require 'rubygems'
+require 'merb-core'
+
+Merb.start
