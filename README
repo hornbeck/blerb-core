@@ -28,8 +28,9 @@
   * git clone git://github.com/hornbeck/blerb-core.git - anon checkout
   * git clone git@github.com:hornbeck/blerb-core.git   - commit access
   * cd blerb-core
-  * merb  ( this generates config/database.yml.sample )
+  * merb  # this generates config/database.yml.sample
   * mv config/database.yml.sample config/database.yml
+  * cp config/settings.sample.yml config/settings.yml
   * fill in the correct database credentials
   * rake dm:db:automigrate
     * automigrate seems to be broken at the moment.  A better bet is to import the blerb.sql file from config
