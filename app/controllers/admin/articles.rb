@@ -10,7 +10,7 @@ module Admin
     end
 
     def show(id)
-      @article = Article.find_by_slug id
+      @article = Article.find_by_slug(id)
       raise NotFound unless @article
       display @article
     end
@@ -32,13 +32,13 @@ module Admin
 
     def edit(id)
       only_provides :html
-      @article = Article.find_by_slug id
+      @article = Article.find_by_slug(id)
       raise NotFound unless @article
       render
     end
 
     def update(id, article)
-      @article = Article.find_by_slug id
+      @article = Article.find_by_slug(id)
       raise NotFound unless @article
       if @article.update_attributes(article)
         redirect url(:admin_article, @article)
@@ -48,7 +48,7 @@ module Admin
     end
 
     def destroy(id)
-      @article = Article.find_by_slug id
+      @article = Article.find_by_slug(id)
       raise NotFound unless @article
       if @article.destroy!
         redirect url(:admin_articles)
