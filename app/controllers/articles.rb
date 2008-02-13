@@ -7,7 +7,7 @@ class Articles < Application
   end
 
   def show(id)
-    @article = Article.first :slug => id
+    @article = Article.find_by_slug id
     raise NotFound unless @article
     display @article
   end
