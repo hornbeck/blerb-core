@@ -1,6 +1,8 @@
 <% @title = @article.title %>
 <%= partial 'article', :with => @article %>
 
+<% unless @article.comments.empty? %>
 <ul>
-  <%= partial 'comments/comment', :with => @article.comments %>
+  <%= partial 'comments/comment', :with => @article.comments.to_a %>
 </ul>
+<% end %>

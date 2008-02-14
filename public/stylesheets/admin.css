@@ -1,25 +1,122 @@
-body{margin:0;}
-label{display:block;}
-label.inline{display:inline;}
-form p+p{text-indent:0;}
-#header{background:#07b;padding:5px 1em;overflow:hidden;}
-#header a{color:#f5f5f5;text-decoration:none;font-weight:bold;font-size:3em;}
-#header .controls{float:right;}
-#header .controls a{font-size:1em;text-decoration:underline;}
-#nav{list-style-type: none;overflow:hidden;background:#5592CA;margin:0;padding:0 1em;
-	padding-bottom:5px;border-top:2px solid #dedede;}
-#nav li{float:left;}
-#nav li a{display:block;;text-decoration:none;padding:4px 10px 2px;margin-right:5px;color:#dedede;}
-#nav li.current a{color:#333;background:#dedede}
-#nav li a:hover{background:#b5d5ff;margin-top:2px;padding-top:2px;color:#999;}
-.buttons{overflow:hidden;}
-.admin{ border-top:1px solid #ccc;margin:0 0 1em 0;padding:0;}
-.admin li{list-style-type:none;overflow:hidden;display:block;border-bottom:1px dotted #999;padding:5px 5px 0;
-text-decoration:none;}
-.admin li:hover{background:#eee;}
-.admin li .info h3{font-size:2em;padding:0;margin:0;color:#000;}
-.admin li .info h3 a{color:#000;text-decoration:none;}
-.admin li .info .date, .comment .date{color:#999;margin:0;font-size:0.9em;}
-.admin li .info em{font-size:0.9em;}
-.admin li .controls{float:right; overflow:hidden;}
-.body p{text-indent:1em;}
+body{
+	margin: 0;
+}
+label {
+	display:block;
+}
+label.inline {
+	display: inline;
+}
+form p + p {
+	text-indent:0;
+}
+
+#header {
+	background:#07b;
+	padding:5px 1em;
+	overflow:hidden;
+}
+	#header a {
+		color: #f5f5f5;
+		text-decoration: none;
+		font-weight: bold;
+		font-size: 3em;
+	}
+
+	#header .controls {
+		float:right;
+	}
+
+		#header .controls a {
+			font-size: 1em;
+			text-decoration: underline;
+		}
+
+#nav {
+	list-style-type: none;
+	overflow: hidden;
+	background: #5592CA;
+	margin: 0;
+	padding: 0 1em;
+	padding-bottom: 5px;
+	border-top:2px solid #dedede;
+}
+
+	#nav li {
+		float:left;
+	}
+
+		#nav li a {
+			display: block;
+			text-decoration: none;
+			padding: 4px 10px 2px;
+			margin-right: 5px;
+			color: #dedede;
+		}
+		#nav li a:hover {
+			background: #b5d5ff;
+			margin-top: 2px;
+			padding-top: 2px;
+			color:#999;
+		}
+		#nav li.current a {
+			color: #333;
+			background: #dedede;
+		}
+
+
+.buttons {
+	overflow: hidden;
+}
+
+.admin {
+	border-top: 1px solid #ccc;
+	margin:0 0 1em 0;
+	padding: 0;
+}
+
+	.admin li {
+		list-style-type: none;
+		overflow: hidden;
+		display: block;
+		border-bottom: 1px dotted #999;
+		padding: 5px 5px 0;
+		text-decoration: none;
+	}
+
+		.admin li .info h3 {
+			font-size: 2em;
+			padding: 0;
+			margin: 0;
+			color:#000;
+		}
+
+		.admin li .info h3 a {
+			color: #000;
+			text-decoration: none;
+		}
+
+
+		.admin li .info em {
+			font-size:0.9em;
+		}
+
+	.admin li .controls {
+		float: right;
+		overflow: hidden;
+	}
+
+	.admin li:hover {
+		background:#eee;
+	}
+	
+.admin li .info .date,
+.comment .date {
+	color: #999;
+	margin: 0;
+	font-size: 0.9em;
+}
+
+.body p {
+	text-indent:1em;
+}

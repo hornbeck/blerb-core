@@ -2,12 +2,12 @@ class Articles < Application
   provides :html, :atom
 
   def index
-    @articles = Article.find(:all, :order => 'created_at desc')
+    @articles = Article.all(:order => 'created_at desc')
     display @articles
   end
 
   def show(id)
-    @article = Article.find(id)
+    @article = Article.with_slug(id)
     raise NotFound unless @article
     display @article
   end

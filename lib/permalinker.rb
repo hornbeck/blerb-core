@@ -25,7 +25,11 @@ module Permalinker
       s.strip! # remove spaces from the ends
       s.gsub!(/\ +/,'-') # replace spaces with hyphens
       s.downcase # lowercase what's left
-    end 
+    end
+    
+    def with_slug(slug)
+      first :slug => slug
+    end
   end
 
   # Adds instance methods.
