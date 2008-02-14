@@ -27,7 +27,7 @@ module Permalinker
       s.downcase # lowercase what's left
     end
     
-    def find_by_slug(slug)
+    def with_slug(slug)
       first :slug => slug
     end
   end
