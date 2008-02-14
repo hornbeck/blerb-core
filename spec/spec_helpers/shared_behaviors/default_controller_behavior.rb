@@ -1,14 +1,21 @@
 describe "default controller behavior", :shared => true do
   before(:each) do
-    @controller = controller_class.build(fake_request)
+    @controller = dispatch_to(controller_class, :index)
     model_class.delete_all
+  end
+
+  #FIXME: this should go in a helper, or something, brapse
+  def controller
+    @controller
   end
 
   describe "#index" do
     it "returns an empty array without error if there are no models created" do
       if controller.respond_to? :index
-        do_index
-    
+        #do_index
+        dispatch_to(controller_class, :index)
+        puts "Debug: %s" % controller_sym
+
         controller.assigns(controller_sym).should_not be_nil
         controller.assigns(controller_sym).should == []
         controller.assigns(controller_sym).should be_empty
@@ -28,8 +35,8 @@ describe "default controller behavior", :shared => true do
         end
         model_class.should_receive(:all).and_return(expected_models)
 
-        do_index
-    
+        #do_index
+        dispatch_to(controller_class, :index)
         controller.assigns(controller_sym).should == expected_models
         controller.should be_successful
       end
@@ -39,7 +46,8 @@ describe "default controller behavior", :shared => true do
   describe "#show" do
     it "should fail for a model that doesn't exist" do
       if controller.respond_to? :show
-        do_show(invalid_id)
+        #do_show(invalid_id)
+        dispatch_to(controller_class, :show, {:method => :get, :id => invalid_id})
         controller.assigns(model_sym).should be_nil
         controller.should_not be_successful
       end
@@ -47,11 +55,13 @@ describe "default controller behavior", :shared => true do
    
     it "should not throw an error if given a valid model" do
       if controller.respond_to? :show
-        do_create
+        #do_create
+        dispatch_to(controller_class, :create, {:method => :post, model_sym => valid_attributes}) 
         new_model = controller.assigns model_sym
         new_model.should_not be_nil
   
-        do_show(new_model.id)
+        #do_show(new_model.id)
+        dispatch_to(controller_class, :show, {:method => :get, :id => new_mod.id})
   
         controller.should be_successful
         controller.assigns(model_sym).id.should == new_model.id
@@ -62,7 +72,8 @@ describe "default controller behavior", :shared => true do
   describe "#new" do
     it "returns a new non-persisted model object" do
       if controller.respond_to? :new
-        do_new
+        #do_new
+        dispatch_to(controller, :new, {:method => :get})
         new_model = controller.assigns(model_sym)
    
         new_model.should_not be_nil
@@ -75,7 +86,8 @@ describe "default controller behavior", :shared => true do
     it 'should add a new mode to the database if all attributes present' do
       if controller.respond_to? :create
         lambda do
-          do_create
+          #do_create
+          dispatch_to(controller, :create, {:method => :post, model_sym => valid_attributes}) 
           controller.should redirect      
         end.should change(model_class, :count).by(1)
       end
@@ -99,8 +111,8 @@ describe "default controller behavior", :shared => true do
   describe "#edit" do
     it "should return status 404 for a model that doesn't exist" do
       if controller.respond_to? :edit
-        do_edit(invalid_id)
-  
+        #do_edit(invalid_id)
+        dispatch_to(controller, :edit, {:id => invalid_id})
         controller.should_not be_successful
         controller.assigns(model_sym).should be_nil
       end
@@ -108,11 +120,13 @@ describe "default controller behavior", :shared => true do
   
     it "should not throw an error if given a valid model" do
       if controller.respond_to? :edit
-        do_create
+        #do_create
+        dispatch_to(controller, :create, {:method => :post, model_sym => valid_attributes}) 
         new_model = controller.assigns model_sym
         new_model.should_not be_nil
   
-        do_edit(new_model.id)
+        #do_edit(new_model.id)
+        dispatch_to(controller, :edit, {:id => new_model.id})
   
         controller.should be_successful
         controller.assigns(model_sym).id.should == new_model.id
@@ -123,7 +137,8 @@ describe "default controller behavior", :shared => true do
   describe "#update" do
     it "should return status 404 for a model that doesn't exist" do
       if controller.respond_to? :update
-        do_update(invalid_id)
+        #do_update(invalid_id)
+        dispatch_to(controller, :update, {:id => invalid_id})
   
         controller.should_not be_successful
         controller.assigns(model_sym).should be_nil
@@ -132,11 +147,14 @@ describe "default controller behavior", :shared => true do
   
     it "should fail on an update with invalid attributes" do
       if controller.respond_to? :update
-        do_create
+        #do_create
+        dispatch_to(controller, :create, {:method => :post, model_sym => valid_attributes}) 
+
         new_model = controller.assigns model_sym
         new_model.should_not be_nil
   
-        do_update(new_model.id, :name => nil)
+        #do_update(new_model.id, :name => nil)
+        dispatch_to(controller, :update, {:method => :post, :name => nil})
   
         controller.should_not be_successful
         controller.assigns(model_sym).should be_nil
@@ -148,7 +166,8 @@ describe "default controller behavior", :shared => true do
         now = DateTime.now
         later = now+10
         Time.stub!(:now).and_return(now)
-        do_create
+        #do_create
+        dispatch_to(controller, :create, {:method => :post, model_sym => valid_attributes}) 
         new_model = model_class.find(controller.assigns(model_sym).id)
         new_model.should_not be_nil
         new_model.created_at.should == now

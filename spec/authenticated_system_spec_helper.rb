@@ -1,8 +1,8 @@
 class Merb::Controller
-  require "merb/session/memory_session"
+  require "merb-core/dispatch/session/memory"
   Merb::MemorySessionContainer.setup
-  include ::Merb::SessionMixin
-  self.session_secret_key = "foo to the bar to the baz"
+  #include ::Merb::SessionMixin
+  #Merb::Config[:session_secret_key] = "rawrrawr"
 end
 
 class Merb::Mailer

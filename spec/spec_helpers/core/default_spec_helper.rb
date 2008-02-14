@@ -5,7 +5,7 @@ module DefaultSpecHelper
   end
   
   def controller_name
-    controller_class.to_s.downcase.pluralize
+    controller_class.to_s.downcase
   end
   
   def controller_sym
