@@ -27,5 +27,5 @@ Merb::Router.prepare do |r|
   #r.default_routes
   
   # Set the default to articles for now
-  r.match('/').to(:controller => 'articles', :action =>'index').name(:home)
+  r.match('/').to(:controller => 'articles').name(:home)
 end
