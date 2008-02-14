@@ -18,8 +18,9 @@ describe Articles do
       end
       expected_ids = created_articles.sort_by(&:created_at).reverse.collect(&:id)
 
-      do_index
-    
+      #do_index
+      dispatch_to(controller, :index)
+
       controller.assigns(:articles).collect(&:id).should == expected_ids
       controller.should be_successful
     end

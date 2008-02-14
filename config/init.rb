@@ -25,10 +25,6 @@ use_orm :datamapper
 # use_orm :sequel
 
 
-### This defines which test framework the generators will use
-### rspec is turned on by default
-# use_test :test_unit
-use_test :rspec
 
 ### Add your other dependencies here
 
@@ -36,6 +32,11 @@ dependency "merb-mailer"
 dependency "merb-assets"
 dependency "merb_helpers"
 
+### This defines which test framework the generators will use
+### rspec is turned on by default
+# use_test :test_unit
+require "merb_rspec"
+use_test :rspec
 
 # These are some examples of how you might specify dependencies.
 #

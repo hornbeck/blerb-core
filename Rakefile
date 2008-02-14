@@ -10,9 +10,9 @@ require 'fileutils'
 require 'merb-core'
 
 $RAKE_ENV = true
-Merb.start :environment => (ENV['MERB_ENV'] || 'development'),
-           :adapter     => 'runner',
-           :merb_root  => File.dirname(__FILE__)
+#Merb.start :environment => (ENV['MERB_ENV'] || 'development'),
+#           :adapter     => 'runner',
+#           :merb_root  => File.dirname(__FILE__)
 #require Merb::framework_root+'/tasks'
 include FileUtils
 Merb::Plugins.rakefiles.each {|r| require r }
