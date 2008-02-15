@@ -44,6 +44,7 @@ describe Users do
   
   before(:each) do
     @user = mock_model(User, valid_user_hash)
+    @activation_code = 'yyz'
   end
   
   describe '#create with valid user' do
@@ -100,7 +101,6 @@ describe Users do
   
   describe "#activate an inactive user" do
     before(:each) do
-      @activation_code = 'yyz'
       @params = {:activation_code => @activation_code}
       @user.stub!(:active?).and_return(false)
       User.stub!(:find_activated_authenticated_model).with(@activation_code).and_return(@user)
@@ -125,4 +125,57 @@ describe Users do
       dispatch_to(Users, :activate, @params).should redirect_to('/')
     end
   end
+  
+  describe "#activate an active user" do
+    before(:each) do
+      @params = {:activation_code => @activation_code}
+      @user.stub!(:active?).and_return(true)
+      User.stub!(:find_activated_authenticated_model).with(@activation_code).and_return(@user)
+    end
+    
+    it "should lookup activated authenticated model" do
+      User.should_receive(:find_activated_authenticated_model).with(@activation_code).and_return(@user)
+      dispatch_to(Users, :activate, @params)
+    end
+    
+    it "should not activate the user" do
+      @user.should_not_receive(:activate)
+      dispatch_to(Users, :activate, @params)
+    end
+    
+    it "should redirect" do
+      dispatch_to(Users, :activate, @params).should be_redirect
+    end
+    
+    it "should redirect to '/'" do
+      dispatch_to(Users, :activate, @params).should redirect_to('/')
+    end
+  end
+  
+  describe "#activate a non-existent user" do
+    before(:each) do
+      @params = {:activation_code => @activation_code}
+      User.stub!(:find_activated_authenticated_model).with(@activation_code).and_return(nil)
+    end
+    
+    it "should lookup activated authenticated model" do
+      User.should_receive(:find_activated_authenticated_model).with(@activation_code).and_return(@user)
+      dispatch_to(Users, :activate, @params) do
+        stub!(:logged_in?).and_return(false)
+      end
+    end
+    
+    it "should redirect" do
+      dispatch_to(Users, :activate, @params){
+        stub!(:logged_in?).and_return(false)
+      }.should be_redirect
+    end
+    
+    it "should redirect to '/'" do
+      dispatch_to(Users, :activate, @params){
+        stub!(:logged_in?).and_return(false)
+      }.should redirect_to('/')
+    end
+  end
+  
 end
