@@ -23,6 +23,7 @@ Spec::Runner.configure do |config|
     config.include(Merb::Test::Helper)
     config.include(Merb::Test::RequestHelper)
     config.include(Merb::Test::RspecMatchers)
+    config.include(Merb::Test::Rspec::ControllerMatchers)
 end
 
 ### METHODS BELOW THIS LINE SHOULD BE EXTRACTED TO MERB ITSELF
