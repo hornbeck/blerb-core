@@ -5,7 +5,6 @@ steps_for(:user) do
   end
   
   When "they view the signup page" do
-    #not sure how to do this with url()
-    @response = get("/signup")
+    @response = get(url(:signup))
   end
 end
