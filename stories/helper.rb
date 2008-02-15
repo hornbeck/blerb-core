@@ -9,7 +9,7 @@ Dir[File.dirname(__FILE__) + "/helpers/*_helper.rb"].uniq.each { |file| require 
 class MerbStory
   include Merb::Test::Rspec::ControllerMatchers
   # TODO: update boxy steps to use merb's markup matchers
-  #include Merb::Test::Rspec::MarkupMatchers
+  include Merb::Test::Rspec::MarkupMatchers
   include BoxyStories
   
   def url(name, params={})

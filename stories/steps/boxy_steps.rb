@@ -25,32 +25,39 @@ steps_for(:boxy) do
   end_of_boxy_step = ""
   
   Then "#{start_of_boxy_step}$child within $parent" do |child, parent|
-    child_elements = tag_filter_and_attributes(child)
-    parent_elements = tag_filter_and_attributes(parent)
+    child_tag, unused, child_attributes = tag_filter_and_attributes(child)
+    parent_tag, unused, parent_attributes = tag_filter_and_attributes(parent)
     
-    @response.body.should have_tag(*parent_elements[0..2]).with_tag(*child_elements[0..2])
+    @response.body.should have_tag(parent_tag, parent_attributes).with_tag(child_tag, child_attributes)
   end
   
   Then "#{start_of_boxy_step}$parent with $attribute" do |parent, attribute|
     tag, filter, attributes = tag_filter_and_attributes(parent)
     unused, unused, extra_attribute = tag_filter_and_attributes(attribute)
     attributes.merge(extra_attribute)
-    
-    @response.body.should have_tag(tag, filter, attributes)
+        
+    case filter
+    when String then @response.body.should have_tag(tag, attributes) {|ele| ele.should contain(filter)}
+    when Regexp then @response.body.should have_tag(tag, attributes) {|ele| ele.should match(filter)}
+    else             @response.body.should have_tag(tag, attributes)
+    end
   end
   
   Then "#{start_of_boxy_step}$parent containing $filter" do |parent, filter|
     tag, unused, attributes = tag_filter_and_attributes(parent)
     unused, filter, unused = tag_filter_and_attributes(filter)
-    
-    @response.body.should have_tag(tag, filter, attributes)
+        
+    case filter
+    when String then @response.body.should have_tag(tag, attributes) {|ele| ele.should contain(filter)}
+    when Regexp then @response.body.should have_tag(tag, attributes) {|ele| ele.should match(filter)}
+    end
   end
   
   #example:
   #Then they should see a hentry box
   Then "#{start_of_boxy_step}$parent#{end_of_boxy_step}" do |parent|
-    tag, filter, attributes = tag_filter_and_attributes(parent)
+    tag, unused, attributes = tag_filter_and_attributes(parent)
     
-    @response.body.should have_tag(tag, filter, attributes)
+    @response.body.should have_tag(tag, attributes)
   end
 end
