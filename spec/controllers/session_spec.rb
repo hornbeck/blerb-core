@@ -41,13 +41,7 @@ describe Session, "index action" do
     end
   end
 
-  it 'fails login and does not redirect' do
-    pending
-    controller = dispatch_to(Session, :email => 'quentin@example.com', :password => 'bad password')
-    session[:user].should be_nil
-    controller.template.should match(/^new\./)
-    controller.should be_success
-  end
+
 
   it 'logs out' do
     pending
@@ -94,7 +88,6 @@ describe Session, "index action" do
 end
 
 describe Session, "logging in successfully" do
-  # include Merb::Test::Rspec::ControllerMatchers
   before(:each) do
     @user = mock_model(User, :email => 'quentin@example.com', :password => 'test')
     User.stub!(:authenticate).with(@user.email, @user.password).and_return(@user)
@@ -126,6 +119,39 @@ describe Session, "logging in successfully" do
   end
   
   def do_it
-    @controller = dispatch_to(Session, :create, :email => 'quentin@example.com', :password => 'test')
+    @controller = dispatch_to(Session, :create, :email => @user.email, :password => @user.password)
+  end
+end
+
+
+describe Session, 'failing to login' do
+  
+  before(:each) do
+    @user = mock_model(User, :email => 'quentin@example.com', :password => 'bad pasword')
+    User.stub!(:authenticate).with(@user.email, @user.password).and_return(nil)
+  end
+  
+  it "should not redirect" do
+    do_it
+    @controller.should_not be_redirect
+  end
+  
+  it "should not populate the session" do
+    do_it
+    @controller.session[:user].should be_nil
+  end
+  
+  it "should have 'success' status code" do
+    do_it
+    @controller.should be_success
+  end
+  
+  it "should a login form" do
+    do_it
+    @controller.body.should have_tag(:form, :action => '/session')
+  end
+  
+  def do_it
+    @controller = dispatch_to(Session, :create, :email => @user.email, :password => @user.password)
   end
 end
