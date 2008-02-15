@@ -7,10 +7,11 @@ describe Users do
   include UserSpecHelper
   
   before(:each) do
-    User.clear_database_table
+    # User.clear_database_table
   end
   
   it 'allows signup' do
+    pending
      lambda do
        create_user
        controller.should redirect      
@@ -58,11 +59,53 @@ describe Users do
    end
 
    it 'does not activate user without key' do
+     pending
        get "/users/activate"
        controller.should be_missing
    end
      
    def create_user(options = {})
+     pending
      post "/users", :user => valid_user_hash.merge(options)
    end
+end
+
+
+describe Users do
+  include UserSpecHelper
+  
+  before(:each) do
+    @user = mock_model(User, valid_user_hash)
+  end
+  
+  describe 'succesfully creating user' do
+    before(:each) do
+
+      User.stub!(:new).and_return(@user)
+
+      @user.stub!(:save).and_return(true)
+      
+      @params = {:user => @user}
+    end
+    
+    it "should delete auth cookies" do
+      dispatch_to(Users, :create, @params) do
+        self.cookies.should_receive(:delete).with(:auth_token)
+      end
+    end
+    
+    it "should save the user" do
+      @user.should_receive(:save).and_return(true)
+      dispatch_to(Users, :create, @params)
+    end
+    
+    it "should redirect" do
+      dispatch_to(Users, :create, @params).should be_redirect
+    end
+    
+    it "should redirect to /" do
+      dispatch_to(Users, :create, @params).should redirect_to('/')
+    end
+  end
+  
 end
