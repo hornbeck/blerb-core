@@ -3,43 +3,6 @@ require File.join( File.dirname(__FILE__), "..", "user_spec_helper")
 require File.join( File.dirname(__FILE__), "..", "authenticated_system_spec_helper")
 
 describe Users do
-  
-  include UserSpecHelper
-  
-  before(:each) do
-    # User.clear_database_table
-  end
-   
-   it "should have a route for user activation" do
-     with_route("/users/activate/1234") do |params|
-       params[:controller].should == "Users"
-       params[:action].should == "activate" 
-       params[:activation_code].should == "1234"    
-     end
-   end
-
-   it 'activates user' do
-     create_user(:email => "aaron@example.com", :password => "test", :password_confirmation => "test")
-     @user = controller.assigns(:user)
-     User.authenticate('aaron', 'test').should be_nil
-     get "/users/activate/1234" 
-     controller.should redirect_to("/")
-   end
-
-   it 'does not activate user without key' do
-     pending
-       get "/users/activate"
-       controller.should be_missing
-   end
-     
-   def create_user(options = {})
-     pending
-     post "/users", :user => valid_user_hash.merge(options)
-   end
-end
-
-
-describe Users do
   include UserSpecHelper
   
   before(:each) do
@@ -176,6 +139,10 @@ describe Users do
         stub!(:logged_in?).and_return(false)
       }.should redirect_to('/')
     end
+  end
+  
+  describe "'s routes" do
+    # TODO
   end
   
 end
