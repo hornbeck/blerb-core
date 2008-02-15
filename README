@@ -12,23 +12,28 @@
   * Install merb-more
     * git clone git://github.com/wycats/merb-more.git
     * cd merb-more
+    * cd merb-action-args
     * rake install
-    * cd merb-more/merb-action-args
+    * cd ../merb-assets
     * rake install
-    * cd merb-more/merb-assets
+    * cd ../merb-test
     * rake install
     
   * Install merb-plugins
     * git clone git://github.com/wycats/merb-plugins.git
-    * cd merb-plugins/merb_datamapper
+    * cd merb-plugins
+    * cd merb_datamapper
     * rake install
-    * cd merb-plugins/merb_helpers
+    * cd ../merb_helpers
+    * rake install
+    * cd ../merb_rspec
     * rake install
     
   * git clone git://github.com/hornbeck/blerb-core.git - anon checkout
   * git clone git@github.com:hornbeck/blerb-core.git   - commit access
   * cd blerb-core
-  * merb  # this generates config/database.yml.sample
+  * merb
+   * this generates config/database.yml.sample
   * mv config/database.yml.sample config/database.yml
   * cp config/settings.sample.yml config/settings.yml
   * fill in the correct database credentials
