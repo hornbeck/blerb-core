@@ -41,3 +41,19 @@ def mock_model(klass, fields = {})
   
   model
 end
+
+def url(name, params={})
+  Merb::Router.generate(name, params)
+end
+
+def with_route(path, _method = "GET", env = {}, &block)
+  env[:request_method] ||= _method
+  env[:request_uri] = path
+  
+  request = fake_request(env)
+  
+  opts = check_request_for_route(request)
+  
+  yield opts if block_given?
+  opts
+end

@@ -17,6 +17,7 @@ Merb::Router.prepare do |r|
   
   r.match('/signup').to(:controller => 'users', :action => 'new').name(:signup)
   r.to(:controller => "Session") do |session|
+    session.match("/login", :method => :post).to(:action => 'create')
     session.match("/login").to(:action => "new").name(:login)
     session.match("/logout").to(:action => "destroy").name(:logout)
   end
