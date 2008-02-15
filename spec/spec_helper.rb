@@ -1,6 +1,6 @@
 require 'rubygems'
-require 'spec'
 require 'merb-core'
+require 'merb-test'
 
 dir = File.dirname(__FILE__)
 require dir / "helpers" / "merb_helpers"
@@ -27,3 +27,13 @@ end
 
 ### METHODS BELOW THIS LINE SHOULD BE EXTRACTED TO MERB ITSELF
 
+def mock_model(klass, fields = {})
+  model = mock(klass.name)
+  model.stub!(:id).and_return(rand(1000))
+  
+  fields.each do |m, r|
+    model.stub!(m).and_return(r)
+  end
+  
+  model
+end

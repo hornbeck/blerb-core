@@ -2,3 +2,4 @@ log/*.log
 log/*.pid
 *.db
 config/database.yml
+config/settings.yml

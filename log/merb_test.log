@@ -1,1 +1,635 @@
 # Logfile created on Tue Dec 04 20:05:23 -0600 2007
+Thu, 14 Feb 2008 23:42:29 GMT ~ Thu, 14 Feb 2008 23:42:29 GMT: loading gem 'merb-action-args' from config/init.rb:4 ...
+Thu, 14 Feb 2008 23:42:29 GMT ~ Thu, 14 Feb 2008 23:42:29 GMT: loading gem 'merb_datamapper' from config/init.rb:19 ...
+Thu, 14 Feb 2008 23:42:29 GMT ~ Thu, 14 Feb 2008 23:42:29 GMT: loading gem 'merb-mailer' from config/init.rb:31 ...
+Thu, 14 Feb 2008 23:42:29 GMT ~ Thu, 14 Feb 2008 23:42:29 GMT: loading gem 'merb-assets' from config/init.rb:32 ...
+Thu, 14 Feb 2008 23:42:29 GMT ~ Thu, 14 Feb 2008 23:42:29 GMT: loading gem 'merb_helpers' from config/init.rb:33 ...
+Thu, 14 Feb 2008 23:42:29 GMT ~ Thu, 14 Feb 2008 23:42:29 GMT: loading gem 'hpricot' from config/init.rb:38 ...
+Thu, 14 Feb 2008 23:42:29 GMT ~ Thu, 14 Feb 2008 23:42:29 GMT: loading gem 'merb-test' from config/init.rb:38 ...
+Thu, 14 Feb 2008 23:42:30 GMT ~ Thu, 14 Feb 2008 23:42:30 GMT: loading gem 'merb_rspec' from config/init.rb:39 ...
+Thu, 14 Feb 2008 23:42:30 GMT ~ Thu, 14 Feb 2008 23:42:30 GMT: loading gem 'merb_helpers' from app/controllers/application.rb:1 ...
+Thu, 14 Feb 2008 23:42:30 GMT ~ Thu, 14 Feb 2008 23:42:30 GMT: loading gem 'merb_helpers' from app/controllers/admin/articles.rb:1 ...
+Thu, 14 Feb 2008 23:42:30 GMT ~ Thu, 14 Feb 2008 23:42:30 GMT: loading gem 'merb_helpers' from app/controllers/application.rb:1 ...
+Thu, 14 Feb 2008 23:42:30 GMT ~ Filter login_required was not found in your filter chain.
+Thu, 14 Feb 2008 23:42:30 GMT ~ Filter login_required was not found in your filter chain.
+Thu, 14 Feb 2008 23:42:30 GMT ~ Using 'share-nothing' cookie sessions (4kb limit per client)
+Thu, 14 Feb 2008 23:42:31 GMT ~ Setting Up Cookie Store Sessions
+Thu, 14 Feb 2008 23:42:31 GMT ~ Setting Up Cookie Store Sessions
+Thu, 14 Feb 2008 23:42:31 GMT ~ Setting Up Cookie Store Sessions
+Thu, 14 Feb 2008 23:42:31 GMT ~ Setting Up Cookie Store Sessions
+Thu, 14 Feb 2008 23:42:31 GMT ~ Setting Up Cookie Store Sessions
+Thu, 14 Feb 2008 23:42:31 GMT ~ Setting Up Cookie Store Sessions
+Thu, 14 Feb 2008 23:42:31 GMT ~ Setting Up Cookie Store Sessions
+Thu, 14 Feb 2008 23:42:31 GMT ~ Setting Up Cookie Store Sessions
+Thu, 14 Feb 2008 23:42:31 GMT ~ Setting Up Cookie Store Sessions
+Thu, 14 Feb 2008 23:42:31 GMT ~ Setting Up Cookie Store Sessions
+Thu, 14 Feb 2008 23:42:31 GMT ~ Setting Up Cookie Store Sessions
+Thu, 14 Feb 2008 23:42:31 GMT ~ Setting Up Cookie Store Sessions
+Thu, 14 Feb 2008 23:42:31 GMT ~ Setting Up Cookie Store Sessions
+Thu, 14 Feb 2008 23:42:31 GMT ~ Setting Up Cookie Store Sessions
+Thu, 14 Feb 2008 23:42:31 GMT ~ Setting Up Cookie Store Sessions
+Thu, 14 Feb 2008 23:42:31 GMT ~ undefined method `url' for #<UserMailer:0x1231c74>
+Thu, 14 Feb 2008 23:42:31 GMT ~ signup_notification was not sent because nothing was rendered for it
+Thu, 14 Feb 2008 23:42:31 GMT ~ undefined method `url' for #<UserMailer:0x121c734>
+Thu, 14 Feb 2008 23:42:31 GMT ~ signup_notification was not sent because nothing was rendered for it
+Thu, 14 Feb 2008 23:42:31 GMT ~ undefined method `url' for #<UserMailer:0x1204274>
+Thu, 14 Feb 2008 23:42:31 GMT ~ signup_notification was not sent because nothing was rendered for it
+Thu, 14 Feb 2008 23:42:31 GMT ~ undefined method `url' for #<UserMailer:0x11f3280>
+Thu, 14 Feb 2008 23:42:31 GMT ~ signup_notification was not sent because nothing was rendered for it
+Thu, 14 Feb 2008 23:42:31 GMT ~ undefined method `url' for #<UserMailer:0x11e1198>
+Thu, 14 Feb 2008 23:42:31 GMT ~ signup_notification was not sent because nothing was rendered for it
+Thu, 14 Feb 2008 23:42:31 GMT ~ undefined method `url' for #<UserMailer:0x11cd4e0>
+Thu, 14 Feb 2008 23:42:31 GMT ~ signup_notification was not sent because nothing was rendered for it
+Thu, 14 Feb 2008 23:42:31 GMT ~ undefined method `url' for #<UserMailer:0x11a4450>
+Thu, 14 Feb 2008 23:42:31 GMT ~ signup_notification was not sent because nothing was rendered for it
+Thu, 14 Feb 2008 23:42:31 GMT ~ undefined method `url' for #<UserMailer:0x1193ba0>
+Thu, 14 Feb 2008 23:42:31 GMT ~ signup_notification was not sent because nothing was rendered for it
+Thu, 14 Feb 2008 23:42:31 GMT ~ undefined method `url' for #<UserMailer:0x11757f4>
+Thu, 14 Feb 2008 23:42:31 GMT ~ signup_notification was not sent because nothing was rendered for it
+Thu, 14 Feb 2008 23:42:31 GMT ~ undefined method `url' for #<UserMailer:0x1162b2c>
+Thu, 14 Feb 2008 23:42:31 GMT ~ signup_notification was not sent because nothing was rendered for it
+Thu, 14 Feb 2008 23:42:31 GMT ~ undefined method `url' for #<UserMailer:0x1144708>
+Thu, 14 Feb 2008 23:42:31 GMT ~ signup_notification was not sent because nothing was rendered for it
+Thu, 14 Feb 2008 23:42:31 GMT ~ Setting Up Cookie Store Sessions
+Thu, 14 Feb 2008 23:42:31 GMT ~ Cookie deleted: auth_token => nil
+Thu, 14 Feb 2008 23:42:31 GMT ~ undefined method `url' for #<UserMailer:0x197e478>
+Thu, 14 Feb 2008 23:42:31 GMT ~ signup_notification was not sent because nothing was rendered for it
+Thu, 14 Feb 2008 23:42:31 GMT ~ Redirecting to: /
+Thu, 14 Feb 2008 23:42:31 GMT ~ Finalize Cookie Store Session
+Thu, 14 Feb 2008 23:42:31 GMT ~ {:after_filters_time=>8.0e-06, :action_time=>0.00481, :before_filters_time=>1.0e-05}
+Thu, 14 Feb 2008 23:42:31 GMT ~ Setting Up Cookie Store Sessions
+Thu, 14 Feb 2008 23:42:31 GMT ~ Cookie deleted: auth_token => nil
+Thu, 14 Feb 2008 23:42:31 GMT ~ Setting Up Cookie Store Sessions
+Thu, 14 Feb 2008 23:42:31 GMT ~ Cookie deleted: auth_token => nil
+Thu, 14 Feb 2008 23:42:31 GMT ~ Setting Up Cookie Store Sessions
+Thu, 14 Feb 2008 23:42:31 GMT ~ Cookie deleted: auth_token => nil
+Thu, 14 Feb 2008 23:42:31 GMT ~ Setting Up Cookie Store Sessions
+Thu, 14 Feb 2008 23:42:31 GMT ~ Cookie deleted: auth_token => nil
+Thu, 14 Feb 2008 23:42:31 GMT ~ undefined method `url' for #<UserMailer:0x193da40>
+Thu, 14 Feb 2008 23:42:31 GMT ~ signup_notification was not sent because nothing was rendered for it
+Thu, 14 Feb 2008 23:42:31 GMT ~ Redirecting to: /
+Thu, 14 Feb 2008 23:42:31 GMT ~ Finalize Cookie Store Session
+Thu, 14 Feb 2008 23:42:31 GMT ~ {:after_filters_time=>9.0e-06, :action_time=>0.005888, :before_filters_time=>1.6e-05}
+Thu, 14 Feb 2008 23:54:09 GMT ~ Thu, 14 Feb 2008 23:54:09 GMT: loading gem 'merb-action-args' from config/init.rb:4 ...
+Thu, 14 Feb 2008 23:54:09 GMT ~ Thu, 14 Feb 2008 23:54:09 GMT: loading gem 'merb_datamapper' from config/init.rb:19 ...
+Thu, 14 Feb 2008 23:54:09 GMT ~ Thu, 14 Feb 2008 23:54:09 GMT: loading gem 'merb-mailer' from config/init.rb:31 ...
+Thu, 14 Feb 2008 23:54:09 GMT ~ Thu, 14 Feb 2008 23:54:09 GMT: loading gem 'merb-assets' from config/init.rb:32 ...
+Thu, 14 Feb 2008 23:54:09 GMT ~ Thu, 14 Feb 2008 23:54:09 GMT: loading gem 'merb_helpers' from config/init.rb:33 ...
+Thu, 14 Feb 2008 23:54:09 GMT ~ Thu, 14 Feb 2008 23:54:09 GMT: loading gem 'hpricot' from config/init.rb:38 ...
+Thu, 14 Feb 2008 23:54:09 GMT ~ Thu, 14 Feb 2008 23:54:09 GMT: loading gem 'merb-test' from config/init.rb:38 ...
+Thu, 14 Feb 2008 23:54:09 GMT ~ Thu, 14 Feb 2008 23:54:09 GMT: loading gem 'merb_rspec' from config/init.rb:39 ...
+Thu, 14 Feb 2008 23:54:09 GMT ~ Thu, 14 Feb 2008 23:54:09 GMT: loading gem 'merb_helpers' from app/controllers/application.rb:1 ...
+Thu, 14 Feb 2008 23:54:09 GMT ~ Thu, 14 Feb 2008 23:54:09 GMT: loading gem 'merb_helpers' from app/controllers/admin/articles.rb:1 ...
+Thu, 14 Feb 2008 23:54:09 GMT ~ Thu, 14 Feb 2008 23:54:09 GMT: loading gem 'merb_helpers' from app/controllers/application.rb:1 ...
+Thu, 14 Feb 2008 23:54:09 GMT ~ Filter login_required was not found in your filter chain.
+Thu, 14 Feb 2008 23:54:09 GMT ~ Filter login_required was not found in your filter chain.
+Thu, 14 Feb 2008 23:54:10 GMT ~ Using 'share-nothing' cookie sessions (4kb limit per client)
+Thu, 14 Feb 2008 23:54:10 GMT ~ Setting Up Cookie Store Sessions
+Thu, 14 Feb 2008 23:54:10 GMT ~ Setting Up Cookie Store Sessions
+Thu, 14 Feb 2008 23:54:10 GMT ~ Setting Up Cookie Store Sessions
+Thu, 14 Feb 2008 23:54:10 GMT ~ Setting Up Cookie Store Sessions
+Thu, 14 Feb 2008 23:54:10 GMT ~ Setting Up Cookie Store Sessions
+Thu, 14 Feb 2008 23:54:10 GMT ~ Setting Up Cookie Store Sessions
+Thu, 14 Feb 2008 23:54:10 GMT ~ Setting Up Cookie Store Sessions
+Thu, 14 Feb 2008 23:54:10 GMT ~ Setting Up Cookie Store Sessions
+Thu, 14 Feb 2008 23:54:10 GMT ~ Setting Up Cookie Store Sessions
+Thu, 14 Feb 2008 23:54:10 GMT ~ Setting Up Cookie Store Sessions
+Thu, 14 Feb 2008 23:54:10 GMT ~ Setting Up Cookie Store Sessions
+Thu, 14 Feb 2008 23:54:10 GMT ~ Setting Up Cookie Store Sessions
+Thu, 14 Feb 2008 23:54:10 GMT ~ Setting Up Cookie Store Sessions
+Thu, 14 Feb 2008 23:54:10 GMT ~ Setting Up Cookie Store Sessions
+Thu, 14 Feb 2008 23:54:10 GMT ~ Setting Up Cookie Store Sessions
+Thu, 14 Feb 2008 23:54:10 GMT ~ undefined method `url' for #<UserMailer:0x1231c74>
+Thu, 14 Feb 2008 23:54:10 GMT ~ signup_notification was not sent because nothing was rendered for it
+Thu, 14 Feb 2008 23:54:10 GMT ~ undefined method `url' for #<UserMailer:0x121c734>
+Thu, 14 Feb 2008 23:54:10 GMT ~ signup_notification was not sent because nothing was rendered for it
+Thu, 14 Feb 2008 23:54:10 GMT ~ undefined method `url' for #<UserMailer:0x12030cc>
+Thu, 14 Feb 2008 23:54:10 GMT ~ signup_notification was not sent because nothing was rendered for it
+Thu, 14 Feb 2008 23:54:10 GMT ~ undefined method `url' for #<UserMailer:0x11f1bd8>
+Thu, 14 Feb 2008 23:54:10 GMT ~ signup_notification was not sent because nothing was rendered for it
+Thu, 14 Feb 2008 23:54:10 GMT ~ undefined method `url' for #<UserMailer:0x11dfdd4>
+Thu, 14 Feb 2008 23:54:10 GMT ~ signup_notification was not sent because nothing was rendered for it
+Thu, 14 Feb 2008 23:54:10 GMT ~ undefined method `url' for #<UserMailer:0x11bd98c>
+Thu, 14 Feb 2008 23:54:10 GMT ~ signup_notification was not sent because nothing was rendered for it
+Thu, 14 Feb 2008 23:54:10 GMT ~ undefined method `url' for #<UserMailer:0x11a4450>
+Thu, 14 Feb 2008 23:54:10 GMT ~ signup_notification was not sent because nothing was rendered for it
+Thu, 14 Feb 2008 23:54:10 GMT ~ undefined method `url' for #<UserMailer:0x1193ba0>
+Thu, 14 Feb 2008 23:54:10 GMT ~ signup_notification was not sent because nothing was rendered for it
+Thu, 14 Feb 2008 23:54:10 GMT ~ undefined method `url' for #<UserMailer:0x11757f4>
+Thu, 14 Feb 2008 23:54:10 GMT ~ signup_notification was not sent because nothing was rendered for it
+Thu, 14 Feb 2008 23:54:10 GMT ~ undefined method `url' for #<UserMailer:0x1162b2c>
+Thu, 14 Feb 2008 23:54:10 GMT ~ signup_notification was not sent because nothing was rendered for it
+Thu, 14 Feb 2008 23:54:10 GMT ~ undefined method `url' for #<UserMailer:0x1144708>
+Thu, 14 Feb 2008 23:54:10 GMT ~ signup_notification was not sent because nothing was rendered for it
+Thu, 14 Feb 2008 23:54:10 GMT ~ Setting Up Cookie Store Sessions
+Thu, 14 Feb 2008 23:54:10 GMT ~ Cookie deleted: auth_token => nil
+Thu, 14 Feb 2008 23:54:10 GMT ~ undefined method `url' for #<UserMailer:0x197e478>
+Thu, 14 Feb 2008 23:54:10 GMT ~ signup_notification was not sent because nothing was rendered for it
+Thu, 14 Feb 2008 23:54:10 GMT ~ Redirecting to: /
+Thu, 14 Feb 2008 23:54:10 GMT ~ Finalize Cookie Store Session
+Thu, 14 Feb 2008 23:54:10 GMT ~ {:after_filters_time=>1.0e-05, :action_time=>0.005801, :before_filters_time=>1.5e-05}
+Thu, 14 Feb 2008 23:54:10 GMT ~ Setting Up Cookie Store Sessions
+Thu, 14 Feb 2008 23:54:10 GMT ~ Cookie deleted: auth_token => nil
+Thu, 14 Feb 2008 23:54:10 GMT ~ Setting Up Cookie Store Sessions
+Thu, 14 Feb 2008 23:54:10 GMT ~ Cookie deleted: auth_token => nil
+Thu, 14 Feb 2008 23:54:10 GMT ~ Setting Up Cookie Store Sessions
+Thu, 14 Feb 2008 23:54:10 GMT ~ Cookie deleted: auth_token => nil
+Thu, 14 Feb 2008 23:54:10 GMT ~ Setting Up Cookie Store Sessions
+Thu, 14 Feb 2008 23:54:10 GMT ~ Cookie deleted: auth_token => nil
+Thu, 14 Feb 2008 23:54:10 GMT ~ undefined method `url' for #<UserMailer:0x193da40>
+Thu, 14 Feb 2008 23:54:10 GMT ~ signup_notification was not sent because nothing was rendered for it
+Thu, 14 Feb 2008 23:54:10 GMT ~ Redirecting to: /
+Thu, 14 Feb 2008 23:54:10 GMT ~ Finalize Cookie Store Session
+Thu, 14 Feb 2008 23:54:10 GMT ~ {:after_filters_time=>0.000955, :action_time=>0.007227, :before_filters_time=>2.5e-05}
+Thu, 14 Feb 2008 23:59:52 GMT ~ Thu, 14 Feb 2008 23:59:52 GMT: loading gem 'merb-action-args' from config/init.rb:4 ...
+Thu, 14 Feb 2008 23:59:52 GMT ~ Thu, 14 Feb 2008 23:59:52 GMT: loading gem 'merb_datamapper' from config/init.rb:19 ...
+Thu, 14 Feb 2008 23:59:53 GMT ~ Thu, 14 Feb 2008 23:59:53 GMT: loading gem 'merb-mailer' from config/init.rb:31 ...
+Thu, 14 Feb 2008 23:59:53 GMT ~ Thu, 14 Feb 2008 23:59:53 GMT: loading gem 'merb-assets' from config/init.rb:32 ...
+Thu, 14 Feb 2008 23:59:53 GMT ~ Thu, 14 Feb 2008 23:59:53 GMT: loading gem 'merb_helpers' from config/init.rb:33 ...
+Thu, 14 Feb 2008 23:59:53 GMT ~ Thu, 14 Feb 2008 23:59:53 GMT: loading gem 'hpricot' from config/init.rb:38 ...
+Thu, 14 Feb 2008 23:59:53 GMT ~ Thu, 14 Feb 2008 23:59:53 GMT: loading gem 'merb-test' from config/init.rb:38 ...
+Thu, 14 Feb 2008 23:59:53 GMT ~ Thu, 14 Feb 2008 23:59:53 GMT: loading gem 'merb_rspec' from config/init.rb:39 ...
+Thu, 14 Feb 2008 23:59:53 GMT ~ Thu, 14 Feb 2008 23:59:53 GMT: loading gem 'merb_helpers' from app/controllers/application.rb:1 ...
+Thu, 14 Feb 2008 23:59:53 GMT ~ Thu, 14 Feb 2008 23:59:53 GMT: loading gem 'merb_helpers' from app/controllers/admin/articles.rb:1 ...
+Thu, 14 Feb 2008 23:59:53 GMT ~ Thu, 14 Feb 2008 23:59:53 GMT: loading gem 'merb_helpers' from app/controllers/application.rb:1 ...
+Thu, 14 Feb 2008 23:59:53 GMT ~ Filter login_required was not found in your filter chain.
+Thu, 14 Feb 2008 23:59:53 GMT ~ Filter login_required was not found in your filter chain.
+Thu, 14 Feb 2008 23:59:53 GMT ~ Using 'share-nothing' cookie sessions (4kb limit per client)
+Thu, 14 Feb 2008 23:59:54 GMT ~ Setting Up Cookie Store Sessions
+Thu, 14 Feb 2008 23:59:54 GMT ~ Setting Up Cookie Store Sessions
+Thu, 14 Feb 2008 23:59:54 GMT ~ Setting Up Cookie Store Sessions
+Thu, 14 Feb 2008 23:59:54 GMT ~ Setting Up Cookie Store Sessions
+Thu, 14 Feb 2008 23:59:54 GMT ~ Setting Up Cookie Store Sessions
+Thu, 14 Feb 2008 23:59:54 GMT ~ Setting Up Cookie Store Sessions
+Thu, 14 Feb 2008 23:59:54 GMT ~ Setting Up Cookie Store Sessions
+Thu, 14 Feb 2008 23:59:54 GMT ~ Setting Up Cookie Store Sessions
+Thu, 14 Feb 2008 23:59:54 GMT ~ Setting Up Cookie Store Sessions
+Thu, 14 Feb 2008 23:59:54 GMT ~ Setting Up Cookie Store Sessions
+Thu, 14 Feb 2008 23:59:54 GMT ~ Setting Up Cookie Store Sessions
+Thu, 14 Feb 2008 23:59:54 GMT ~ Setting Up Cookie Store Sessions
+Thu, 14 Feb 2008 23:59:54 GMT ~ Setting Up Cookie Store Sessions
+Thu, 14 Feb 2008 23:59:54 GMT ~ Setting Up Cookie Store Sessions
+Thu, 14 Feb 2008 23:59:54 GMT ~ Setting Up Cookie Store Sessions
+Thu, 14 Feb 2008 23:59:54 GMT ~ undefined method `url' for #<UserMailer:0x1230c0c>
+Thu, 14 Feb 2008 23:59:54 GMT ~ signup_notification was not sent because nothing was rendered for it
+Thu, 14 Feb 2008 23:59:54 GMT ~ undefined method `url' for #<UserMailer:0x121b640>
+Thu, 14 Feb 2008 23:59:54 GMT ~ signup_notification was not sent because nothing was rendered for it
+Thu, 14 Feb 2008 23:59:54 GMT ~ undefined method `url' for #<UserMailer:0x1202e4c>
+Thu, 14 Feb 2008 23:59:54 GMT ~ signup_notification was not sent because nothing was rendered for it
+Thu, 14 Feb 2008 23:59:54 GMT ~ undefined method `url' for #<UserMailer:0x11f196c>
+Thu, 14 Feb 2008 23:59:54 GMT ~ signup_notification was not sent because nothing was rendered for it
+Thu, 14 Feb 2008 23:59:54 GMT ~ undefined method `url' for #<UserMailer:0x11dfaa0>
+Thu, 14 Feb 2008 23:59:54 GMT ~ signup_notification was not sent because nothing was rendered for it
+Thu, 14 Feb 2008 23:59:54 GMT ~ undefined method `url' for #<UserMailer:0x11bd66c>
+Thu, 14 Feb 2008 23:59:54 GMT ~ signup_notification was not sent because nothing was rendered for it
+Thu, 14 Feb 2008 23:59:54 GMT ~ undefined method `url' for #<UserMailer:0x11a41e4>
+Thu, 14 Feb 2008 23:59:54 GMT ~ signup_notification was not sent because nothing was rendered for it
+Thu, 14 Feb 2008 23:59:54 GMT ~ undefined method `url' for #<UserMailer:0x11939e8>
+Thu, 14 Feb 2008 23:59:54 GMT ~ signup_notification was not sent because nothing was rendered for it
+Thu, 14 Feb 2008 23:59:54 GMT ~ undefined method `url' for #<UserMailer:0x11756b4>
+Thu, 14 Feb 2008 23:59:54 GMT ~ signup_notification was not sent because nothing was rendered for it
+Thu, 14 Feb 2008 23:59:54 GMT ~ undefined method `url' for #<UserMailer:0x1162a00>
+Thu, 14 Feb 2008 23:59:54 GMT ~ signup_notification was not sent because nothing was rendered for it
+Thu, 14 Feb 2008 23:59:54 GMT ~ undefined method `url' for #<UserMailer:0x1144028>
+Thu, 14 Feb 2008 23:59:54 GMT ~ signup_notification was not sent because nothing was rendered for it
+Thu, 14 Feb 2008 23:59:54 GMT ~ Setting Up Cookie Store Sessions
+Thu, 14 Feb 2008 23:59:54 GMT ~ Cookie deleted: auth_token => nil
+Thu, 14 Feb 2008 23:59:54 GMT ~ undefined method `url' for #<UserMailer:0x197e478>
+Thu, 14 Feb 2008 23:59:54 GMT ~ signup_notification was not sent because nothing was rendered for it
+Thu, 14 Feb 2008 23:59:54 GMT ~ Redirecting to: /
+Thu, 14 Feb 2008 23:59:54 GMT ~ Finalize Cookie Store Session
+Thu, 14 Feb 2008 23:59:54 GMT ~ {:after_filters_time=>8.0e-06, :action_time=>0.005019, :before_filters_time=>1.0e-05}
+Thu, 14 Feb 2008 23:59:54 GMT ~ Setting Up Cookie Store Sessions
+Thu, 14 Feb 2008 23:59:54 GMT ~ Cookie deleted: auth_token => nil
+Thu, 14 Feb 2008 23:59:54 GMT ~ Setting Up Cookie Store Sessions
+Thu, 14 Feb 2008 23:59:54 GMT ~ Cookie deleted: auth_token => nil
+Thu, 14 Feb 2008 23:59:54 GMT ~ Setting Up Cookie Store Sessions
+Thu, 14 Feb 2008 23:59:54 GMT ~ Cookie deleted: auth_token => nil
+Thu, 14 Feb 2008 23:59:54 GMT ~ Setting Up Cookie Store Sessions
+Thu, 14 Feb 2008 23:59:54 GMT ~ Cookie deleted: auth_token => nil
+Thu, 14 Feb 2008 23:59:54 GMT ~ undefined method `url' for #<UserMailer:0x193da40>
+Thu, 14 Feb 2008 23:59:54 GMT ~ signup_notification was not sent because nothing was rendered for it
+Thu, 14 Feb 2008 23:59:54 GMT ~ Redirecting to: /
+Thu, 14 Feb 2008 23:59:54 GMT ~ Finalize Cookie Store Session
+Thu, 14 Feb 2008 23:59:54 GMT ~ {:after_filters_time=>1.0e-05, :action_time=>0.007182, :before_filters_time=>1.5e-05}
+Fri, 15 Feb 2008 00:00:25 GMT ~ Fri, 15 Feb 2008 00:00:25 GMT: loading gem 'merb-action-args' from config/init.rb:4 ...
+Fri, 15 Feb 2008 00:00:26 GMT ~ Fri, 15 Feb 2008 00:00:26 GMT: loading gem 'merb_datamapper' from config/init.rb:19 ...
+Fri, 15 Feb 2008 00:00:26 GMT ~ Fri, 15 Feb 2008 00:00:26 GMT: loading gem 'merb-mailer' from config/init.rb:31 ...
+Fri, 15 Feb 2008 00:00:26 GMT ~ Fri, 15 Feb 2008 00:00:26 GMT: loading gem 'merb-assets' from config/init.rb:32 ...
+Fri, 15 Feb 2008 00:00:26 GMT ~ Fri, 15 Feb 2008 00:00:26 GMT: loading gem 'merb_helpers' from config/init.rb:33 ...
+Fri, 15 Feb 2008 00:00:26 GMT ~ Fri, 15 Feb 2008 00:00:26 GMT: loading gem 'hpricot' from config/init.rb:38 ...
+Fri, 15 Feb 2008 00:00:26 GMT ~ Fri, 15 Feb 2008 00:00:26 GMT: loading gem 'merb-test' from config/init.rb:38 ...
+Fri, 15 Feb 2008 00:00:26 GMT ~ Fri, 15 Feb 2008 00:00:26 GMT: loading gem 'merb_rspec' from config/init.rb:39 ...
+Fri, 15 Feb 2008 00:00:26 GMT ~ Fri, 15 Feb 2008 00:00:26 GMT: loading gem 'merb_helpers' from app/controllers/application.rb:1 ...
+Fri, 15 Feb 2008 00:00:26 GMT ~ Fri, 15 Feb 2008 00:00:26 GMT: loading gem 'merb_helpers' from app/controllers/admin/articles.rb:1 ...
+Fri, 15 Feb 2008 00:00:26 GMT ~ Fri, 15 Feb 2008 00:00:26 GMT: loading gem 'merb_helpers' from app/controllers/application.rb:1 ...
+Fri, 15 Feb 2008 00:00:26 GMT ~ Filter login_required was not found in your filter chain.
+Fri, 15 Feb 2008 00:00:26 GMT ~ Filter login_required was not found in your filter chain.
+Fri, 15 Feb 2008 00:00:26 GMT ~ Using 'share-nothing' cookie sessions (4kb limit per client)
+Fri, 15 Feb 2008 00:01:42 GMT ~ Fri, 15 Feb 2008 00:01:42 GMT: loading gem 'merb-action-args' from config/init.rb:4 ...
+Fri, 15 Feb 2008 00:01:42 GMT ~ Fri, 15 Feb 2008 00:01:42 GMT: loading gem 'merb_datamapper' from config/init.rb:19 ...
+Fri, 15 Feb 2008 00:01:42 GMT ~ Fri, 15 Feb 2008 00:01:42 GMT: loading gem 'merb-mailer' from config/init.rb:31 ...
+Fri, 15 Feb 2008 00:01:42 GMT ~ Fri, 15 Feb 2008 00:01:42 GMT: loading gem 'merb-assets' from config/init.rb:32 ...
+Fri, 15 Feb 2008 00:01:42 GMT ~ Fri, 15 Feb 2008 00:01:42 GMT: loading gem 'merb_helpers' from config/init.rb:33 ...
+Fri, 15 Feb 2008 00:01:42 GMT ~ Fri, 15 Feb 2008 00:01:42 GMT: loading gem 'hpricot' from config/init.rb:38 ...
+Fri, 15 Feb 2008 00:01:42 GMT ~ Fri, 15 Feb 2008 00:01:42 GMT: loading gem 'merb-test' from config/init.rb:38 ...
+Fri, 15 Feb 2008 00:01:42 GMT ~ Fri, 15 Feb 2008 00:01:42 GMT: loading gem 'merb_rspec' from config/init.rb:39 ...
+Fri, 15 Feb 2008 00:01:42 GMT ~ Fri, 15 Feb 2008 00:01:42 GMT: loading gem 'merb_helpers' from app/controllers/application.rb:1 ...
+Fri, 15 Feb 2008 00:01:43 GMT ~ Fri, 15 Feb 2008 00:01:43 GMT: loading gem 'merb_helpers' from app/controllers/admin/articles.rb:1 ...
+Fri, 15 Feb 2008 00:01:43 GMT ~ Fri, 15 Feb 2008 00:01:43 GMT: loading gem 'merb_helpers' from app/controllers/application.rb:1 ...
+Fri, 15 Feb 2008 00:01:43 GMT ~ Filter login_required was not found in your filter chain.
+Fri, 15 Feb 2008 00:01:43 GMT ~ Filter login_required was not found in your filter chain.
+Fri, 15 Feb 2008 00:01:43 GMT ~ Using 'share-nothing' cookie sessions (4kb limit per client)
+Fri, 15 Feb 2008 00:01:43 GMT ~ 
+***** Debugger requested, but was not available: Start server with --debugger to enable *****
+Fri, 15 Feb 2008 00:01:43 GMT ~ Setting Up Cookie Store Sessions
+Fri, 15 Feb 2008 00:01:43 GMT ~ Finalize Cookie Store Session
+Fri, 15 Feb 2008 00:01:43 GMT ~ {:after_filters_time=>8.0e-06, :action_time=>0.003402, :before_filters_time=>9.0e-06}
+Fri, 15 Feb 2008 00:01:43 GMT ~ Setting Up Cookie Store Sessions
+Fri, 15 Feb 2008 00:01:43 GMT ~ Finalize Cookie Store Session
+Fri, 15 Feb 2008 00:01:43 GMT ~ {:after_filters_time=>7.0e-06, :action_time=>0.001555, :before_filters_time=>8.0e-06}
+Fri, 15 Feb 2008 00:01:43 GMT ~ undefined method `url' for #<UserMailer:0x1603e24>
+Fri, 15 Feb 2008 00:01:43 GMT ~ signup_notification was not sent because nothing was rendered for it
+Fri, 15 Feb 2008 00:01:43 GMT ~ undefined method `url' for #<UserMailer:0x12f6dbc>
+Fri, 15 Feb 2008 00:01:43 GMT ~ signup_notification was not sent because nothing was rendered for it
+Fri, 15 Feb 2008 00:01:43 GMT ~ undefined method `url' for #<UserMailer:0x12d6300>
+Fri, 15 Feb 2008 00:01:43 GMT ~ signup_notification was not sent because nothing was rendered for it
+Fri, 15 Feb 2008 00:01:43 GMT ~ undefined method `url' for #<UserMailer:0x12ba3a8>
+Fri, 15 Feb 2008 00:01:43 GMT ~ signup_notification was not sent because nothing was rendered for it
+Fri, 15 Feb 2008 00:01:43 GMT ~ undefined method `url' for #<UserMailer:0x12a1b14>
+Fri, 15 Feb 2008 00:01:43 GMT ~ signup_notification was not sent because nothing was rendered for it
+Fri, 15 Feb 2008 00:01:43 GMT ~ undefined method `url' for #<UserMailer:0x127d0d4>
+Fri, 15 Feb 2008 00:01:43 GMT ~ signup_notification was not sent because nothing was rendered for it
+Fri, 15 Feb 2008 00:01:43 GMT ~ undefined method `url' for #<UserMailer:0x126c3d8>
+Fri, 15 Feb 2008 00:01:43 GMT ~ signup_notification was not sent because nothing was rendered for it
+Fri, 15 Feb 2008 00:01:43 GMT ~ undefined method `url' for #<UserMailer:0x124ed74>
+Fri, 15 Feb 2008 00:01:43 GMT ~ signup_notification was not sent because nothing was rendered for it
+Fri, 15 Feb 2008 00:01:43 GMT ~ undefined method `url' for #<UserMailer:0x1231bc0>
+Fri, 15 Feb 2008 00:01:43 GMT ~ signup_notification was not sent because nothing was rendered for it
+Fri, 15 Feb 2008 00:01:43 GMT ~ undefined method `url' for #<UserMailer:0x121ccfc>
+Fri, 15 Feb 2008 00:01:43 GMT ~ signup_notification was not sent because nothing was rendered for it
+Fri, 15 Feb 2008 00:01:43 GMT ~ undefined method `url' for #<UserMailer:0x1204c9c>
+Fri, 15 Feb 2008 00:01:43 GMT ~ signup_notification was not sent because nothing was rendered for it
+Fri, 15 Feb 2008 00:01:43 GMT ~ Setting Up Cookie Store Sessions
+Fri, 15 Feb 2008 00:01:43 GMT ~ Cookie deleted: auth_token => nil
+Fri, 15 Feb 2008 00:01:43 GMT ~ undefined method `url' for #<UserMailer:0x11e7e6c>
+Fri, 15 Feb 2008 00:01:43 GMT ~ signup_notification was not sent because nothing was rendered for it
+Fri, 15 Feb 2008 00:01:43 GMT ~ Redirecting to: /
+Fri, 15 Feb 2008 00:01:43 GMT ~ Finalize Cookie Store Session
+Fri, 15 Feb 2008 00:01:43 GMT ~ {:after_filters_time=>8.0e-06, :action_time=>0.004831, :before_filters_time=>1.1e-05}
+Fri, 15 Feb 2008 00:01:44 GMT ~ Setting Up Cookie Store Sessions
+Fri, 15 Feb 2008 00:01:44 GMT ~ Cookie deleted: auth_token => nil
+Fri, 15 Feb 2008 00:01:44 GMT ~ Setting Up Cookie Store Sessions
+Fri, 15 Feb 2008 00:01:44 GMT ~ Cookie deleted: auth_token => nil
+Fri, 15 Feb 2008 00:01:44 GMT ~ Setting Up Cookie Store Sessions
+Fri, 15 Feb 2008 00:01:44 GMT ~ Cookie deleted: auth_token => nil
+Fri, 15 Feb 2008 00:01:44 GMT ~ Setting Up Cookie Store Sessions
+Fri, 15 Feb 2008 00:01:44 GMT ~ Cookie deleted: auth_token => nil
+Fri, 15 Feb 2008 00:01:44 GMT ~ undefined method `url' for #<UserMailer:0x117c770>
+Fri, 15 Feb 2008 00:01:44 GMT ~ signup_notification was not sent because nothing was rendered for it
+Fri, 15 Feb 2008 00:01:44 GMT ~ Redirecting to: /
+Fri, 15 Feb 2008 00:01:44 GMT ~ Finalize Cookie Store Session
+Fri, 15 Feb 2008 00:01:44 GMT ~ {:after_filters_time=>9.0e-06, :action_time=>0.004366, :before_filters_time=>1.1e-05}
+Fri, 15 Feb 2008 00:03:02 GMT ~ Fri, 15 Feb 2008 00:03:02 GMT: loading gem 'merb-action-args' from config/init.rb:4 ...
+Fri, 15 Feb 2008 00:03:02 GMT ~ Fri, 15 Feb 2008 00:03:02 GMT: loading gem 'merb_datamapper' from config/init.rb:19 ...
+Fri, 15 Feb 2008 00:03:02 GMT ~ Fri, 15 Feb 2008 00:03:02 GMT: loading gem 'merb-mailer' from config/init.rb:31 ...
+Fri, 15 Feb 2008 00:03:02 GMT ~ Fri, 15 Feb 2008 00:03:02 GMT: loading gem 'merb-assets' from config/init.rb:32 ...
+Fri, 15 Feb 2008 00:03:02 GMT ~ Fri, 15 Feb 2008 00:03:02 GMT: loading gem 'merb_helpers' from config/init.rb:33 ...
+Fri, 15 Feb 2008 00:03:02 GMT ~ Fri, 15 Feb 2008 00:03:02 GMT: loading gem 'hpricot' from config/init.rb:38 ...
+Fri, 15 Feb 2008 00:03:02 GMT ~ Fri, 15 Feb 2008 00:03:02 GMT: loading gem 'merb-test' from config/init.rb:38 ...
+Fri, 15 Feb 2008 00:03:02 GMT ~ Fri, 15 Feb 2008 00:03:02 GMT: loading gem 'merb_rspec' from config/init.rb:39 ...
+Fri, 15 Feb 2008 00:03:02 GMT ~ Fri, 15 Feb 2008 00:03:02 GMT: loading gem 'merb_helpers' from app/controllers/application.rb:1 ...
+Fri, 15 Feb 2008 00:03:02 GMT ~ Fri, 15 Feb 2008 00:03:02 GMT: loading gem 'merb_helpers' from app/controllers/admin/articles.rb:1 ...
+Fri, 15 Feb 2008 00:03:02 GMT ~ Fri, 15 Feb 2008 00:03:02 GMT: loading gem 'merb_helpers' from app/controllers/application.rb:1 ...
+Fri, 15 Feb 2008 00:03:02 GMT ~ Filter login_required was not found in your filter chain.
+Fri, 15 Feb 2008 00:03:02 GMT ~ Filter login_required was not found in your filter chain.
+Fri, 15 Feb 2008 00:03:03 GMT ~ Using 'share-nothing' cookie sessions (4kb limit per client)
+Fri, 15 Feb 2008 00:03:03 GMT ~ 
+***** Debugger requested, but was not available: Start server with --debugger to enable *****
+Fri, 15 Feb 2008 00:03:03 GMT ~ Setting Up Cookie Store Sessions
+Fri, 15 Feb 2008 00:03:03 GMT ~ Finalize Cookie Store Session
+Fri, 15 Feb 2008 00:03:03 GMT ~ {:action_time=>0.003576, :after_filters_time=>1.0e-05, :before_filters_time=>1.0e-05}
+Fri, 15 Feb 2008 00:03:03 GMT ~ Setting Up Cookie Store Sessions
+Fri, 15 Feb 2008 00:03:03 GMT ~ Finalize Cookie Store Session
+Fri, 15 Feb 2008 00:03:03 GMT ~ {:action_time=>0.003996, :after_filters_time=>1.0e-05, :before_filters_time=>1.0e-05}
+Fri, 15 Feb 2008 00:03:26 GMT ~ Fri, 15 Feb 2008 00:03:26 GMT: loading gem 'merb-action-args' from config/init.rb:4 ...
+Fri, 15 Feb 2008 00:03:26 GMT ~ Fri, 15 Feb 2008 00:03:26 GMT: loading gem 'merb_datamapper' from config/init.rb:19 ...
+Fri, 15 Feb 2008 00:03:26 GMT ~ Fri, 15 Feb 2008 00:03:26 GMT: loading gem 'merb-mailer' from config/init.rb:31 ...
+Fri, 15 Feb 2008 00:03:26 GMT ~ Fri, 15 Feb 2008 00:03:26 GMT: loading gem 'merb-assets' from config/init.rb:32 ...
+Fri, 15 Feb 2008 00:03:26 GMT ~ Fri, 15 Feb 2008 00:03:26 GMT: loading gem 'merb_helpers' from config/init.rb:33 ...
+Fri, 15 Feb 2008 00:03:26 GMT ~ Fri, 15 Feb 2008 00:03:26 GMT: loading gem 'hpricot' from config/init.rb:38 ...
+Fri, 15 Feb 2008 00:03:26 GMT ~ Fri, 15 Feb 2008 00:03:26 GMT: loading gem 'merb-test' from config/init.rb:38 ...
+Fri, 15 Feb 2008 00:03:26 GMT ~ Fri, 15 Feb 2008 00:03:26 GMT: loading gem 'merb_rspec' from config/init.rb:39 ...
+Fri, 15 Feb 2008 00:03:26 GMT ~ Fri, 15 Feb 2008 00:03:26 GMT: loading gem 'merb_helpers' from app/controllers/application.rb:1 ...
+Fri, 15 Feb 2008 00:03:26 GMT ~ Fri, 15 Feb 2008 00:03:26 GMT: loading gem 'merb_helpers' from app/controllers/admin/articles.rb:1 ...
+Fri, 15 Feb 2008 00:03:26 GMT ~ Fri, 15 Feb 2008 00:03:26 GMT: loading gem 'merb_helpers' from app/controllers/application.rb:1 ...
+Fri, 15 Feb 2008 00:03:26 GMT ~ Filter login_required was not found in your filter chain.
+Fri, 15 Feb 2008 00:03:26 GMT ~ Filter login_required was not found in your filter chain.
+Fri, 15 Feb 2008 00:03:27 GMT ~ Using 'share-nothing' cookie sessions (4kb limit per client)
+Fri, 15 Feb 2008 00:03:27 GMT ~ 
+***** Debugger requested, but was not available: Start server with --debugger to enable *****
+Fri, 15 Feb 2008 00:03:27 GMT ~ Setting Up Cookie Store Sessions
+Fri, 15 Feb 2008 00:03:27 GMT ~ Finalize Cookie Store Session
+Fri, 15 Feb 2008 00:03:27 GMT ~ {:action_time=>0.003081, :after_filters_time=>1.3e-05, :before_filters_time=>1.0e-05}
+Fri, 15 Feb 2008 00:03:27 GMT ~ Setting Up Cookie Store Sessions
+Fri, 15 Feb 2008 00:03:27 GMT ~ Finalize Cookie Store Session
+Fri, 15 Feb 2008 00:03:27 GMT ~ {:action_time=>0.002395, :after_filters_time=>8.0e-06, :before_filters_time=>1.0e-05}
+Fri, 15 Feb 2008 00:03:32 GMT ~ Fri, 15 Feb 2008 00:03:32 GMT: loading gem 'merb-action-args' from config/init.rb:4 ...
+Fri, 15 Feb 2008 00:03:32 GMT ~ Fri, 15 Feb 2008 00:03:32 GMT: loading gem 'merb_datamapper' from config/init.rb:19 ...
+Fri, 15 Feb 2008 00:03:33 GMT ~ Fri, 15 Feb 2008 00:03:33 GMT: loading gem 'merb-mailer' from config/init.rb:31 ...
+Fri, 15 Feb 2008 00:03:33 GMT ~ Fri, 15 Feb 2008 00:03:33 GMT: loading gem 'merb-assets' from config/init.rb:32 ...
+Fri, 15 Feb 2008 00:03:33 GMT ~ Fri, 15 Feb 2008 00:03:33 GMT: loading gem 'merb_helpers' from config/init.rb:33 ...
+Fri, 15 Feb 2008 00:03:33 GMT ~ Fri, 15 Feb 2008 00:03:33 GMT: loading gem 'hpricot' from config/init.rb:38 ...
+Fri, 15 Feb 2008 00:03:33 GMT ~ Fri, 15 Feb 2008 00:03:33 GMT: loading gem 'merb-test' from config/init.rb:38 ...
+Fri, 15 Feb 2008 00:03:33 GMT ~ Fri, 15 Feb 2008 00:03:33 GMT: loading gem 'merb_rspec' from config/init.rb:39 ...
+Fri, 15 Feb 2008 00:03:33 GMT ~ Fri, 15 Feb 2008 00:03:33 GMT: loading gem 'merb_helpers' from app/controllers/application.rb:1 ...
+Fri, 15 Feb 2008 00:03:33 GMT ~ Fri, 15 Feb 2008 00:03:33 GMT: loading gem 'merb_helpers' from app/controllers/admin/articles.rb:1 ...
+Fri, 15 Feb 2008 00:03:33 GMT ~ Fri, 15 Feb 2008 00:03:33 GMT: loading gem 'merb_helpers' from app/controllers/application.rb:1 ...
+Fri, 15 Feb 2008 00:03:33 GMT ~ Filter login_required was not found in your filter chain.
+Fri, 15 Feb 2008 00:03:33 GMT ~ Filter login_required was not found in your filter chain.
+Fri, 15 Feb 2008 00:03:33 GMT ~ Using 'share-nothing' cookie sessions (4kb limit per client)
+Fri, 15 Feb 2008 00:03:33 GMT ~ 
+***** Debugger requested, but was not available: Start server with --debugger to enable *****
+Fri, 15 Feb 2008 00:03:33 GMT ~ Setting Up Cookie Store Sessions
+Fri, 15 Feb 2008 00:03:33 GMT ~ Finalize Cookie Store Session
+Fri, 15 Feb 2008 00:03:33 GMT ~ {:action_time=>0.00351, :after_filters_time=>1.1e-05, :before_filters_time=>1.2e-05}
+Fri, 15 Feb 2008 00:03:42 GMT ~ Fri, 15 Feb 2008 00:03:42 GMT: loading gem 'merb-action-args' from config/init.rb:4 ...
+Fri, 15 Feb 2008 00:03:42 GMT ~ Fri, 15 Feb 2008 00:03:42 GMT: loading gem 'merb_datamapper' from config/init.rb:19 ...
+Fri, 15 Feb 2008 00:03:42 GMT ~ Fri, 15 Feb 2008 00:03:42 GMT: loading gem 'merb-mailer' from config/init.rb:31 ...
+Fri, 15 Feb 2008 00:03:42 GMT ~ Fri, 15 Feb 2008 00:03:42 GMT: loading gem 'merb-assets' from config/init.rb:32 ...
+Fri, 15 Feb 2008 00:03:42 GMT ~ Fri, 15 Feb 2008 00:03:42 GMT: loading gem 'merb_helpers' from config/init.rb:33 ...
+Fri, 15 Feb 2008 00:03:42 GMT ~ Fri, 15 Feb 2008 00:03:42 GMT: loading gem 'hpricot' from config/init.rb:38 ...
+Fri, 15 Feb 2008 00:03:42 GMT ~ Fri, 15 Feb 2008 00:03:42 GMT: loading gem 'merb-test' from config/init.rb:38 ...
+Fri, 15 Feb 2008 00:03:42 GMT ~ Fri, 15 Feb 2008 00:03:42 GMT: loading gem 'merb_rspec' from config/init.rb:39 ...
+Fri, 15 Feb 2008 00:03:42 GMT ~ Fri, 15 Feb 2008 00:03:42 GMT: loading gem 'merb_helpers' from app/controllers/application.rb:1 ...
+Fri, 15 Feb 2008 00:03:42 GMT ~ Fri, 15 Feb 2008 00:03:42 GMT: loading gem 'merb_helpers' from app/controllers/admin/articles.rb:1 ...
+Fri, 15 Feb 2008 00:03:42 GMT ~ Fri, 15 Feb 2008 00:03:42 GMT: loading gem 'merb_helpers' from app/controllers/application.rb:1 ...
+Fri, 15 Feb 2008 00:03:42 GMT ~ Filter login_required was not found in your filter chain.
+Fri, 15 Feb 2008 00:03:42 GMT ~ Filter login_required was not found in your filter chain.
+Fri, 15 Feb 2008 00:03:43 GMT ~ Using 'share-nothing' cookie sessions (4kb limit per client)
+Fri, 15 Feb 2008 00:03:43 GMT ~ 
+***** Debugger requested, but was not available: Start server with --debugger to enable *****
+Fri, 15 Feb 2008 00:03:43 GMT ~ Setting Up Cookie Store Sessions
+Fri, 15 Feb 2008 00:03:43 GMT ~ Finalize Cookie Store Session
+Fri, 15 Feb 2008 00:03:43 GMT ~ {:action_time=>0.003733, :after_filters_time=>1.0e-05, :before_filters_time=>1.6e-05}
+Fri, 15 Feb 2008 00:03:43 GMT ~ Setting Up Cookie Store Sessions
+Fri, 15 Feb 2008 00:03:43 GMT ~ Finalize Cookie Store Session
+Fri, 15 Feb 2008 00:03:43 GMT ~ {:action_time=>0.0013, :after_filters_time=>7.0e-06, :before_filters_time=>9.0e-06}
+Fri, 15 Feb 2008 00:05:16 GMT ~ Fri, 15 Feb 2008 00:05:16 GMT: loading gem 'merb-action-args' from config/init.rb:4 ...
+Fri, 15 Feb 2008 00:05:16 GMT ~ Fri, 15 Feb 2008 00:05:16 GMT: loading gem 'merb_datamapper' from config/init.rb:19 ...
+Fri, 15 Feb 2008 00:05:16 GMT ~ Fri, 15 Feb 2008 00:05:16 GMT: loading gem 'merb-mailer' from config/init.rb:31 ...
+Fri, 15 Feb 2008 00:05:16 GMT ~ Fri, 15 Feb 2008 00:05:16 GMT: loading gem 'merb-assets' from config/init.rb:32 ...
+Fri, 15 Feb 2008 00:05:16 GMT ~ Fri, 15 Feb 2008 00:05:16 GMT: loading gem 'merb_helpers' from config/init.rb:33 ...
+Fri, 15 Feb 2008 00:05:16 GMT ~ Fri, 15 Feb 2008 00:05:16 GMT: loading gem 'hpricot' from config/init.rb:38 ...
+Fri, 15 Feb 2008 00:05:16 GMT ~ Fri, 15 Feb 2008 00:05:16 GMT: loading gem 'merb-test' from config/init.rb:38 ...
+Fri, 15 Feb 2008 00:05:16 GMT ~ Fri, 15 Feb 2008 00:05:16 GMT: loading gem 'merb_rspec' from config/init.rb:39 ...
+Fri, 15 Feb 2008 00:05:17 GMT ~ Fri, 15 Feb 2008 00:05:17 GMT: loading gem 'merb_helpers' from app/controllers/application.rb:1 ...
+Fri, 15 Feb 2008 00:05:17 GMT ~ Fri, 15 Feb 2008 00:05:17 GMT: loading gem 'merb_helpers' from app/controllers/admin/articles.rb:1 ...
+Fri, 15 Feb 2008 00:05:17 GMT ~ Fri, 15 Feb 2008 00:05:17 GMT: loading gem 'merb_helpers' from app/controllers/application.rb:1 ...
+Fri, 15 Feb 2008 00:05:17 GMT ~ Filter login_required was not found in your filter chain.
+Fri, 15 Feb 2008 00:05:17 GMT ~ Filter login_required was not found in your filter chain.
+Fri, 15 Feb 2008 00:05:17 GMT ~ Using 'share-nothing' cookie sessions (4kb limit per client)
+Fri, 15 Feb 2008 00:05:17 GMT ~ 
+***** Debugger requested, but was not available: Start server with --debugger to enable *****
+Fri, 15 Feb 2008 00:05:17 GMT ~ Setting Up Cookie Store Sessions
+Fri, 15 Feb 2008 00:05:17 GMT ~ Finalize Cookie Store Session
+Fri, 15 Feb 2008 00:05:17 GMT ~ {:after_filters_time=>8.0e-06, :action_time=>0.002445, :before_filters_time=>9.0e-06}
+Fri, 15 Feb 2008 00:05:17 GMT ~ Setting Up Cookie Store Sessions
+Fri, 15 Feb 2008 00:05:17 GMT ~ Finalize Cookie Store Session
+Fri, 15 Feb 2008 00:05:17 GMT ~ {:after_filters_time=>7.0e-06, :action_time=>0.00119, :before_filters_time=>9.0e-06}
+Fri, 15 Feb 2008 00:05:17 GMT ~ undefined method `url' for #<UserMailer:0x16066d8>
+Fri, 15 Feb 2008 00:05:17 GMT ~ signup_notification was not sent because nothing was rendered for it
+Fri, 15 Feb 2008 00:05:17 GMT ~ undefined method `url' for #<UserMailer:0x12fe148>
+Fri, 15 Feb 2008 00:05:17 GMT ~ signup_notification was not sent because nothing was rendered for it
+Fri, 15 Feb 2008 00:05:18 GMT ~ undefined method `url' for #<UserMailer:0x12e0238>
+Fri, 15 Feb 2008 00:05:18 GMT ~ signup_notification was not sent because nothing was rendered for it
+Fri, 15 Feb 2008 00:05:18 GMT ~ undefined method `url' for #<UserMailer:0x12c3700>
+Fri, 15 Feb 2008 00:05:18 GMT ~ signup_notification was not sent because nothing was rendered for it
+Fri, 15 Feb 2008 00:05:18 GMT ~ undefined method `url' for #<UserMailer:0x12ae92c>
+Fri, 15 Feb 2008 00:05:18 GMT ~ signup_notification was not sent because nothing was rendered for it
+Fri, 15 Feb 2008 00:05:18 GMT ~ undefined method `url' for #<UserMailer:0x128bd8c>
+Fri, 15 Feb 2008 00:05:18 GMT ~ signup_notification was not sent because nothing was rendered for it
+Fri, 15 Feb 2008 00:05:18 GMT ~ undefined method `url' for #<UserMailer:0x1274a24>
+Fri, 15 Feb 2008 00:05:18 GMT ~ signup_notification was not sent because nothing was rendered for it
+Fri, 15 Feb 2008 00:05:18 GMT ~ undefined method `url' for #<UserMailer:0x1255890>
+Fri, 15 Feb 2008 00:05:18 GMT ~ signup_notification was not sent because nothing was rendered for it
+Fri, 15 Feb 2008 00:05:18 GMT ~ undefined method `url' for #<UserMailer:0x123b3b4>
+Fri, 15 Feb 2008 00:05:18 GMT ~ signup_notification was not sent because nothing was rendered for it
+Fri, 15 Feb 2008 00:05:18 GMT ~ undefined method `url' for #<UserMailer:0x1224010>
+Fri, 15 Feb 2008 00:05:18 GMT ~ signup_notification was not sent because nothing was rendered for it
+Fri, 15 Feb 2008 00:05:18 GMT ~ undefined method `url' for #<UserMailer:0x120c2f8>
+Fri, 15 Feb 2008 00:05:18 GMT ~ signup_notification was not sent because nothing was rendered for it
+Fri, 15 Feb 2008 00:05:18 GMT ~ Setting Up Cookie Store Sessions
+Fri, 15 Feb 2008 00:05:18 GMT ~ Cookie deleted: auth_token => nil
+Fri, 15 Feb 2008 00:05:18 GMT ~ undefined method `url' for #<UserMailer:0x11f029c>
+Fri, 15 Feb 2008 00:05:18 GMT ~ signup_notification was not sent because nothing was rendered for it
+Fri, 15 Feb 2008 00:05:18 GMT ~ Redirecting to: /
+Fri, 15 Feb 2008 00:05:18 GMT ~ Finalize Cookie Store Session
+Fri, 15 Feb 2008 00:05:18 GMT ~ {:after_filters_time=>8.0e-06, :action_time=>0.004499, :before_filters_time=>1.0e-05}
+Fri, 15 Feb 2008 00:05:18 GMT ~ Setting Up Cookie Store Sessions
+Fri, 15 Feb 2008 00:05:18 GMT ~ Cookie deleted: auth_token => nil
+Fri, 15 Feb 2008 00:05:18 GMT ~ Setting Up Cookie Store Sessions
+Fri, 15 Feb 2008 00:05:18 GMT ~ Cookie deleted: auth_token => nil
+Fri, 15 Feb 2008 00:05:18 GMT ~ Setting Up Cookie Store Sessions
+Fri, 15 Feb 2008 00:05:18 GMT ~ Cookie deleted: auth_token => nil
+Fri, 15 Feb 2008 00:05:18 GMT ~ Setting Up Cookie Store Sessions
+Fri, 15 Feb 2008 00:05:18 GMT ~ Cookie deleted: auth_token => nil
+Fri, 15 Feb 2008 00:05:18 GMT ~ undefined method `url' for #<UserMailer:0x11874f4>
+Fri, 15 Feb 2008 00:05:18 GMT ~ signup_notification was not sent because nothing was rendered for it
+Fri, 15 Feb 2008 00:05:18 GMT ~ Redirecting to: /
+Fri, 15 Feb 2008 00:05:18 GMT ~ Finalize Cookie Store Session
+Fri, 15 Feb 2008 00:05:18 GMT ~ {:after_filters_time=>1.0e-05, :action_time=>0.005643, :before_filters_time=>1.5e-05}
+Fri, 15 Feb 2008 00:06:44 GMT ~ Fri, 15 Feb 2008 00:06:44 GMT: loading gem 'merb-action-args' from config/init.rb:4 ...
+Fri, 15 Feb 2008 00:06:44 GMT ~ Fri, 15 Feb 2008 00:06:44 GMT: loading gem 'merb_datamapper' from config/init.rb:19 ...
+Fri, 15 Feb 2008 00:06:44 GMT ~ Fri, 15 Feb 2008 00:06:44 GMT: loading gem 'merb-mailer' from config/init.rb:31 ...
+Fri, 15 Feb 2008 00:06:44 GMT ~ Fri, 15 Feb 2008 00:06:44 GMT: loading gem 'merb-assets' from config/init.rb:32 ...
+Fri, 15 Feb 2008 00:06:44 GMT ~ Fri, 15 Feb 2008 00:06:44 GMT: loading gem 'merb_helpers' from config/init.rb:33 ...
+Fri, 15 Feb 2008 00:06:44 GMT ~ Fri, 15 Feb 2008 00:06:44 GMT: loading gem 'hpricot' from config/init.rb:38 ...
+Fri, 15 Feb 2008 00:06:44 GMT ~ Fri, 15 Feb 2008 00:06:44 GMT: loading gem 'merb-test' from config/init.rb:38 ...
+Fri, 15 Feb 2008 00:06:44 GMT ~ Fri, 15 Feb 2008 00:06:44 GMT: loading gem 'merb_rspec' from config/init.rb:39 ...
+Fri, 15 Feb 2008 00:06:44 GMT ~ Fri, 15 Feb 2008 00:06:44 GMT: loading gem 'merb_helpers' from app/controllers/application.rb:1 ...
+Fri, 15 Feb 2008 00:06:44 GMT ~ Fri, 15 Feb 2008 00:06:44 GMT: loading gem 'merb_helpers' from app/controllers/admin/articles.rb:1 ...
+Fri, 15 Feb 2008 00:06:45 GMT ~ Fri, 15 Feb 2008 00:06:45 GMT: loading gem 'merb_helpers' from app/controllers/application.rb:1 ...
+Fri, 15 Feb 2008 00:06:45 GMT ~ Filter login_required was not found in your filter chain.
+Fri, 15 Feb 2008 00:06:45 GMT ~ Filter login_required was not found in your filter chain.
+Fri, 15 Feb 2008 00:06:45 GMT ~ Using 'share-nothing' cookie sessions (4kb limit per client)
+Fri, 15 Feb 2008 00:06:45 GMT ~ 
+***** Debugger requested, but was not available: Start server with --debugger to enable *****
+Fri, 15 Feb 2008 00:06:45 GMT ~ Setting Up Cookie Store Sessions
+Fri, 15 Feb 2008 00:06:45 GMT ~ Finalize Cookie Store Session
+Fri, 15 Feb 2008 00:06:45 GMT ~ {:before_filters_time=>1.2e-05, :action_time=>0.002982, :after_filters_time=>1.5e-05}
+Fri, 15 Feb 2008 00:06:45 GMT ~ Setting Up Cookie Store Sessions
+Fri, 15 Feb 2008 00:06:45 GMT ~ Finalize Cookie Store Session
+Fri, 15 Feb 2008 00:06:45 GMT ~ {:before_filters_time=>1.1e-05, :action_time=>0.003319, :after_filters_time=>8.0e-06}
+Fri, 15 Feb 2008 00:07:07 GMT ~ Fri, 15 Feb 2008 00:07:07 GMT: loading gem 'merb-action-args' from config/init.rb:4 ...
+Fri, 15 Feb 2008 00:07:07 GMT ~ Fri, 15 Feb 2008 00:07:07 GMT: loading gem 'merb_datamapper' from config/init.rb:19 ...
+Fri, 15 Feb 2008 00:07:07 GMT ~ Fri, 15 Feb 2008 00:07:07 GMT: loading gem 'merb-mailer' from config/init.rb:31 ...
+Fri, 15 Feb 2008 00:07:07 GMT ~ Fri, 15 Feb 2008 00:07:07 GMT: loading gem 'merb-assets' from config/init.rb:32 ...
+Fri, 15 Feb 2008 00:07:07 GMT ~ Fri, 15 Feb 2008 00:07:07 GMT: loading gem 'merb_helpers' from config/init.rb:33 ...
+Fri, 15 Feb 2008 00:07:07 GMT ~ Fri, 15 Feb 2008 00:07:07 GMT: loading gem 'hpricot' from config/init.rb:38 ...
+Fri, 15 Feb 2008 00:07:07 GMT ~ Fri, 15 Feb 2008 00:07:07 GMT: loading gem 'merb-test' from config/init.rb:38 ...
+Fri, 15 Feb 2008 00:07:08 GMT ~ Fri, 15 Feb 2008 00:07:08 GMT: loading gem 'merb_rspec' from config/init.rb:39 ...
+Fri, 15 Feb 2008 00:07:08 GMT ~ Fri, 15 Feb 2008 00:07:08 GMT: loading gem 'merb_helpers' from app/controllers/application.rb:1 ...
+Fri, 15 Feb 2008 00:07:08 GMT ~ Fri, 15 Feb 2008 00:07:08 GMT: loading gem 'merb_helpers' from app/controllers/admin/articles.rb:1 ...
+Fri, 15 Feb 2008 00:07:08 GMT ~ Fri, 15 Feb 2008 00:07:08 GMT: loading gem 'merb_helpers' from app/controllers/application.rb:1 ...
+Fri, 15 Feb 2008 00:07:08 GMT ~ Filter login_required was not found in your filter chain.
+Fri, 15 Feb 2008 00:07:08 GMT ~ Filter login_required was not found in your filter chain.
+Fri, 15 Feb 2008 00:07:08 GMT ~ Using 'share-nothing' cookie sessions (4kb limit per client)
+Fri, 15 Feb 2008 00:07:08 GMT ~ 
+***** Debugger requested, but was not available: Start server with --debugger to enable *****
+Fri, 15 Feb 2008 00:07:08 GMT ~ Setting Up Cookie Store Sessions
+Fri, 15 Feb 2008 00:07:08 GMT ~ Finalize Cookie Store Session
+Fri, 15 Feb 2008 00:07:08 GMT ~ {:after_filters_time=>1.0e-05, :before_filters_time=>1.2e-05, :action_time=>0.00335}
+Fri, 15 Feb 2008 00:07:08 GMT ~ Setting Up Cookie Store Sessions
+Fri, 15 Feb 2008 00:07:08 GMT ~ Finalize Cookie Store Session
+Fri, 15 Feb 2008 00:07:08 GMT ~ {:after_filters_time=>1.1e-05, :before_filters_time=>1.1e-05, :action_time=>0.001633}
+Fri, 15 Feb 2008 00:07:08 GMT ~ Setting Up Cookie Store Sessions
+Fri, 15 Feb 2008 00:07:08 GMT ~ Finalize Cookie Store Session
+Fri, 15 Feb 2008 00:07:08 GMT ~ {:after_filters_time=>7.0e-06, :before_filters_time=>1.0e-05, :action_time=>0.001687}
+Fri, 15 Feb 2008 00:07:08 GMT ~ Setting Up Cookie Store Sessions
+Fri, 15 Feb 2008 00:07:08 GMT ~ Finalize Cookie Store Session
+Fri, 15 Feb 2008 00:07:08 GMT ~ {:after_filters_time=>7.0e-06, :before_filters_time=>9.0e-06, :action_time=>0.001666}
+Fri, 15 Feb 2008 00:07:43 GMT ~ Fri, 15 Feb 2008 00:07:43 GMT: loading gem 'merb-action-args' from config/init.rb:4 ...
+Fri, 15 Feb 2008 00:07:43 GMT ~ Fri, 15 Feb 2008 00:07:43 GMT: loading gem 'merb_datamapper' from config/init.rb:19 ...
+Fri, 15 Feb 2008 00:07:43 GMT ~ Fri, 15 Feb 2008 00:07:43 GMT: loading gem 'merb-mailer' from config/init.rb:31 ...
+Fri, 15 Feb 2008 00:07:43 GMT ~ Fri, 15 Feb 2008 00:07:43 GMT: loading gem 'merb-assets' from config/init.rb:32 ...
+Fri, 15 Feb 2008 00:07:43 GMT ~ Fri, 15 Feb 2008 00:07:43 GMT: loading gem 'merb_helpers' from config/init.rb:33 ...
+Fri, 15 Feb 2008 00:07:43 GMT ~ Fri, 15 Feb 2008 00:07:43 GMT: loading gem 'hpricot' from config/init.rb:38 ...
+Fri, 15 Feb 2008 00:07:43 GMT ~ Fri, 15 Feb 2008 00:07:43 GMT: loading gem 'merb-test' from config/init.rb:38 ...
+Fri, 15 Feb 2008 00:07:43 GMT ~ Fri, 15 Feb 2008 00:07:43 GMT: loading gem 'merb_rspec' from config/init.rb:39 ...
+Fri, 15 Feb 2008 00:07:43 GMT ~ Fri, 15 Feb 2008 00:07:43 GMT: loading gem 'merb_helpers' from app/controllers/application.rb:1 ...
+Fri, 15 Feb 2008 00:07:43 GMT ~ Fri, 15 Feb 2008 00:07:43 GMT: loading gem 'merb_helpers' from app/controllers/admin/articles.rb:1 ...
+Fri, 15 Feb 2008 00:07:44 GMT ~ Fri, 15 Feb 2008 00:07:44 GMT: loading gem 'merb_helpers' from app/controllers/application.rb:1 ...
+Fri, 15 Feb 2008 00:07:44 GMT ~ Filter login_required was not found in your filter chain.
+Fri, 15 Feb 2008 00:07:44 GMT ~ Filter login_required was not found in your filter chain.
+Fri, 15 Feb 2008 00:07:44 GMT ~ Using 'share-nothing' cookie sessions (4kb limit per client)
+Fri, 15 Feb 2008 00:07:44 GMT ~ 
+***** Debugger requested, but was not available: Start server with --debugger to enable *****
+Fri, 15 Feb 2008 00:07:44 GMT ~ Setting Up Cookie Store Sessions
+Fri, 15 Feb 2008 00:07:44 GMT ~ Finalize Cookie Store Session
+Fri, 15 Feb 2008 00:07:44 GMT ~ {:after_filters_time=>1.1e-05, :before_filters_time=>1.5e-05, :action_time=>0.00445}
+Fri, 15 Feb 2008 00:07:44 GMT ~ Setting Up Cookie Store Sessions
+Fri, 15 Feb 2008 00:07:44 GMT ~ Finalize Cookie Store Session
+Fri, 15 Feb 2008 00:07:44 GMT ~ {:after_filters_time=>5.5e-05, :before_filters_time=>9.0e-06, :action_time=>0.001278}
+Fri, 15 Feb 2008 00:07:44 GMT ~ Setting Up Cookie Store Sessions
+Fri, 15 Feb 2008 00:07:44 GMT ~ Finalize Cookie Store Session
+Fri, 15 Feb 2008 00:07:44 GMT ~ {:after_filters_time=>1.0e-05, :before_filters_time=>1.0e-05, :action_time=>0.003525}
+Fri, 15 Feb 2008 00:07:44 GMT ~ Setting Up Cookie Store Sessions
+Fri, 15 Feb 2008 00:07:44 GMT ~ Finalize Cookie Store Session
+Fri, 15 Feb 2008 00:07:44 GMT ~ {:after_filters_time=>7.0e-06, :before_filters_time=>1.0e-05, :action_time=>0.001515}
+Fri, 15 Feb 2008 00:07:48 GMT ~ Fri, 15 Feb 2008 00:07:48 GMT: loading gem 'merb-action-args' from config/init.rb:4 ...
+Fri, 15 Feb 2008 00:07:48 GMT ~ Fri, 15 Feb 2008 00:07:48 GMT: loading gem 'merb_datamapper' from config/init.rb:19 ...
+Fri, 15 Feb 2008 00:07:48 GMT ~ Fri, 15 Feb 2008 00:07:48 GMT: loading gem 'merb-mailer' from config/init.rb:31 ...
+Fri, 15 Feb 2008 00:07:48 GMT ~ Fri, 15 Feb 2008 00:07:48 GMT: loading gem 'merb-assets' from config/init.rb:32 ...
+Fri, 15 Feb 2008 00:07:48 GMT ~ Fri, 15 Feb 2008 00:07:48 GMT: loading gem 'merb_helpers' from config/init.rb:33 ...
+Fri, 15 Feb 2008 00:07:48 GMT ~ Fri, 15 Feb 2008 00:07:48 GMT: loading gem 'hpricot' from config/init.rb:38 ...
+Fri, 15 Feb 2008 00:07:48 GMT ~ Fri, 15 Feb 2008 00:07:48 GMT: loading gem 'merb-test' from config/init.rb:38 ...
+Fri, 15 Feb 2008 00:07:48 GMT ~ Fri, 15 Feb 2008 00:07:48 GMT: loading gem 'merb_rspec' from config/init.rb:39 ...
+Fri, 15 Feb 2008 00:07:48 GMT ~ Fri, 15 Feb 2008 00:07:48 GMT: loading gem 'merb_helpers' from app/controllers/application.rb:1 ...
+Fri, 15 Feb 2008 00:07:48 GMT ~ Fri, 15 Feb 2008 00:07:48 GMT: loading gem 'merb_helpers' from app/controllers/admin/articles.rb:1 ...
+Fri, 15 Feb 2008 00:07:48 GMT ~ Fri, 15 Feb 2008 00:07:48 GMT: loading gem 'merb_helpers' from app/controllers/application.rb:1 ...
+Fri, 15 Feb 2008 00:07:48 GMT ~ Filter login_required was not found in your filter chain.
+Fri, 15 Feb 2008 00:07:48 GMT ~ Filter login_required was not found in your filter chain.
+Fri, 15 Feb 2008 00:07:49 GMT ~ Using 'share-nothing' cookie sessions (4kb limit per client)
+Fri, 15 Feb 2008 00:07:49 GMT ~ 
+***** Debugger requested, but was not available: Start server with --debugger to enable *****
+Fri, 15 Feb 2008 00:07:49 GMT ~ Setting Up Cookie Store Sessions
+Fri, 15 Feb 2008 00:07:49 GMT ~ Finalize Cookie Store Session
+Fri, 15 Feb 2008 00:07:49 GMT ~ {:after_filters_time=>9.0e-06, :before_filters_time=>1.7e-05, :action_time=>0.004886}
+Fri, 15 Feb 2008 00:07:49 GMT ~ Setting Up Cookie Store Sessions
+Fri, 15 Feb 2008 00:07:49 GMT ~ Finalize Cookie Store Session
+Fri, 15 Feb 2008 00:07:49 GMT ~ {:after_filters_time=>7.0e-06, :before_filters_time=>8.0e-06, :action_time=>0.001186}
+Fri, 15 Feb 2008 00:07:49 GMT ~ Setting Up Cookie Store Sessions
+Fri, 15 Feb 2008 00:07:49 GMT ~ Finalize Cookie Store Session
+Fri, 15 Feb 2008 00:07:49 GMT ~ {:after_filters_time=>8.0e-06, :before_filters_time=>1.0e-05, :action_time=>0.00176}
+Fri, 15 Feb 2008 00:07:49 GMT ~ Setting Up Cookie Store Sessions
+Fri, 15 Feb 2008 00:07:49 GMT ~ Finalize Cookie Store Session
+Fri, 15 Feb 2008 00:07:49 GMT ~ {:after_filters_time=>9.0e-06, :before_filters_time=>1.1e-05, :action_time=>0.003853}
+Fri, 15 Feb 2008 00:08:08 GMT ~ Fri, 15 Feb 2008 00:08:08 GMT: loading gem 'merb-action-args' from config/init.rb:4 ...
+Fri, 15 Feb 2008 00:08:08 GMT ~ Fri, 15 Feb 2008 00:08:08 GMT: loading gem 'merb_datamapper' from config/init.rb:19 ...
+Fri, 15 Feb 2008 00:08:08 GMT ~ Fri, 15 Feb 2008 00:08:08 GMT: loading gem 'merb-mailer' from config/init.rb:31 ...
+Fri, 15 Feb 2008 00:08:08 GMT ~ Fri, 15 Feb 2008 00:08:08 GMT: loading gem 'merb-assets' from config/init.rb:32 ...
+Fri, 15 Feb 2008 00:08:08 GMT ~ Fri, 15 Feb 2008 00:08:08 GMT: loading gem 'merb_helpers' from config/init.rb:33 ...
+Fri, 15 Feb 2008 00:08:08 GMT ~ Fri, 15 Feb 2008 00:08:08 GMT: loading gem 'hpricot' from config/init.rb:38 ...
+Fri, 15 Feb 2008 00:08:08 GMT ~ Fri, 15 Feb 2008 00:08:08 GMT: loading gem 'merb-test' from config/init.rb:38 ...
+Fri, 15 Feb 2008 00:08:08 GMT ~ Fri, 15 Feb 2008 00:08:08 GMT: loading gem 'merb_rspec' from config/init.rb:39 ...
+Fri, 15 Feb 2008 00:08:08 GMT ~ Fri, 15 Feb 2008 00:08:08 GMT: loading gem 'merb_helpers' from app/controllers/application.rb:1 ...
+Fri, 15 Feb 2008 00:08:08 GMT ~ Fri, 15 Feb 2008 00:08:08 GMT: loading gem 'merb_helpers' from app/controllers/admin/articles.rb:1 ...
+Fri, 15 Feb 2008 00:08:08 GMT ~ Fri, 15 Feb 2008 00:08:08 GMT: loading gem 'merb_helpers' from app/controllers/application.rb:1 ...
+Fri, 15 Feb 2008 00:08:08 GMT ~ Filter login_required was not found in your filter chain.
+Fri, 15 Feb 2008 00:08:08 GMT ~ Filter login_required was not found in your filter chain.
+Fri, 15 Feb 2008 00:08:09 GMT ~ Using 'share-nothing' cookie sessions (4kb limit per client)
+Fri, 15 Feb 2008 00:08:09 GMT ~ 
+***** Debugger requested, but was not available: Start server with --debugger to enable *****
+Fri, 15 Feb 2008 00:08:09 GMT ~ Setting Up Cookie Store Sessions
+Fri, 15 Feb 2008 00:08:09 GMT ~ Finalize Cookie Store Session
+Fri, 15 Feb 2008 00:08:09 GMT ~ {:after_filters_time=>8.0e-06, :action_time=>0.002817, :before_filters_time=>1.1e-05}
+Fri, 15 Feb 2008 00:08:09 GMT ~ Setting Up Cookie Store Sessions
+Fri, 15 Feb 2008 00:08:09 GMT ~ Finalize Cookie Store Session
+Fri, 15 Feb 2008 00:08:09 GMT ~ {:after_filters_time=>6.0e-06, :action_time=>0.00118, :before_filters_time=>9.0e-06}
+Fri, 15 Feb 2008 00:08:09 GMT ~ Setting Up Cookie Store Sessions
+Fri, 15 Feb 2008 00:08:09 GMT ~ Finalize Cookie Store Session
+Fri, 15 Feb 2008 00:08:09 GMT ~ {:after_filters_time=>7.0e-06, :action_time=>0.00152, :before_filters_time=>8.0e-06}
+Fri, 15 Feb 2008 00:08:09 GMT ~ Setting Up Cookie Store Sessions
+Fri, 15 Feb 2008 00:08:09 GMT ~ Finalize Cookie Store Session
+Fri, 15 Feb 2008 00:08:09 GMT ~ {:after_filters_time=>6.0e-06, :action_time=>0.001375, :before_filters_time=>8.0e-06}
+Fri, 15 Feb 2008 00:08:09 GMT ~ Setting Up Cookie Store Sessions
+Fri, 15 Feb 2008 00:08:09 GMT ~ undefined method `url' for #<UserMailer:0x12c34d0>
+Fri, 15 Feb 2008 00:08:09 GMT ~ signup_notification was not sent because nothing was rendered for it
+Fri, 15 Feb 2008 00:08:09 GMT ~ undefined method `url' for #<UserMailer:0x12adec8>
+Fri, 15 Feb 2008 00:08:09 GMT ~ signup_notification was not sent because nothing was rendered for it
+Fri, 15 Feb 2008 00:08:09 GMT ~ undefined method `url' for #<UserMailer:0x128c5e8>
+Fri, 15 Feb 2008 00:08:09 GMT ~ signup_notification was not sent because nothing was rendered for it
+Fri, 15 Feb 2008 00:08:09 GMT ~ undefined method `url' for #<UserMailer:0x127571c>
+Fri, 15 Feb 2008 00:08:09 GMT ~ signup_notification was not sent because nothing was rendered for it
+Fri, 15 Feb 2008 00:08:09 GMT ~ undefined method `url' for #<UserMailer:0x1254878>
+Fri, 15 Feb 2008 00:08:09 GMT ~ signup_notification was not sent because nothing was rendered for it
+Fri, 15 Feb 2008 00:08:09 GMT ~ undefined method `url' for #<UserMailer:0x1239ba4>
+Fri, 15 Feb 2008 00:08:09 GMT ~ signup_notification was not sent because nothing was rendered for it
+Fri, 15 Feb 2008 00:08:09 GMT ~ undefined method `url' for #<UserMailer:0x12235fc>
+Fri, 15 Feb 2008 00:08:09 GMT ~ signup_notification was not sent because nothing was rendered for it
+Fri, 15 Feb 2008 00:08:09 GMT ~ undefined method `url' for #<UserMailer:0x120b614>
+Fri, 15 Feb 2008 00:08:09 GMT ~ signup_notification was not sent because nothing was rendered for it
+Fri, 15 Feb 2008 00:08:09 GMT ~ undefined method `url' for #<UserMailer:0x11fa788>
+Fri, 15 Feb 2008 00:08:09 GMT ~ signup_notification was not sent because nothing was rendered for it
+Fri, 15 Feb 2008 00:08:09 GMT ~ undefined method `url' for #<UserMailer:0x11e70e8>
+Fri, 15 Feb 2008 00:08:09 GMT ~ signup_notification was not sent because nothing was rendered for it
+Fri, 15 Feb 2008 00:08:09 GMT ~ undefined method `url' for #<UserMailer:0x11d5e88>
+Fri, 15 Feb 2008 00:08:09 GMT ~ signup_notification was not sent because nothing was rendered for it
+Fri, 15 Feb 2008 00:08:09 GMT ~ Setting Up Cookie Store Sessions
+Fri, 15 Feb 2008 00:08:09 GMT ~ Cookie deleted: auth_token => nil
+Fri, 15 Feb 2008 00:08:09 GMT ~ undefined method `url' for #<UserMailer:0x11a2240>
+Fri, 15 Feb 2008 00:08:09 GMT ~ signup_notification was not sent because nothing was rendered for it
+Fri, 15 Feb 2008 00:08:09 GMT ~ Redirecting to: /
+Fri, 15 Feb 2008 00:08:09 GMT ~ Finalize Cookie Store Session
+Fri, 15 Feb 2008 00:08:09 GMT ~ {:after_filters_time=>1.1e-05, :action_time=>0.005727, :before_filters_time=>1.2e-05}
+Fri, 15 Feb 2008 00:08:09 GMT ~ Setting Up Cookie Store Sessions
+Fri, 15 Feb 2008 00:08:09 GMT ~ Cookie deleted: auth_token => nil
+Fri, 15 Feb 2008 00:08:09 GMT ~ Setting Up Cookie Store Sessions
+Fri, 15 Feb 2008 00:08:09 GMT ~ Cookie deleted: auth_token => nil
+Fri, 15 Feb 2008 00:08:09 GMT ~ Setting Up Cookie Store Sessions
+Fri, 15 Feb 2008 00:08:09 GMT ~ Cookie deleted: auth_token => nil
+Fri, 15 Feb 2008 00:08:09 GMT ~ Setting Up Cookie Store Sessions
+Fri, 15 Feb 2008 00:08:09 GMT ~ Cookie deleted: auth_token => nil
+Fri, 15 Feb 2008 00:08:09 GMT ~ undefined method `url' for #<UserMailer:0x196c264>
+Fri, 15 Feb 2008 00:08:09 GMT ~ signup_notification was not sent because nothing was rendered for it
+Fri, 15 Feb 2008 00:08:09 GMT ~ Redirecting to: /
+Fri, 15 Feb 2008 00:08:09 GMT ~ Finalize Cookie Store Session
+Fri, 15 Feb 2008 00:08:09 GMT ~ {:after_filters_time=>9.0e-06, :action_time=>0.004587, :before_filters_time=>1.2e-05}
+Fri, 15 Feb 2008 00:08:55 GMT ~ Fri, 15 Feb 2008 00:08:55 GMT: loading gem 'merb-action-args' from config/init.rb:4 ...
+Fri, 15 Feb 2008 00:08:56 GMT ~ Fri, 15 Feb 2008 00:08:56 GMT: loading gem 'merb_datamapper' from config/init.rb:19 ...
+Fri, 15 Feb 2008 00:08:56 GMT ~ Fri, 15 Feb 2008 00:08:56 GMT: loading gem 'merb-mailer' from config/init.rb:31 ...
+Fri, 15 Feb 2008 00:08:56 GMT ~ Fri, 15 Feb 2008 00:08:56 GMT: loading gem 'merb-assets' from config/init.rb:32 ...
+Fri, 15 Feb 2008 00:08:56 GMT ~ Fri, 15 Feb 2008 00:08:56 GMT: loading gem 'merb_helpers' from config/init.rb:33 ...
+Fri, 15 Feb 2008 00:08:56 GMT ~ Fri, 15 Feb 2008 00:08:56 GMT: loading gem 'hpricot' from config/init.rb:38 ...
+Fri, 15 Feb 2008 00:08:56 GMT ~ Fri, 15 Feb 2008 00:08:56 GMT: loading gem 'merb-test' from config/init.rb:38 ...
+Fri, 15 Feb 2008 00:08:56 GMT ~ Fri, 15 Feb 2008 00:08:56 GMT: loading gem 'merb_rspec' from config/init.rb:39 ...
+Fri, 15 Feb 2008 00:08:56 GMT ~ Fri, 15 Feb 2008 00:08:56 GMT: loading gem 'merb_helpers' from app/controllers/application.rb:1 ...
+Fri, 15 Feb 2008 00:08:56 GMT ~ Fri, 15 Feb 2008 00:08:56 GMT: loading gem 'merb_helpers' from app/controllers/admin/articles.rb:1 ...
+Fri, 15 Feb 2008 00:08:56 GMT ~ Fri, 15 Feb 2008 00:08:56 GMT: loading gem 'merb_helpers' from app/controllers/application.rb:1 ...
+Fri, 15 Feb 2008 00:08:56 GMT ~ Filter login_required was not found in your filter chain.
+Fri, 15 Feb 2008 00:08:56 GMT ~ Filter login_required was not found in your filter chain.
+Fri, 15 Feb 2008 00:08:56 GMT ~ Using 'share-nothing' cookie sessions (4kb limit per client)
+Fri, 15 Feb 2008 00:08:56 GMT ~ Setting Up Cookie Store Sessions
+Fri, 15 Feb 2008 00:08:56 GMT ~ Finalize Cookie Store Session
+Fri, 15 Feb 2008 00:08:56 GMT ~ {:after_filters_time=>9.0e-06, :before_filters_time=>1.6e-05, :action_time=>0.001896}
