@@ -4,6 +4,6 @@ steps_for(:boxy) do
   end
   
   When "they view the homepage" do
-    @response = get("/").first
+    @response = get("/")
   end
 end

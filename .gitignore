@@ -4,3 +4,4 @@ log/*.pid
 *.db
 config/database.yml
 config/settings.yml
+gems

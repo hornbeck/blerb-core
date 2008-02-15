@@ -47,12 +47,14 @@ Blerb should now be running on port 4000, so open up your browser and visit loca
 
 
 merb-core         (0.9)
-merb_helpers      (0.9)
-merb_datamapper   (0.9)
-merb-mailer       (0.9.1)
-merb-assets       (0.9.0)
+merb-more         (0.9.0)
 merb-action-args  (0.9.0)
+merb-assets       (0.9.0)
+merb-mailer       (0.9.1)
+merb-test         (0.9.0)
+merb_datamapper   (0.9.0)
+merb_helpers      (0.9.0)
+merb_rspec        (0.9.0)
 datamapper        (0.3.0)
 rspec             (1.1.3)
-merb_stories      (0.1.0)
 

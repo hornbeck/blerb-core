@@ -10,10 +10,11 @@ require 'fileutils'
 require 'merb-core'
 
 $RAKE_ENV = true
-#Merb.start :environment => (ENV['MERB_ENV'] || 'development'),
-#           :adapter     => 'runner',
-#           :merb_root  => File.dirname(__FILE__)
-#require Merb::framework_root+'/tasks'
+
+Merb.start :environment => (ENV['MERB_ENV'] || 'development'),
+           :adapter     => 'runner',
+           :merb_root   => File.dirname(__FILE__)
+
 include FileUtils
 Merb::Plugins.rakefiles.each {|r| require r }
 
@@ -31,68 +32,6 @@ end
 
 task :uninstall => [:clean] do
   sh %{sudo gem uninstall #{NAME}}
-end
-
-desc 'Run unit tests'
-Rake::TestTask.new('test_unit') do |t|
-  t.libs << 'test'
-  t.pattern = 'test/unit/*_test.rb'
-  t.verbose = true
-end
-
-desc 'Run functional tests'
-Rake::TestTask.new('test_functional') do |t|
-  t.libs << 'test'
-  t.pattern = 'test/functional/*_test.rb'
-  t.verbose = true
-end
-
-desc 'Run all tests'
-Rake::TestTask.new('test') do |t|
-  t.libs << 'test'
-  t.pattern = 'test/**/*_test.rb'
-  t.verbose = true
-end
-
-desc "Run all specs"
-Spec::Rake::SpecTask.new('specs') do |t|
-  t.spec_opts = ["--format", "specdoc", "--colour"]
-  t.spec_files = Dir['spec/**/*_spec.rb'].sort
-end
-
-desc "Run all model specs"
-Spec::Rake::SpecTask.new('model_specs') do |t|
-  t.spec_opts = ["--format", "specdoc", "--colour"]
-  t.spec_files = Dir['spec/models/**/*_spec.rb'].sort
-end
-
-desc "Run all controller specs"
-Spec::Rake::SpecTask.new('controller_specs') do |t|
-  t.spec_opts = ["--format", "specdoc", "--colour"]
-  t.spec_files = Dir['spec/controllers/**/*_spec.rb'].sort
-end
-
-desc "Run a specific spec with TASK=xxxx"
-Spec::Rake::SpecTask.new('spec') do |t|
-  t.spec_opts = ["--format", "specdoc", "--colour"]
-  t.libs = ['lib', 'server/lib' ]
-  t.spec_files = ["spec/merb/#{ENV['TASK']}_spec.rb"]
-end
-
-desc "Run all specs output html"
-Spec::Rake::SpecTask.new('specs_html') do |t|
-  t.spec_opts = ["--format", "html"]
-  t.libs = ['lib', 'server/lib' ]
-  t.spec_files = Dir['spec/**/*_spec.rb'].sort
-end
-
-desc "RCov"
-Spec::Rake::SpecTask.new('rcov') do |t|
-  t.spec_opts = ["--format", "specdoc", "--colour"]
-  t.spec_files = Dir['spec/**/*_spec.rb'].sort
-  t.rcov_opts = ["--exclude", "gems", "--exclude", "spec"]
-  t.libs = ['lib', 'server/lib' ]
-  t.rcov = true
 end
 
 desc 'Run all tests, specs and finish with rcov'
