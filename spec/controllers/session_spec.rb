@@ -41,8 +41,6 @@ describe Session, "index action" do
     end
   end
 
-
-
   it 'logs out' do
     pending
     get("/logout"){|response| response.stub!(:current_user).and_return(@quentin) }
@@ -54,12 +52,6 @@ describe Session, "index action" do
     pending
     post "/session", :email => 'quentin@example.com', :password => 'test', :remember_me => "1"
     cookies["auth_token"].should_not be_nil
-  end
- 
-  it 'does not remember me' do
-    pending
-    post "/session", :email => 'quentin@example.com', :password => 'test', :remember_me => "0"
-    cookies["auth_token"].should be_nil
   end
   
   it 'deletes token on logout' do
@@ -116,6 +108,11 @@ describe Session, "logging in successfully" do
   it 'should authenticate the user' do
     User.stub!(:authenticate).with(@user.email, @user.password).and_return(@user)
     do_it
+  end
+  
+  it 'should not remember me' do
+    do_it
+    @controller.cookies["auth_token"].should be_nil
   end
   
   def do_it
