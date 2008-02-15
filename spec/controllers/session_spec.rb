@@ -48,12 +48,6 @@ describe Session, "index action" do
     controller.should redirect
   end
 
-  it 'remembers me' do
-    pending
-    post "/session", :email => 'quentin@example.com', :password => 'test', :remember_me => "1"
-    cookies["auth_token"].should_not be_nil
-  end
-  
   it 'deletes token on logout' do
     pending
     get("/logout") {|request| request.stub!(:current_user).and_return(@quentin) }
@@ -117,6 +111,35 @@ describe Session, "logging in successfully" do
   
   def do_it
     @controller = dispatch_to(Session, :create, :email => @user.email, :password => @user.password)
+  end
+end
+
+describe Session, 'logging in successfully, and setting "remember me"' do
+  before(:each) do
+    @expiration = Time.now + Merb::Const::WEEK * 2
+    @user = mock_model(User,
+      :email => 'quentin@example.com', :password => 'test',
+      :remember_token => 'sekrit', :remember_token_expires_at => @expiration)
+    User.stub!(:authenticate).with(@user.email, @user.password).and_return(@user)
+    @user.stub!(:remember_me)
+  end
+  
+  it "should persist auth token in cookies" do
+    do_it
+    @controller.cookies['auth_token'].should_not be_nil
+    @controller.cookies['auth_token'].should == @user.remember_token
+  end
+  
+  it "should remember the user" do
+    @user.should_receive(:remember_me)
+    do_it
+  end
+  
+  def do_it
+    @controller = dispatch_to(Session,
+      :create, :email => @user.email,
+      :password => @user.password,
+      :remember_me => 1)
   end
 end
 
