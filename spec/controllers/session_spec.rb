@@ -9,7 +9,7 @@ describe "Sessions Controller", "index action" do
   before(:each) do
     User.clear_database_table
     @quentin = User.create(valid_user_hash.with(:email => "quentin@example.com", :password => "test", :password_confirmation => "test"))
-    @controller = Session.build(fake_request)
+    @controller = Session.new(fake_request)
     @quentin.activate
   end
   
