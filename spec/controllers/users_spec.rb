@@ -9,38 +9,6 @@ describe Users do
   before(:each) do
     # User.clear_database_table
   end
-  
-  it 'allows signup' do
-    pending
-     lambda do
-       create_user
-       controller.should redirect      
-     end.should change(User, :count).by(1)
-   end
-    
-   it 'requires password on signup' do
-     lambda do
-       create_user(:password => nil)
-       controller.assigns(:user).errors.on(:password).should_not be_nil
-       controller.should be_successful
-     end.should_not change(User, :count)
-   end
-     
-   it 'requires password confirmation on signup' do
-     lambda do
-       create_user(:password_confirmation => nil)
-       controller.assigns(:user).errors.on(:password_confirmation).should_not be_nil
-       controller.should be_successful
-     end.should_not change(User, :count)
-   end
-   
-   it 'requires email on signup' do
-     lambda do
-       create_user(:email => nil)
-       controller.assigns(:user).errors.on(:email).should_not be_nil
-       controller.should be_successful
-     end.should_not change(User, :count)
-   end
    
    it "should have a route for user activation" do
      with_route("/users/activate/1234") do |params|
@@ -78,14 +46,11 @@ describe Users do
     @user = mock_model(User, valid_user_hash)
   end
   
-  describe 'succesfully creating user' do
+  describe '#create with valid user' do
     before(:each) do
-
       User.stub!(:new).and_return(@user)
-
       @user.stub!(:save).and_return(true)
-      
-      @params = {:user => @user}
+      @params = {:user => valid_user_hash}
     end
     
     it "should delete auth cookies" do
@@ -108,4 +73,56 @@ describe Users do
     end
   end
   
+  describe "#create with invalid user" do
+    before(:each) do
+      User.stub!(:new).and_return(@user)
+      @user.stub!(:save).and_return(false)
+      @params = {:user => valid_user_hash}
+    end
+    
+    it "should delete auth cookies" do
+      dispatch_to(Users, :create, @params) do
+        self.cookies.should_receive(:delete).with(:auth_token)
+      end
+    end
+    
+    it "should save the user" do
+      @user.should_receive(:save).and_return(false)
+      dispatch_to(Users, :create, @params)
+    end
+    
+    it "should render the 'new' template" do
+      dispatch_to(Users, :create, @params) do
+        self.should_receive(:render).with(:new)
+      end
+    end
+  end
+  
+  describe "#activate an inactive user" do
+    before(:each) do
+      @activation_code = 'yyz'
+      @params = {:activation_code => @activation_code}
+      @user.stub!(:active?).and_return(false)
+      User.stub!(:find_activated_authenticated_model).with(@activation_code).and_return(@user)
+      @user.stub!(:activate)
+    end
+    
+    it "should lookup activated authenticated model" do
+      User.should_receive(:find_activated_authenticated_model).with(@activation_code).and_return(@user)
+      dispatch_to(Users, :activate, @params)
+    end
+    
+    it "should activate the user" do
+      @user.should_receive(:activate)
+      dispatch_to(Users, :activate, @params)
+    end
+    
+    it "should redirect" do
+      dispatch_to(Users, :activate, @params).should be_redirect
+    end
+    
+    it "should redirect to '/'" do
+      dispatch_to(Users, :activate, @params).should redirect_to('/')
+    end
+  end
 end
