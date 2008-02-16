@@ -2,10 +2,14 @@ require File.join(File.dirname(__FILE__), '..', 'spec_helper.rb')
 require File.join( File.dirname(__FILE__), "..", "user_spec_helper")
 require File.join( File.dirname(__FILE__), "..", "authenticated_system_spec_helper")
 
+
 describe Users do
-  
+  include DefaultSpecHelper
+  include DefaultControllerHelper
   include UserSpecHelper
   
+  #it_should_behave_like "default controller behavior"  
+
   before(:each) do
     User.clear_database_table
   end
@@ -63,6 +67,7 @@ describe Users do
    end
      
    def create_user(options = {})
+      
      post "/users", :user => valid_user_hash.merge(options)
    end
 end

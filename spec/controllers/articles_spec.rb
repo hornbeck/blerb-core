@@ -1,6 +1,12 @@
 require File.join(File.dirname(__FILE__), '..', 'spec_helper.rb')
 
 describe Articles do
+  include DefaultSpecHelper
+  include ArticleSpecHelper 
+  include DefaultControllerHelper
+
+  it_should_behave_like "default controller behavior"
+
   describe "#index" do
     it "should find all articles and place them in @articles" do
       Article.should_receive(:all).and_return []

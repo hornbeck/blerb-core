@@ -9,7 +9,19 @@ module ArticleSpecHelper
   end
   
   def valid_attributes
-    {:title => "Blog Post #{rand(50)} on #{Time.now.to_i}"}
+    {
+      :title => "Blog Post #{rand(50)} on #{Time.now.to_i}",
+      :body => "like omgwtfbbq!",
+      :slug => "omgimaslug"
+    }
+  end
+
+  def mock_attributes
+    {
+      :title => "a title",
+      :body => "body text",
+      :created_at => Time.now
+    }
   end
   
   def updated_attributes
