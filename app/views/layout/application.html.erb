@@ -16,6 +16,15 @@
       <div id="main">
         <%= catch_content :for_layout %>
       </div>
+      <div id="footer">
+        <% if logged_in? %>
+        <a href="<%= url(:admin_home) %>">Admin</a>
+
+        <% else %>
+        <a href="<%= url(:login) %>">Login?</a>
+        <a href="<%= url(:new_user) %>">New User</a>
+        <% end %>
+      </div>
     </div>
     <%= js_include_tag :jquery %>
   </body>
