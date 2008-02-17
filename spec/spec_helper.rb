@@ -46,14 +46,33 @@ def url(name, params={})
   Merb::Router.generate(name, params)
 end
 
-def with_route(path, _method = "GET", env = {}, &block)
-  env[:request_method] ||= _method
+def request_to(path, method = :get, env = {})
+  env[:request_method] ||= method.to_s.upcase
   env[:request_uri] = path
   
-  request = fake_request(env)
+  check_request_for_route(fake_request(env))
+end
+
+class RouteToMatcher
+  def initialize(klass_or_name, action)
+    @expected_controller = Class === klass_or_name ? klass_or_name.name : klass_or_name
+    @expected_action = action.to_s
+  end
   
-  opts = check_request_for_route(request)
+  def matches?(target)
+    @target_controller, @target_action = target[:controller], target[:action]
+    @expected_controller == @target_controller && @expected_action == @target_action
+  end
   
-  yield opts if block_given?
-  opts
+  def failure_message
+    "expected the request to route to #{@expected_controller}##{@expected_action}, but was #{@target_controller}##{@target_action}"
+  end
+  
+  def negative_failure_message
+    "expected the request not to route to #{@expected_controller}##{@expected_action}, but it did"
+  end
+end
+
+def route_to(klass_or_name, action)
+  RouteToMatcher.new(klass_or_name, action)
 end

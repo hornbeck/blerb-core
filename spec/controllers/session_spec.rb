@@ -10,7 +10,7 @@ describe Session, "logging in successfully" do
   
   it 'should redirect' do
     do_it
-    @controller.should be_redirect
+    @controller.should be_redirected
     # controller.session[:user].should_not be_nil
     # controller.session[:user].should == @quentin.id
     # pending
@@ -82,7 +82,7 @@ describe Session, 'failing to login' do
   
   it "should not redirect" do
     do_it
-    @controller.should_not be_redirect
+    @controller.should_not be_redirected
   end
   
   it "should not populate the session" do
@@ -92,7 +92,7 @@ describe Session, 'failing to login' do
   
   it "should have 'success' status code" do
     do_it
-    @controller.should be_success
+    @controller.should be_successful
   end
   
   it "should a login form" do
@@ -263,17 +263,11 @@ describe Session do
     end
     
     it "should route GET '/login' to Session#login" do
-      with_route("/login", "GET") do |params|
-        params[:controller].should == "Session" 
-        params[:action].should     == "new"
-      end
+      request_to("/login").should route_to(Session, :new)
     end
     
     it "should route POST '/login' to Session#create" do
-      with_route("/login", "POST") do |params|
-        params[:controller].should == "Session" 
-        params[:action].should     == "create"
-      end
+      request_to("/login", :post).should route_to(Session, :create)
     end
     
     it "should map url(:logout) to '/logout'" do
@@ -281,10 +275,7 @@ describe Session do
     end
     
     it "should route '/logout' to Session#logout" do
-      with_route("/logout", "GET") do |params|
-        params[:controller].should == "Session" 
-        params[:action].should     == "destroy"
-      end
+      request_to("/logout").should route_to(Session, :destroy)
     end
   end
 end
