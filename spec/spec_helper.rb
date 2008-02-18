@@ -60,8 +60,17 @@ class RouteToMatcher
   end
   
   def matches?(target)
-    @target_controller, @target_action = target[:controller], target[:action]
-    @expected_controller == @target_controller && @expected_action == @target_action
+    @target_env = target.dup
+    @target_controller, @target_action = @target_env.delete(:controller), @target_env.delete(:action)
+    @expected_controller == @target_controller && @expected_action == @target_action && match_parameters(@target_env)
+  end
+  
+  def match_parameters(target)
+    @parameter_matcher.nil? ? true : @parameter_matcher.matches?(target)
+  end
+  
+  def with(parameters)
+    @paramter_matcher = ParameterMatcher.new(parameters)
   end
   
   def failure_message
@@ -70,6 +79,30 @@ class RouteToMatcher
   
   def negative_failure_message
     "expected the request not to route to #{@expected_controller}##{@expected_action}, but it did"
+  end
+end
+
+class ParameterMatcher
+  def initialize(hash_or_object)
+    @expected = {}
+    case hash_or_object
+    when Hash then @expected = hash_or_object
+    else @expected[:id] = hash_or_object.to_param
+    end
+  end
+  
+  def matches?(parameter_hash)
+    @actual = parameter_hash.dup.except(:controller, :action)
+    
+    @expected.all? {|(k, v)| @actual.has_key?(k) && @actual[k] == v}
+  end
+  
+  def failure_message
+    "expected the route to contain parameters #{@expected.inspect}, but instead contained #{@actual.inspect}"
+  end
+  
+  def negative_failure_message
+    "expected the route not to contain parameters #{@expected.inspect}, but it did"
   end
 end
 
