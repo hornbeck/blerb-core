@@ -23,8 +23,8 @@ describe Users do
     end
     
     it "should delete auth cookies" do
-      dispatch_to(Users, :create, @params) do
-        self.cookies.should_receive(:delete).with(:auth_token)
+      dispatch_to(Users, :create, @params) do |controller|
+        controller.cookies.should_receive(:delete).with(:auth_token)
       end
     end
     
@@ -50,8 +50,8 @@ describe Users do
     end
     
     it "should delete auth cookies" do
-      dispatch_to(Users, :create, @params) do
-        self.cookies.should_receive(:delete).with(:auth_token)
+      dispatch_to(Users, :create, @params) do |controller|
+        controller.cookies.should_receive(:delete).with(:auth_token)
       end
     end
     
@@ -61,8 +61,8 @@ describe Users do
     end
     
     it "should render the 'new' template" do
-      dispatch_to(Users, :create, @params) do
-        self.should_receive(:render).with(:new)
+      dispatch_to(Users, :create, @params) do |controller|
+        controller.should_receive(:render).with(:new)
       end
     end
   end
@@ -128,21 +128,25 @@ describe Users do
     
     it "should lookup activated authenticated model" do
       User.should_receive(:find_activated_authenticated_model).with(@activation_code).and_return(@user)
-      dispatch_to(Users, :activate, @params) do
-        stub!(:logged_in?).and_return(false)
+      dispatch_to(Users, :activate, @params) do |controller|
+        controller.stub!(:logged_in?).and_return(false)
       end
     end
     
     it "should redirect" do
-      dispatch_to(Users, :activate, @params){
-        stub!(:logged_in?).and_return(false)
-      }.should be_redirected
+      controller = dispatch_to(Users, :activate, @params) do |controller|
+        controller.stub!(:logged_in?).and_return(false)
+      end
+      
+      controller.should be_redirected
     end
     
     it "should redirect to '/'" do
-      dispatch_to(Users, :activate, @params){
-        stub!(:logged_in?).and_return(false)
-      }.should redirect_to('/')
+      controller = dispatch_to(Users, :activate, @params) do |controller|
+        controller.stub!(:logged_in?).and_return(false)
+      end
+      
+      controller.should redirect_to('/')
     end
   end
   

@@ -147,8 +147,8 @@ describe Session do
     it "should render the 'new' template if the login was unsuccessful" do
       User.should_receive(:authenticate).and_return :false
       
-      dispatch_to(Session, :create, @params) do
-        self.should_receive(:render).with(:new)
+      dispatch_to(Session, :create, @params) do |controller|
+        controller.should_receive(:render).with(:new)
       end
     end
     
@@ -163,21 +163,21 @@ describe Session do
     end
     
     it "should only set the auth_token in the user's cookie if the :remember_me parameter is 1" do
-      dispatch_to(Session, :create, @params.merge(:remember_me => 1)) do
-        cookies.should_receive(:[]=).and_return do |(key, value)|
+      dispatch_to(Session, :create, @params.merge(:remember_me => 1)) do |controller|
+        controller.cookies.should_receive(:[]=).and_return do |(key, value)|
           key.should == :auth_token
         end
       end
       
-      dispatch_to(Session, :create, @params.merge(:remember_me => false)) do
+      dispatch_to(Session, :create, @params.merge(:remember_me => false)) do |controller|
         #Not sure this allows for non :auth_token assigns
-        cookies.should_not_receive(:[]=).with(:auth_token)
+        controller.cookies.should_not_receive(:[]=).with(:auth_token)
       end
     end
     
-    it "should redirect on a successful login" do
-      @controller = dispatch_to(Session, :create, @params) do
-        self.should_receive(:logged_in?).and_return true
+    it "should redirect on a successful login" do |controller|
+      @controller = dispatch_to(Session, :create, @params) do |controller|
+        controller.should_receive(:logged_in?).and_return true
       end
             
       @controller.should be_redirected
@@ -189,15 +189,15 @@ describe Session do
       user = @user
       user.should_receive(:forget_me)
       
-      dispatch_to(Session, :destroy) do
-        self.stub!(:current_user).and_return user
-        self.should_receive(:logged_in?).and_return true
+      dispatch_to(Session, :destroy) do |controller|
+        controller.stub!(:current_user).and_return user
+        controller.should_receive(:logged_in?).and_return true
       end
       
       user.should_not_receive(:forget_me)
       
-      dispatch_to(Session, :destroy) do
-        self.should_receive(:logged_in?).and_return false
+      dispatch_to(Session, :destroy) do |controller|
+        controller.should_receive(:logged_in?).and_return false
       end
     end
     
@@ -205,16 +205,16 @@ describe Session do
       user = @user
       user.stub!(:forget_me)
       
-      dispatch_to(Session, :destroy) do
-        self.stub!(:current_user).and_return user
+      dispatch_to(Session, :destroy) do |controller|
+        controller.stub!(:current_user).and_return user
         
-        self.should_receive(:logged_in?).and_return true
-        cookies.should_receive(:delete).with(:auth_token)
+        controller.should_receive(:logged_in?).and_return true
+        controller.cookies.should_receive(:delete).with(:auth_token)
       end
       
-      dispatch_to(Session, :destroy) do        
-        self.should_receive(:logged_in?).and_return false
-        cookies.should_receive(:delete).with(:auth_token)
+      dispatch_to(Session, :destroy) do |controller|
+        controller.should_receive(:logged_in?).and_return false
+        controller.cookies.should_receive(:delete).with(:auth_token)
       end
     end
     
@@ -222,16 +222,16 @@ describe Session do
       user = @user
       user.stub!(:forget_me)
       
-      dispatch_to(Session, :destroy) do
-        self.stub!(:current_user).and_return user
+      dispatch_to(Session, :destroy) do |controller|
+        controller.stub!(:current_user).and_return user
         
-        self.should_receive(:logged_in?).and_return true
-        self.should_receive(:reset_session)
+        controller.should_receive(:logged_in?).and_return true
+        controller.should_receive(:reset_session)
       end
       
-      dispatch_to(Session, :destroy) do        
-        self.should_receive(:logged_in?).and_return false
-        self.should_receive(:reset_session)
+      dispatch_to(Session, :destroy) do |controller|
+        controller.should_receive(:logged_in?).and_return false
+        controller.should_receive(:reset_session)
       end
     end
     
@@ -239,18 +239,18 @@ describe Session do
       user = @user
       user.stub!(:forget_me)
       
-      @controller = dispatch_to(Session, :destroy) do
-        self.stub!(:current_user).and_return user
+      @controller = dispatch_to(Session, :destroy) do |controller|
+        controller.stub!(:current_user).and_return user
         
-        self.should_receive(:logged_in?).and_return true
+        controller.should_receive(:logged_in?).and_return true
       end
       
       @controller.should be_redirected
       
-      @controller = dispatch_to(Session, :destroy) do
-        self.stub!(:current_user).and_return user
+      @controller = dispatch_to(Session, :destroy) do |controller|
+        controller.stub!(:current_user).and_return user
         
-        self.should_receive(:logged_in?).and_return false
+        controller.should_receive(:logged_in?).and_return false
       end
       
       @controller.should be_redirected

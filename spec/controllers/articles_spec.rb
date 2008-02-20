@@ -10,7 +10,6 @@ describe Articles do
   describe "#index" do
     it "should find all articles and place them in @articles" do
       Article.should_receive(:all).and_return []
-      debugger
       dispatch_to(Articles, :index).assigns(:articles).should == []
     end
     
