@@ -1,11 +1,59 @@
-body{margin:0; }
-#header{background:#333;padding:0 2em;}
-#header a.title{color:#eee;text-decoration:none;font-size:3em;font-weight:bold;margin:0;}
-#header p.alt{color:#ccc;font-size:1.5em;margin:0;}
-#main{padding:2em 1em 4em;border-left:1px solid #ccc;border-right:1px solid #ccc;}
-.hentry{}
-.hentry .entry-title a{color:#f70;text-decoration:none;font-weight:bold;}
-.hentry .entry-title a:hover{color:#333;text-decoration:underline;}
-.hentry .entry-title{margin-bottom:0;line-height:1em;}
-.hentry .published{color:#999;padding-left:1em;font-size:.9em;margin-bottom:5px;}
-.hentry .entry-content p{text-indent:1em;}
+body {
+	margin: 0;
+}
+
+a {
+	color: #f70;
+}
+
+a:visited {
+	color: #333;
+}
+
+#header {
+	background: #333;
+	padding: 0 2em;
+}
+	#header a.title {
+		color: #eee;
+		text-decoration: none;
+		font-size: 3em;
+		font-weight: bold;
+		margin: 0;
+	}
+	#header p.alt {
+		color: #ccc;
+		font-size: 1.5em;
+		margin: 0;
+	}
+	
+#main {
+	padding: 2em 1em 4em;
+	border-left: 1px solid #ccc;
+	border-right: 1px solid #ccc;
+}
+
+.hentry {
+}
+	.hentry .entry-title {
+		margin-bottom: 0;
+		line-height: 1em;
+	}
+		.hentry .entry-title a {
+			color: #f70;
+			text-decoration: none;
+			font-weight: bold;
+		}
+		.hentry .entry-title a:hover {
+			color: #333;
+			text-decoration: underline;
+		}
+	.hentry .published {
+		color: #999;
+		padding-left: 1em;
+		font-size: .9em;
+		margin-bottom: 5px;
+	}
+	.hentry .entry-content p {
+		text-indent: 1em;
+	}
