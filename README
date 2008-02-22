@@ -41,7 +41,7 @@
   * fill in the correct database credentials
   * cp config/settings.sample.yml config/settings.yml
   * fill in the correct blog settings
-  * rake dm:db:automigrate
+  * rake dm:auto_migrate
   * script/blerb
 
 Blerb should now be running on port 4000, so open up your browser and visit localhost:4000!
