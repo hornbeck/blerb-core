@@ -10,6 +10,8 @@ a:visited {
 	color: #333;
 }
 
+fieldset p+p{text-indent:0;}
+
 #header {
 	background: #333;
 	padding: 0 2em;
