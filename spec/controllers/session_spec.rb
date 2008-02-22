@@ -1,4 +1,4 @@
-require File.join(File.dirname(__FILE__), '..', 'spec_helper.rb')
+require File.join(File.dirname(__FILE__), 'controller_spec_helper.rb')
 require File.join( File.dirname(__FILE__), "..", "user_spec_helper")
 require File.join( File.dirname(__FILE__), "..", "authenticated_system_spec_helper")
 
@@ -95,10 +95,11 @@ describe Session, 'failing to login' do
     @controller.should be_successful
   end
   
-  it "should a login form" do
-    do_it
-    @controller.body.should have_tag(:form, :action => '/session')
-  end
+  # this should be moved to a view test
+  it "should a login form" #do
+  #  do_it
+  #  @controller.body.should have_tag(:form, :action => '/session')
+  #end
   
   def do_it
     @controller = dispatch_to(Session, :create, :email => @user.email, :password => @user.password)
@@ -254,28 +255,6 @@ describe Session do
       end
       
       @controller.should be_redirected
-    end
-  end
-  
-  describe "'s routes" do
-    it "should map url(:login) to '/login'" do
-      url(:login).should == "/login"
-    end
-    
-    it "should route GET '/login' to Session#login" do
-      request_to("/login").should route_to(Session, :new)
-    end
-    
-    it "should route POST '/login' to Session#create" do
-      request_to("/login", :post).should route_to(Session, :create)
-    end
-    
-    it "should map url(:logout) to '/logout'" do
-      url(:logout).should == "/logout"
-    end
-    
-    it "should route '/logout' to Session#logout" do
-      request_to("/logout").should route_to(Session, :destroy)
     end
   end
 end

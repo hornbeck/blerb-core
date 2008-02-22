@@ -37,7 +37,7 @@ describe "default controller behavior", :shared => true do
   describe "#show" do
     it "should fail for a model that doesn't exist" do
       if controller_instance.respond_to? :show
-        calling {dispatch_to(controller_class, :show, :id => invalid_id)}.
+        lambda {dispatch_to(controller_class, :show, :id => invalid_id)}.
           should raise_error(Merb::ControllerExceptions::NotFound)
       end
     end

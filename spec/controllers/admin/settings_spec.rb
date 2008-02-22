@@ -1,4 +1,4 @@
-require File.join(File.dirname(__FILE__), '../..', 'spec_helper.rb')
+require File.join(File.dirname(__FILE__), '..', 'controller_spec_helper.rb')
 
 describe "Admin::Settings Controller", "edit action" do
   before(:each) do
