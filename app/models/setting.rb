@@ -1,18 +1,22 @@
+# Encapsulates settings for blerb.
 class Setting
   SETTINGS_PATH = 'config/settings.yml'
-  SAMPLE_SETTINGS_PATH = 'config/settings.default.yml'
+  DEFAULT_SETTINGS_PATH = 'config/settings.default.yml'
   
   attr_accessor :attributes
   
   class << self
+    # Gets an instance of +Setting+. It will attempt to use +SETTINGS_PATH+ if it exists,
+    # or fall back on +DEFAULT_SETTINGS_PATH+.
     def instance
       if File.exists? SETTINGS_PATH
         load SETTINGS_PATH
       else
-        load SAMPLE_SETTINGS_PATH
+        load DEFAULT_SETTINGS_PATH
       end
     end
     
+    # Loads a +Setting+ using +path+.
     def load path
       file = File.open(path, 'r')
       Setting.new(YAML::load(file))
