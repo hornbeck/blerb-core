@@ -13,7 +13,7 @@ $RAKE_ENV = true
 
 init_file = File.join(File.dirname(__FILE__) / "config" / "init")
 
-Merb.load_dependencies(init_file)
+#Merb.load_dependencies(init_file)
 
 include FileUtils
 Merb::Plugins.rakefiles.each {|r| require r }
@@ -48,7 +48,7 @@ unless Gem.cache.search("haml").empty?
       require 'sass'
       puts "*** Updating stylesheets"
       Sass::Plugin.update_stylesheets
-      puts "*** Done"      
+      puts "*** Done"
     end
   end
 end
