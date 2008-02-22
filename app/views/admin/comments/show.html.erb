@@ -1,15 +1,15 @@
 <div class="comment">
-	<h2><%= "#{@comment.name}(#{@comment.email})" %></h2>
-	<span class="date">Created: <%= @comment.created_at.strftime("%H:%M %m/%d/%Y") %></span>
-	<div class="body">
-		<%= @comment.body %>
-	</div>
+  <h2><%= "#{@comment.name}(#{@comment.email})" %></h2>
+  <span class="date">Created: <%= @comment.created_at.strftime("%H:%M %m/%d/%Y") %></span>
+  <div class="body">
+    <%= @comment.body %>
+  </div>
 </div>
 <div class="buttons">
-  <a href="<%= url(:edit_admin_comment,@comment) %>" class="button">
+  <a href="<%= url(:edit_comment,@comment) %>" class="button">
   	<%= image_tag "icons/comment_edit.png" %> Edit
   </a>
-  <a href="<%= url(:admin_comments) %>" class="button">
+  <a href="<%= url(:comments) %>" class="button">
   	<%= image_tag "icons/arrow_undo.png" %>Back
   </a>
 </div>

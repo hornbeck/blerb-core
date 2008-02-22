@@ -1,15 +1,15 @@
 <div class="post">
-	<h2><%= @article.title %></h2>
-	<p class="date alt">Created: <%= @article.created_at.strftime("%H:%M %m/%d/%Y") %></p>
-	<div class="body">
-		<%= @article.body %>
-	</div>
+  <h2><%= @article.title %></h2>
+  <p class="date alt">Created: <%= @article.created_at.strftime("%H:%M %m/%d/%Y") %></p>
+  <div class="body">
+    <%= @article.body %>
+  </div>
 </div>
 <div class="buttons">
-<a href="<%= url(:edit_admin_article,@article) %>" class="button">
-	<%= image_tag 'icons/note_edit.png' %>Edit
+<a href="<%= url(:edit_article,@article) %>" class="button">
+  <%= image_tag 'icons/note_edit.png' %>Edit
 </a>
-<a href="<%= url(:admin_articles) %>" class="button">
-	<%= image_tag 'icons/arrow_undo.png' %>Back
+<a href="<%= url(:admin_home) %>" class="button">
+  <%= image_tag 'icons/arrow_undo.png' %>Back
 </a>
 </div>

@@ -24,7 +24,7 @@ module Admin
     def create(article)
       @article = Article.new(article)
       if @article.save
-        redirect url(:admin_article, @article)
+        redirect url(:admin_home)
       else
         render :new
       end
@@ -41,7 +41,7 @@ module Admin
       @article = Article.with_slug(id)
       raise NotFound unless @article
       if @article.update_attributes(article)
-        redirect url(:admin_article, @article)
+        redirect url(:admin_home)
       else
         raise BadRequest
       end
@@ -51,7 +51,7 @@ module Admin
       @article = Article.with_slug(id)
       raise NotFound unless @article
       if @article.destroy!
-        redirect url(:admin_articles)
+        redirect url(:admin_home)
       else
         raise BadRequest
       end

@@ -1,27 +1,27 @@
 <h2>Latest posts</h2>
 <div class="buttons">
-<a href="<%= url(:new_admin_article) %>" class="button"><%= image_tag "icons/note_add.png" %>New Article</a>
+<a href="<%= url(:new_article) %>" class="button"><%= image_tag "icons/note_add.png" %>New Article</a>
 </div>
 <ul class="admin">
-		<% @articles.each do |article| %>
-			<li id="article_<%= article.id %>" class="article">
-				<div class="controls">
-					<a href="<%= url(:edit_admin_article,article) %>" class="edit button">
-						<%= image_tag "icons/note_edit.png" %> Edit
-					</a>
-					<a href="<%= url(:admin_article,article) %>" class="delete button negative">
-						<%= image_tag "icons/cross.png" %> Delete
-					</a>
-				</div>
-				<div class="info">
-				  <h3>
-					<a href="<%= url(:admin_article,article) %>"><%= h article.title %></a>
-				  </h3>
-				  <p class="date">
-					Created: <%= article.created_at.strftime("%H:%M %m/%d/%Y") %>
-				  </p>
-				</div>
-			</li>
-		<% end %>
+    <% @articles.each do |article| %>
+      <li id="article_<%= article.id %>" class="article">
+        <div class="controls">
+          <a href="<%= url(:edit_article, article) %>" class="edit button">
+            <%= image_tag "icons/note_edit.png" %> Edit
+          </a>
+          <a href="<%= url(:delete_article, article) %>" class="delete button negative">
+            <%= image_tag "icons/cross.png" %> Delete
+          </a>
+        </div>
+        <div class="info">
+          <h3>
+          <a href="<%= url(:edit_article, article) %>"><%= h article.title %></a>
+          </h3>
+          <p class="date">
+          Created: <%= article.created_at.strftime("%H:%M %m/%d/%Y") %>
+          </p>
+        </div>
+      </li>
+    <% end %>
 </ul>
 <br />
