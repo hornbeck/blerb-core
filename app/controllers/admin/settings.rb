@@ -3,7 +3,7 @@ module Admin
     self._layout = 'admin'
     
     def edit
-      @setting = Setting.load
+      @setting = Setting.instance
       render
     end
   

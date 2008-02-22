@@ -3,9 +3,20 @@ class Setting
   attr_accessor :attributes
   
   class << self
-    def load
-      @file = File.open("config/settings.yml","r")
-      Setting.new(YAML::load(@file))
+    SETTINGS_PATH = 'config/settings.yml'
+    SAMPLE_SETTINGS_PATH = 'config/settings.default.yml'
+    
+    def instance
+      if File.exists? SETTINGS_PATH
+        load SETTINGS_PATH
+      else
+        load SAMPLE_SETTINGS_PATH
+      end
+    end
+    
+    def load path
+      file = File.open(path, 'r')
+      Setting.new(YAML::load(file))
     end
   end
   

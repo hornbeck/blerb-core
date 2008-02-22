@@ -4,7 +4,7 @@ class Application < Merb::Controller
   
   protected
     def get_settings
-      Setting.load
+      Setting.instance
     end
     
     def current_settings
