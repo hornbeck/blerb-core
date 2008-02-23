@@ -7,7 +7,7 @@
   * cd blerb-core
   * use script/install to update or install merb-* in the parent directory (e.g. ~/code/merb-core/):
   * script/install_merb
-  * cp config/database.yml.sample config/database.yml
+  * cp config/database.sample.yml config/database.yml
   * fill in the correct database credentials
   * cp config/settings.sample.yml config/settings.yml
   * fill in the correct blog settings
