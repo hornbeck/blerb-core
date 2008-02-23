@@ -1,48 +1,19 @@
 = Welcome to Blerb!
 
 == Installation
-  * Install merb-core, merb-more and merb-plugins from wycats repo on github
-  
-  * Install merb-core
-    * git clone git://github.com/wycats/merb-core.git
-    * cd merb-core
-    * rake install
-    * sudo cp bin/merb /usr/bin/merb
-    * or use one-liner: git clone git://github.com/wycats/merb-core.git && cd merb-core && rake install && sudo cp bin/merb /usr/bin/merb
-    
-  * Install merb-more
-    * git clone git://github.com/wycats/merb-more.git
-    * cd merb-more
-    * cd merb-action-args
-    * rake install
-    * cd ../merb-assets
-    * rake install
-    * cd ../merb-test
-    * rake install
-    * cd ../merb-mailer
-    * rake install
-    * or use one-liner: git clone git://github.com/wycats/merb-more.git && cd merb-more/merb-action-args && rake install && cd ../merb-assets && rake install && cd ../merb-test && rake install && cd ../merb-mailer && rake install
-    
-  * Install merb-plugins
-    * git clone git://github.com/wycats/merb-plugins.git
-    * cd merb-plugins
-    * cd merb_datamapper
-    * rake install
-    * cd ../merb_helpers
-    * rake install
-    * cd ../merb_rspec
-    * rake install
-    * or use one-liner: git clone git://github.com/wycats/merb-plugins.git && cd merb-plugins/merb_datamapper && rake install && cd ../merb_helpers && rake install && cd ../merb_rspec && rake install
-    
+  * from your working directory, say ~/code/, clone the blerb repository:
   * git clone git://github.com/hornbeck/blerb-core.git - anon checkout
   * git clone git@github.com:hornbeck/blerb-core.git   - commit access
   * cd blerb-core
+  * use script/install to update or install merb-* in the parent directory (e.g. ~/code/merb-core/):
+  * script/install_merb
   * cp config/database.yml.sample config/database.yml
   * fill in the correct database credentials
   * cp config/settings.sample.yml config/settings.yml
   * fill in the correct blog settings
   * rake dm:auto_migrate
-  * script/blerb
+  * to start a webserver, run the merb command:
+  * merb
 
 Blerb should now be running on port 4000, so open up your browser and visit localhost:4000!
 

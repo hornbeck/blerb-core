@@ -1,0 +1,21 @@
+#!/usr/bin/env ruby
+%w(merb-core merb-more merb-plugins).each do |entry|
+  path = File.join(File.dirname(__FILE__), '..', '..', entry)
+  if File.exists?(path) && File.directory?(path)
+    puts "Updating git for #{entry}"
+    system "cd #{path}; git pull"
+  else
+    puts "Cloning git for #{entry}"
+    parent = File.join(File.dirname(__FILE__), '..', '..')
+    system "cd #{parent}; git clone git://github.com/wycats/#{entry}.git"
+  end
+end
+%w(merb-plugins/merb_* merb-more/merb-* merb-more merb-core).each do |entry|
+  path = File.join(File.dirname(__FILE__), '..', '..', entry)
+  Dir.glob(path).each do |dir| 
+    system "cd #{dir}; rake repackage"
+    system("sudo gem uninstall -a -i -x #{File.basename(dir)}") rescue Gem::InstallError 
+    system "sudo gem install --no-rdoc --no-ri -f -l #{dir}/pkg/*"
+  end
+end
+

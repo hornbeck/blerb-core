@@ -3,18 +3,15 @@ Gem.clear_paths
 Gem.path.unshift(File.join(File.dirname(__FILE__), "gems"))
 
 require 'rake'
-require 'rake/rdoctask'
-require 'rake/testtask'
 require 'spec/rake/spectask'
 require 'fileutils'
 require 'merb-core'
-require 'rubigen'
 
 $RAKE_ENV = true
 
-Merb.start :environment => (ENV['MERB_ENV'] || 'development'),
-           :adapter     => 'runner',
-           :merb_root  => File.dirname(__FILE__)
+init_file = File.join(File.dirname(__FILE__) / "config" / "init")
+
+Merb.load_dependencies(init_file)
            
 include FileUtils
 # # # Get Merb plugins and dependencies
