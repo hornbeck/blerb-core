@@ -5,6 +5,7 @@ require File.join( File.dirname(__FILE__), "..", "authenticated_system_spec_help
 describe UserMailer do
   
   def deliver(action, mail_opts= {},opts = {})
+    debugger
     UserMailer.dispatch_and_deliver action, mail_opts, opts
     @delivery = Merb::Mailer.deliveries.last
   end
@@ -42,7 +43,7 @@ describe UserMailer do
   
   it "should mention the activation link in the signup emails" do
     deliver(:signup_notification, @mailer_params, :user => @u)
-    the_url = UserMailer.new.url(:user_activation, :activation_code => @u.activation_code)
+    the_url = UserMailer.new.send(:url, :user_activation, :activation_code => @u.activation_code)
     the_url.should_not be_nil
     @delivery.text.should include( the_url )   
     @delivery.html.should include( the_url )
