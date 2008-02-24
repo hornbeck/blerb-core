@@ -6,3 +6,4 @@ log/*.pid
 config/database.yml
 config/settings.yml
 gems
+*.pid

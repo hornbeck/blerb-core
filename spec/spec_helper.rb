@@ -20,13 +20,9 @@ require "#{dir}/spec_helpers/app_specific"
 DataMapper::Persistence.auto_migrate!
 
 Spec::Runner.configure do |config|
-    config.include(Merb::Test::Helper)
-    config.include(Merb::Test::RequestHelper)
-    config.include(Merb::Test::RspecMatchers)
-    # TODO should the next two get automagically included somewhere else?
-    config.include(Merb::Test::Rspec::ControllerMatchers)
-    config.include(Merb::Test::Rspec::MarkupMatchers)
-    
+  config.include(Merb::Test::ControllerHelper)
+  config.include(Merb::Test::ViewHelper)
+  config.include(Merb::Test::RouteHelper)
 end
 
 ### METHODS BELOW THIS LINE SHOULD BE EXTRACTED TO MERB ITSELF
