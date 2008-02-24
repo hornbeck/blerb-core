@@ -13,7 +13,7 @@ describe "The home named routes" do
     request_to("/").should route_to(Articles, :index)
   end
   
-  it "should route GET '/admin' to Admin::Articles#index" do
-    request_to("/admin", :get).should route_to(Admin::Articles, :index)
+  it "should route GET '/admin/' to Admin::Articles#index" do
+    request_to("/admin").should route_to(Admin::Articles, :index)
   end
 end

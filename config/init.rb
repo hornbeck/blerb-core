@@ -28,14 +28,10 @@ use_orm :datamapper
 
 ### Add your other dependencies here
 
-dependency "merb-mailer"
-dependency "merb-assets"
-dependency "merb_helpers"
 
 ### This defines which test framework the generators will use
 ### rspec is turned on by default
 # use_test :test_unit
-require "merb_rspec"
 use_test :rspec
 
 # These are some examples of how you might specify dependencies.
@@ -45,6 +41,12 @@ use_test :rspec
 # dependency "RedCloth", "> 3.0"
 # OR
 # dependencies "RedCloth" => "> 3.0", "ruby-aes-cext" => "= 1.0"
+
+Merb::BootLoader.before_app_loads do
+  dependency "merb-mailer"
+  dependency "merb_helpers"
+  dependency "merb-assets"
+end
 
 Merb::BootLoader.after_app_loads do
   ### Add dependencies here that must load after the application loads:
