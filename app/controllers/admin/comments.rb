@@ -34,18 +34,18 @@ module Admin
     def approve(id)
       @comment = Comment.find(params[:id])
       @comment.mark_as_ham!
-      redirect url(:admin_comments)
+      redirect url(:comments)
     end
 
     def reject(id)
       @comment = Comment[id]
       @comment.mark_as_spam!
-      redirect url(:admin_comments)
+      redirect url(:comments)
     end
     
     def destroy_multiple(comment_ids)
       Comment[comment_ids].destroy
-      redirect url(:admin_comments)
+      redirect url(:comments)
     end
     
     def destroy(id)

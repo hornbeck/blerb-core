@@ -14,10 +14,10 @@
   <a href="<%= url(:admin_home) %>">Administration</a>
 </div>
 <ul id="nav">
-	<li><a href="<%= url(:admin_articles) %>">Articles</a></li>
-	<li><a href="<%= url(:admin_comments) %>">Comments</a></li>
-	<li><a href="<%= url(:admin_users) %>">Users</a></li>
-  <li><a href="<%= url(:edit_admin_settings) %>">Settings</a></li>
+	<li><a href="<%= url(:admin_home) %>">Articles</a></li>
+	<li><a href="<%= url(:comments) %>">Comments</a></li>
+	<li><a href="<%= url(:users) %>">Users</a></li>
+  <li><a href="<%= url(:edit_settings) %>">Settings</a></li>
 </ul>
 <div class="container">
 		<%= catch_content :for_layout %>

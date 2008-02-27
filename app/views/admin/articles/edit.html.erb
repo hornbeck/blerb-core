@@ -1,6 +1,6 @@
 <h2>Editing <%= @article.title %></h2>
 <%= error_messages_for :article %>
-<% form_for(:article, :action => url(:admin_article,@article)) do |f| %>
+<% form_for(:article, :action => url(:update_article, @article)) do |f| %>
   <p>
     <%= text_control :title, :label => "Title", :size => '45' %>
   </p>  
@@ -17,7 +17,7 @@
   </p>
 <% end %>
 <div class="buttons">
-  <a href="<%= url(:admin_articles) %>" class="button">
+  <a href="<%= url(:admin_home) %>" class="button">
 	<%= image_tag "icons/arrow_undo.png" %> Back
   </a>
 </div>

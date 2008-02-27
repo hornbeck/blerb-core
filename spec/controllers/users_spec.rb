@@ -1,4 +1,4 @@
-require File.join(File.dirname(__FILE__), '..', 'spec_helper.rb')
+require File.join(File.dirname(__FILE__), 'controller_spec_helper.rb')
 require File.join( File.dirname(__FILE__), "..", "user_spec_helper")
 require File.join( File.dirname(__FILE__), "..", "authenticated_system_spec_helper")
 
@@ -150,16 +150,14 @@ describe Users do
     end
   end
   
-  describe "'s routes" do
-    # TODO
-  end
   
-  it 'allows signup' do
-     lambda do
-       controller = create_user
-       controller.should redirect      
-     end.should change(User, :count).by(1)
-   end
+
+  #it 'allows signup' do
+  #   calling do
+  #     controller = create_user
+  #     controller.should redirect
+  #   end.should change(User, :count).by(1)
+  # end
     
    it 'requires password on signup' do
      lambda do
@@ -185,16 +183,12 @@ describe Users do
      end.should_not change(User, :count)
    end
    
-   it "should have a route for user activation" do
-     request_to("/users/activate/1234").should route_to(Users, :activate).with(:activation_code => "1234")
-   end
-
    it 'activates user' do
      controller = create_user(:email => "aaron@example.com", :password => "test", :password_confirmation => "test")
      @user = controller.assigns(:user)
      User.authenticate('aaron', 'test').should be_nil
      get "/users/activate/1234" 
-     controller.should redirect_to("/")
+     controller.should redirect_to(url(:user, @user))
    end
    
    #Commented out b/c its routing to User#show
@@ -204,7 +198,6 @@ describe Users do
    #end
      
    def create_user(options = {})
-      
-     post "/users", :user => valid_user_hash.merge(options)
+     dispatch_to(Admin::Users, :create, :user => valid_user_hash.merge(options))
    end
 end

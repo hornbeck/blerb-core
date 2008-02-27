@@ -12,20 +12,18 @@ $RAKE_ENV = true
 init_file = File.join(File.dirname(__FILE__) / "config" / "init")
 
 Merb.load_dependencies(init_file)
-           
-include FileUtils
-# # # Get Merb plugins and dependencies
-Merb::Plugins.rakefiles.each {|r| require r } 
 
-# 
-#desc "Packages up Merb."
-#task :default => [:package]
+include FileUtils
+Merb::Plugins.rakefiles.each {|r| require r }
+
+# Make the default task run specs for now
+task :default => [:specs]
 
 desc "load merb_init.rb"
 task :merb_init do
-  require 'merb-core'
-  require File.dirname(__FILE__)+'/config/init.rb'
-end  
+  # deprecated - here for BC
+  # Rake::Task['merb_env'].invoke
+end
 
 task :uninstall => [:clean] do
   sh %{sudo gem uninstall #{NAME}}

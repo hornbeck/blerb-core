@@ -1,12 +1,12 @@
 <li id="comment_<%= spam.id %>">
-	<ul class="controls">
-		<li><a href="<%= url(:approve_admin_comment,spam) %>" class="button update ham">
-			<%= image_tag "icons/comment_add.png" %> Not Spam
-		</a></li>
-	</ul>
-	<div class="info">
-		<%= check_box_tag "comment_ids[]", spam.id, true %>
-		<h2><%= spam.name %></h2>
-		<div class="content"><%= spam.body %></div>
-	</div>
+  <ul class="controls">
+    <li><a href="<%= url(:approve_comment,spam) %>" class="button update ham">
+      <%= image_tag "icons/comment_add.png" %> Not Spam
+    </a></li>
+  </ul>
+  <div class="info">
+    <%= check_box_tag "comment_ids[]", spam.id, true %>
+    <h2><%= spam.name %></h2>
+    <div class="content"><%= spam.body %></div>
+  </div>
 </li>
