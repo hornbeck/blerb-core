@@ -14,7 +14,7 @@ describe "The settings named routes" do
     request_to("/admin/settings", :get).should route_to(Admin::Settings, :edit)
   end
 
-  it "should route POST '/admin/settings to Admin::Settings#update" do
-    request_to("/admin/settings", :post).should route_to(Admin::Settings, :update)
+  it "should route PUT '/admin/settings to Admin::Settings#update" do
+    request_to("/admin/settings", :put).should route_to(Admin::Settings, :update)
   end
 end

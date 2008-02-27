@@ -1,4 +1,4 @@
-<% form_for(:setting, :action => url(:admin_settings,@setting), :method => :put) do |f| %>
+<% form_for(:setting, :action => url(:update_settings), :method => :put) do |f| %>
   <fieldset>
     <legend>Blerb Settings</legend>
     <%= text_control :title, :label => "Blog Title", :class => "title" %>

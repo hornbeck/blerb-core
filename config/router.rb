@@ -16,7 +16,7 @@ Merb::Router.prepare do |r|
     end
 
     admin.to(:controller => "settings") do |admin_settings|
-      admin_settings.match('/settings', :method => :post).to(:action => 'update').name(:update_settings)
+      admin_settings.match('/settings', :method => :put).to(:action => 'update').name(:update_settings)
       admin_settings.match('/settings').to(:action => 'edit').name(:edit_settings)
     end
 

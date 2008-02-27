@@ -3,11 +3,12 @@ module Admin
     self._layout = 'admin'
     
     def edit
-      @setting = Setting.load
+      @setting = Setting.instance
       render
     end
   
     def update(setting)
+      debugger
       @setting = Setting.new({"settings" => setting})
       @setting.save
       redirect url(:edit_settings)
