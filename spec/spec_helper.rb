@@ -8,16 +8,14 @@ require 'merb-core/test/request_helper'
 require 'merb-core/test/fake_request'
 
 $TESTING=true
-Merb.start :environment => 'test', 
-           :adapter     => 'runner'
+Merb.start :environment => 'test'
 
-require Merb.root / "config" / "init" 
 require "#{dir}/spec_helpers/core"
 require "#{dir}/spec_helpers/custom_matchers"
 require "#{dir}/spec_helpers/shared_behaviors"
 require "#{dir}/spec_helpers/app_specific"
 
-DataMapper::Persistence.auto_migrate!
+#DataMapper::Persistence.auto_migrate!
 
 ### METHODS BELOW THIS LINE SHOULD BE EXTRACTED TO MERB ITSELF
 

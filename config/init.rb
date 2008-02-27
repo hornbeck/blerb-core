@@ -42,11 +42,9 @@ use_test :rspec
 # OR
 # dependencies "RedCloth" => "> 3.0", "ruby-aes-cext" => "= 1.0"
 
-Merb::BootLoader.before_app_loads do
-  dependency "merb-mailer"
-  dependency "merb_helpers"
-  dependency "merb-assets"
-end
+dependency "merb-mailer"
+dependency "merb_helpers"
+dependency "merb-assets"
 
 Merb::BootLoader.after_app_loads do
   ### Add dependencies here that must load after the application loads:

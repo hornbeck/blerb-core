@@ -1,10 +1,20 @@
 puts "Compiling routes.."
 Merb::Router.prepare do |r|
   
-  r.resources :users
-  
   r.namespace('admin') do |admin|
     
+    admin.to(:controller => "users") do |admin_users|
+      admin_users.match('/users/new', :method => :post).to(:action => 'create').name(:create_user)
+      admin_users.match('/users/new').to(:action => 'new').name(:new_user)
+      admin_users.match('/users/:id', :method => :delete).to(:action => 'destroy')
+      admin_users.match('/users/:id/delete').to(:action => 'delete').name(:delete_user)
+      admin_users.match('/users/:id/edit').to(:action => 'edit').name(:edit_user)
+      admin_users.match('/users/:id', :method => :put).to(:action => 'update').name(:update_user)
+      admin_users.match('/users/:id').to(:action => 'show').name(:user)
+      admin_users.match('/users').to(:action => 'index').name(:users)
+      admin_users.match('/users', :method => :post).to(:action => 'create')
+    end
+
     admin.to(:controller => "settings") do |admin_settings|
       admin_settings.match('/settings', :method => :post).to(:action => 'update').name(:update_settings)
       admin_settings.match('/settings').to(:action => 'edit').name(:edit_settings)
@@ -27,7 +37,8 @@ Merb::Router.prepare do |r|
       admin_articles.match('/articles/:id/delete', :method => :post).to(:action => "destroy").name(:delete_article)
       admin_articles.match('/articles/:id/edit').to(:action => "edit").name(:edit_article)
       admin_articles.match('/articles/:id', :method => :put).to(:action => "update").name(:update_article)
-      #admin_articles.match('/admin/articles/:id').to(:action => "show").name(:review_article)
+      admin_articles.match('/articles/:id').to(:action => "show").name(:review_article)
+      admin_articles.match('/articles').to(:action => "index").name(:review_articles)
     end
   end
   
@@ -38,7 +49,6 @@ Merb::Router.prepare do |r|
   end
   
   r.to(:controller => "users") do |users|
-    users.match('/signup').to(:action => 'new').name(:signup)
     users.match("/users/activate/:activation_code").to(:action => 'activate').name(:user_activation)
   end
   
@@ -48,6 +58,7 @@ Merb::Router.prepare do |r|
   
   r.to(:controller => "articles") do |articles|
     articles.match('/articles/:id').to(:action => "show").name(:article)
+    articles.match('/articles').to(:action => "index").name(:articles)
   end
   
   r.match('/admin').to(:namespace => "admin", :controller => "articles", :action => "index").name(:admin_home)

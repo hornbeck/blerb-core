@@ -188,7 +188,7 @@ describe Users do
      @user = controller.assigns(:user)
      User.authenticate('aaron', 'test').should be_nil
      get "/users/activate/1234" 
-     controller.should redirect_to("/")
+     controller.should redirect_to(url(:user, @user))
    end
    
    #Commented out b/c its routing to User#show
@@ -198,7 +198,6 @@ describe Users do
    #end
      
    def create_user(options = {})
-      
-     post "/users", :user => valid_user_hash.merge(options)
+     dispatch_to(Admin::Users, :create, :user => valid_user_hash.merge(options))
    end
 end
