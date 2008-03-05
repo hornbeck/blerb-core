@@ -19,10 +19,10 @@ end
 use_orm :datamapper
 
 ### Uncomment for ActiveRecord ORM
-# use_orm :activerecord
+#use_orm :activerecord
 
 ### Uncomment for Sequel ORM
-# use_orm :sequel
+#use_orm :sequel
 
 
 
@@ -32,7 +32,7 @@ use_orm :datamapper
 ### This defines which test framework the generators will use
 ### rspec is turned on by default
 # use_test :test_unit
-use_test :rspec
+use_test :rspec, "merb_stories"
 
 # These are some examples of how you might specify dependencies.
 #
@@ -45,6 +45,17 @@ use_test :rspec
 dependency "merb-mailer"
 dependency "merb_helpers"
 dependency "merb-assets"
+dependency "permalinker"
+
+dependency "authenticated_system"
+
+module AuthenticatedSystem
+  autoload :Controller, Merb.root / "lib" / "authenticated_system_controller"
+  autoload :Model,      Merb.root / "lib" / "authenticated_system_model"
+  autoload :OrmMap,     Merb.root / "lib" / "authenticated_system_orm_map"
+end
+
+#autoload :AuthenticatedSystem::Controller, Merb.root / "lib" / "authenticated_system_controller"
 
 Merb::BootLoader.after_app_loads do
   ### Add dependencies here that must load after the application loads:
