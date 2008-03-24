@@ -9,9 +9,8 @@ require 'merb-core'
 
 $RAKE_ENV = true
 
-init_file = File.join(File.dirname(__FILE__) / "config" / "init")
-
-Merb.load_dependencies(init_file)
+init_env = ENV['MERB_ENV'] || 'rake'
+Merb.load_dependencies(:environment => init_env)
 
 include FileUtils
 Merb::Plugins.rakefiles.each {|r| require r }

@@ -1,14 +1,11 @@
 require 'rubygems'
 require 'merb-core'
-require 'merb-test'
 
 dir = File.dirname(__FILE__)
 require dir / "helpers" / "merb_helpers"
-require 'merb-core/test/request_helper'
-require 'merb-core/test/fake_request'
+require 'merb-core/test/helpers'
 
-$TESTING=true
-Merb.start :environment => 'test'
+Merb.start_environment(:testing => true, :adapter => 'runner', :environment => ENV['MERB_ENV'] || 'test')
 
 require "#{dir}/spec_helpers/core"
 require "#{dir}/spec_helpers/custom_matchers"

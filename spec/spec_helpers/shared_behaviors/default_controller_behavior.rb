@@ -1,6 +1,6 @@
 describe "default controller behavior", :shared => true do
   before(:each) do
-    @controller_instance = controller_class.new(Merb::Test::FakeRequest.new)
+    @controller_instance = controller_class.new(Merb::Test::RequestHelper::FakeRequest.new)
     model_class.delete_all
   end
 
